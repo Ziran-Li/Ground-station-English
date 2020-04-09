@@ -1,0 +1,255 @@
+﻿<Window
+     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:window ="clr-namespace:XMonitor_GUI.Window"
+            xmlns:d3="http://research.microsoft.com/DynamicDataDisplay/1.0"
+        xmlns:forms="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        xmlns:ControlsUnit="clr-namespace:ControlsUnit;assembly=ControlsUnit" x:Class="XMonitor_GUI.DataWindow" Name="Window"
+        Title="DataWindow" Height="600" Width="700" MinHeight="600" MinWidth="700" Icon="/X-Monitor;component/Resources/minisv3.ico" Background="{DynamicResource WindowBackgroundBrush}" WindowStyle="None" WindowStartupLocation="CenterScreen">
+
+    <!--ウィンドウ画面スタイル-->
+    <Window.Resources>
+        <ResourceDictionary Source="../MainWindowStyles.xaml"/>
+    </Window.Resources>
+    <!--ウィンドウ画面設定-->
+	<WindowChrome.WindowChrome>
+		<WindowChrome CaptionHeight="50" ResizeBorderThickness="5" />
+	</WindowChrome.WindowChrome>
+
+    <!--UAV詳細情報-->
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="5"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="50"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="50"/>
+			<RowDefinition Height="50"/>
+            <RowDefinition Height="5"/>
+        </Grid.RowDefinitions>
+
+        <!--ウィンドウ枠設定-->
+        <Label Grid.Row="1" Grid.Column="1" Content="UAV详细信息" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" FontSize="32" FontFamily="Meiryo UI" FontWeight="Bold"/>
+        <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal"
+			HorizontalAlignment="Right"
+			VerticalAlignment="Top" Height="50" Width="37">
+            <Button Content="r" Style="{DynamicResource CaptionButtonStyleKey}" FontSize="32" BorderBrush="White" Click="Button_Click" />
+        </StackPanel>
+
+        <!-- タブ -->
+        <TabControl Grid.Row="2" Grid.Column="1" BorderBrush="White" Background="White" >
+            <!--Health Data-->
+            <TabItem Header="Health Data" x:Name="TabItem0" BorderBrush="White" >
+                <StackPanel Orientation="Vertical"  >
+                    <!--Processor-->
+                    <GroupBox Header="Processor">
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Orientation="Horizontal" >
+                                <Label Margin="5,0,5,0" Content="Lower Level MCU Proc. Time :" FontSize="10" Width="160"/>
+                                <Grid  Width="150" Height="20">
+                                    <ProgressBar Name="LowLvMcuProcTimeBar" Minimum="0" Maximum="100" Value="50" />
+                                    <Viewbox>
+                                        <TextBlock Name="LowLvMcuProcTimeText" Text="0%" TextAlignment="Center"/>
+                                    </Viewbox>
+                                </Grid>
+                                <Label  Margin="5,0,5,0"  Content="Higher Level MCU Proc. Time :" FontSize="10" Width="160"/>
+                                <Grid  Width="150" Height="20">
+                                    <ProgressBar Name="HighLvMcuProcTimeBar" Minimum="0" Maximum="100" Value="50" />
+                                    <Viewbox>
+                                        <TextBlock Name="HighLvMcuProcTimeText" Text="0%" TextAlignment="Center"/>
+                                    </Viewbox>
+                                </Grid>
+                            </StackPanel>
+                        </StackPanel>
+                    </GroupBox>
+                    <!--LowerLevelMCU-->
+                    <GroupBox Header="LowerLevelMCU">
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Orientation="Horizontal" >
+                                <Label Margin="5,0,5,0" Content="RC Receiver Communication :" FontSize="10" Width="160"/>
+                                <Grid  Width="150" Height="20">
+                                    <ProgressBar Name="LLMCU_RcReceiverCommunicationBar" Minimum="0" Maximum="15" Value="5" />
+                                    <Viewbox>
+                                        <TextBlock Name="LLMCU_RcReceiverCommunicationText" Text="0/15" TextAlignment="Center"/>
+                                    </Viewbox>
+                                </Grid>
+                                <Label  Margin="5,0,5,0"  Content="RC Receiver Reception :" FontSize="10" Width="160"/>
+                                <Grid  Width="150" Height="20">
+                                    <ProgressBar Name="LLMCU_RcReceiverReceptionBar" Minimum="0" Maximum="15" Value="5" />
+                                    <Viewbox>
+                                        <TextBlock Name="LLMCU_RcReceiverReceptionText" Text="0/15" TextAlignment="Center"/>
+                                    </Viewbox>
+                                </Grid>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" >
+                                <Label Margin="5,0,5,0" Content="Gyro Sensor Communication :" FontSize="10" Width="160"/>
+                                <Grid  Width="150" Height="20">
+                                    <ProgressBar Name="LLMCU_GyroSensorCommunicationBar" Minimum="0" Maximum="15" Value="5" />
+                                    <Viewbox>
+                                        <TextBlock Name="LLMCU_GyroSensorCommunicationText" Text="0/15" TextAlignment="Center"/>
+                                    </Viewbox>
+                                </Grid>
+                                <Label  Margin="5,0,5,0"  Content="Gyro Sensor Measurement :" FontSize="10" Width="160"/>
+                                <Grid  Width="150" Height="20">
+                                    <ProgressBar Name="LLMCU_GyroSensorMeasurementBar" Minimum="0" Maximum="15" Value="5" />
+                                    <Viewbox>
+                                        <TextBlock Name="LLMCU_GyroSensorMeasurementText" Text="0/15" TextAlignment="Center"/>
+                                    </Viewbox>
+                                </Grid>
+                            </StackPanel>
+                        </StackPanel>
+                    </GroupBox>
+                    <!--LowerLevelMCU - HigherLevelMCU Communication-->
+                    <GroupBox Header="LowerLevelMCU - HigherLevelMCU Communication">
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Orientation="Horizontal" >
+                                <Label Margin="5,0,5,0" Content="Low ---&gt; High :" FontSize="10" Width="160"/>
+                                <Grid  Width="150" Height="20">
+                                    <ProgressBar Name="McuComm_LowToHighBar" Minimum="0" Maximum="15" Value="5" />
+                                    <Viewbox>
+                                        <TextBlock Name="McuComm_LowToHighText" Text="0/15" TextAlignment="Center"/>
+                                    </Viewbox>
+                                </Grid>
+                                <Label  Margin="5,0,5,0"  Content="Low &lt;--- High :" FontSize="10" Width="160"/>
+                                <Grid  Width="150" Height="20">
+                                    <ProgressBar Name="McuComm_HighToLowBar" Minimum="0" Maximum="15" Value="5" />
+                                    <Viewbox>
+                                        <TextBlock Name="McuComm_HighToLowText" Text="0/15" TextAlignment="Center"/>
+                                    </Viewbox>
+                                </Grid>
+                            </StackPanel>
+                        </StackPanel>
+                    </GroupBox>
+                    <!--HigherLevelMCU-->
+                    <GroupBox Header="HigherLevelMCU">
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Orientation="Horizontal" >
+                                <Label Margin="5,0,5,0" Content="IMU Communication :" FontSize="10" Width="160"/>
+                                <Grid  Width="150" Height="20">
+                                    <ProgressBar Name="HLMCU_IMUCommunicationBar" Minimum="0" Maximum="15" Value="5" />
+                                    <Viewbox>
+                                        <TextBlock Name="HLMCU_IMUCommunicationText" Text="0/15" TextAlignment="Center"/>
+                                    </Viewbox>
+                                </Grid>
+                                <Label  Margin="5,0,5,0"  Content="IMU Gyro Measurement :" FontSize="10" Width="160"/>
+                                <Grid  Width="150" Height="20">
+                                    <ProgressBar Name="HLMCU_IMUGyroMeasurementBar" Minimum="0" Maximum="15" Value="5" />
+                                    <Viewbox>
+                                        <TextBlock Name="HLMCU_IMUGyroMeasurementText" Text="0/15" TextAlignment="Center"/>
+                                    </Viewbox>
+                                </Grid>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" >
+                                <Label  Margin="325,0,5,0"  Content="IMU Acc Measurement :" FontSize="10" Width="160"/>
+                                <Grid  Width="150" Height="20">
+                                    <ProgressBar Name="HLMCU_IMUAccMeasurementBar" Minimum="0" Maximum="15" Value="5" />
+                                    <Viewbox>
+                                        <TextBlock Name="HLMCU_IMUAccMeasurementText" Text="0/15" TextAlignment="Center"/>
+                                    </Viewbox>
+                                </Grid>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" >
+                                <Label  Margin="325,0,5,0"  Content="IMU Mag Measurement :" FontSize="10" Width="160"/>
+                                <Grid  Width="150" Height="20">
+                                    <ProgressBar Name="HLMCU_IMUMagMeasurementBar" Minimum="0" Maximum="15" Value="5" />
+                                    <Viewbox>
+                                        <TextBlock Name="HLMCU_IMUMagMeasurementText" Text="0/15" TextAlignment="Center"/>
+                                    </Viewbox>
+                                </Grid>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" >
+                                <Label Margin="5,0,5,0" Content="Pres. Sensor Communication :" FontSize="10" Width="160"/>
+                                <Grid  Width="150" Height="20">
+                                    <ProgressBar Name="HLMCU_PresSensorCommunicationBar" Minimum="0" Maximum="15" Value="5" />
+                                    <Viewbox>
+                                        <TextBlock Name="HLMCU_PresSensorCommunicationText" Text="0/15" TextAlignment="Center"/>
+                                    </Viewbox>
+                                </Grid>
+                                <Label  Margin="5,0,5,0"  Content="Pres. Sensor Measurement :" FontSize="10" Width="160"/>
+                                <Grid  Width="150" Height="20">
+                                    <ProgressBar Name="HLMCU_PresSensorMeasurementBar" Minimum="0" Maximum="15" Value="5" />
+                                    <Viewbox>
+                                        <TextBlock Name="HLMCU_PresSensorMeasurementText" Text="0/15" TextAlignment="Center"/>
+                                    </Viewbox>
+                                </Grid>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" >
+                                <Label Margin="5,0,5,0" Content="GPS Receiver Communication :" FontSize="10" Width="160"/>
+                                <Grid  Width="150" Height="20">
+                                    <ProgressBar Name="HLMCU_GpsReceiverCommunicationBar" Minimum="0" Maximum="15" Value="5" />
+                                    <Viewbox>
+                                        <TextBlock Name="HLMCU_GpsReceiverCommunicationText" Text="0/15" TextAlignment="Center"/>
+                                    </Viewbox>
+                                </Grid>
+                                <Label  Margin="5,0,5,0"  Content="GPS Measurement :" FontSize="10" Width="160"/>
+                                <Grid  Width="150" Height="20">
+                                    <ProgressBar Name="HLMCU_GpsMeasurementBar" Minimum="0" Maximum="15" Value="5" />
+                                    <Viewbox>
+                                        <TextBlock Name="HLMCU_GpsMeasurementText" Text="0/15" TextAlignment="Center"/>
+                                    </Viewbox>
+                                </Grid>
+                            </StackPanel>
+                        </StackPanel>
+                    </GroupBox>
+                    <!--UAV - Ground Control Station Communication-->
+                    <GroupBox Header="UAV - Ground Control Station Communication">
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Orientation="Horizontal" >
+                                <Label Margin="5,0,5,0" Content="UAV ---&gt; GCS :" FontSize="10" Width="160"/>
+                                <Grid  Width="150" Height="20">
+                                    <ProgressBar Name="MainLink_UavToGcsBar" Minimum="0" Maximum="15" Value="5" />
+                                    <Viewbox>
+                                        <TextBlock Name="MainLink_UavToGcsText" Text="0/15" TextAlignment="Center"/>
+                                    </Viewbox>
+                                </Grid>
+                                <Label  Margin="5,0,5,0"  Content="UAV &lt;--- GCS :" FontSize="10" Width="160"/>
+                                <Grid  Width="150" Height="20">
+                                    <ProgressBar Name="MainLink_GcsToUavBar" Minimum="0" Maximum="15" Value="5" />
+                                    <Viewbox>
+                                        <TextBlock Name="MainLink_GcsToUavText" Text="0/15" TextAlignment="Center"/>
+                                    </Viewbox>
+                                </Grid>
+                            </StackPanel>
+                        </StackPanel>
+                    </GroupBox>
+                </StackPanel>
+            </TabItem>
+			<!--UAV Data-->
+			<TabItem Header="UAV Data" x:Name="TabItem2" BorderBrush="White" >
+				<DataGrid x:Name="UAVListView" Grid.Row="1" IsReadOnly="True" FontSize="16">
+					<DataGrid.Columns>
+						<DataGridTextColumn  Header="" Binding="{Binding Name}" />
+						<DataGridTextColumn  Header="纬度" Binding="{Binding Lat}" />
+						<DataGridTextColumn  Header="经度" Binding="{Binding Lon}" />
+						<DataGridTextColumn  Header="高度" Binding="{Binding Alt}" />
+						<DataGridTextColumn  Header="方位" Binding="{Binding Yaw}" />
+					</DataGrid.Columns>
+				</DataGrid>
+			</TabItem>
+			<!--ALL Data-->
+			<TabItem Header="Data Lsit" x:Name="TabItem1" BorderBrush="White" >
+				<ListView Name="TagList" Grid.Row="2" Grid.ColumnSpan="2" Margin="3" SelectionMode="Multiple" >
+					<ListView.View>
+						<GridView>
+							<GridViewColumn Header="XML" DisplayMemberBinding="{Binding Path=XMLTag}" />
+							<GridViewColumn Header="Value" DisplayMemberBinding="{Binding Path=Value}" />
+							<GridViewColumn Header="Content" DisplayMemberBinding="{Binding Path=Contents}" />
+						</GridView>
+					</ListView.View>
+				</ListView>
+			</TabItem>
+		</TabControl>
+		<TextBox Name="FlightLogFilePath" Grid.Row="3" Grid.Column="1" Margin="0,5,0,5" Text="" VerticalContentAlignment="Center" HorizontalScrollBarVisibility="Auto" />
+
+
+		<!-- 「閉じる」ボタン -->
+        <StackPanel Grid.Column="1" Grid.Row="4" Orientation="Horizontal"
+			VerticalAlignment="Center"  HorizontalAlignment="Right" >
+            <Button Content="关闭" FontSize="18" Width="100"  BorderBrush="White" Background="White" Foreground="Black" FontFamily="Meiryo UI"  Margin="10,5,5,5" Click="Button_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

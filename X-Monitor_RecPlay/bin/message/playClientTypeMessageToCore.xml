@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <message type="set" a="ClientType">
+    <ClientType>
+      <Function t="S">PLAY</Function>
+    </ClientType>
+  </message>
+</root>

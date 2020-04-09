@@ -1,0 +1,78 @@
+﻿<UserControl x:Class="ControlsUnit.AltitudeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" >
+    <UserControl.Resources>
+        <!-- インジケーターのバックグラウンド -->
+        <LinearGradientBrush x:Key="IndicatorBackground" StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Offset="0" Color="#FF00FF00" />
+            <GradientStop Offset="0.5" Color="#FF00FF00" />
+            <GradientStop Offset="1" Color="#AA00FF00" />
+        </LinearGradientBrush>
+        <!-- 光沢上部 -->
+        <LinearGradientBrush x:Key="LightingTop" 
+                         StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Offset="0" Color="#CCFFFFFF" />
+            <GradientStop Offset="0.1" Color="#CCFFFFFF" />
+            <GradientStop Offset="0.4" Color="#99FFFFFF" />
+            <GradientStop Offset="0.5" Color="#00FFFFFF" />
+        </LinearGradientBrush>
+        <!-- 光沢下部-->
+        <RadialGradientBrush x:Key="LightingBottom"
+                         GradientOrigin="0.5,1.0"
+                         Center="0.5,1.0" RadiusX="1" RadiusY="0.1">
+            <RadialGradientBrush.GradientStops>
+                <GradientStop Color="#AAFFFFFF" Offset="0" />
+                <GradientStop Color="#00FFFFFF" Offset="1" />
+            </RadialGradientBrush.GradientStops>
+        </RadialGradientBrush>
+
+
+        <!-- ProgressBarのサイズ設定 -->
+        <Style TargetType="ProgressBar" x:Key="ProgressBarSize">
+            <Setter Property="Width" Value="100" />
+            <Setter Property="Height" Value="100" />
+            <Setter Property="Margin" Value="10,0,0,10" />
+        </Style>
+        <!-- 円形のプログレスバースタイルを定義 -->
+        <Style x:Key="EllipseProgressBar" TargetType="ProgressBar" BasedOn="{StaticResource ProgressBarSize}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ProgressBar">
+                        <Ellipse Name="PART_Track" Stroke="{TemplateBinding BorderBrush}" 
+                             StrokeThickness="{TemplateBinding BorderThickness}" >
+                            <Ellipse.Fill>
+                                <VisualBrush>
+                                    <VisualBrush.Visual>
+                                        <Border Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" 
+                                            Background="{TemplateBinding Background}">
+                                            <Grid Name="PART_Indicator" HorizontalAlignment="Left" >
+                                                <Rectangle Margin="0" RadiusX="1" RadiusY="1" Fill="{StaticResource IndicatorBackground}" >
+                                                </Rectangle>
+                                                <Rectangle Margin="0" Fill="{StaticResource LightingTop}" />
+                                                <Rectangle Margin="0" Fill="{StaticResource LightingBottom}" />
+                                            </Grid>
+                                        </Border>
+                                    </VisualBrush.Visual>
+                                </VisualBrush>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <ProgressBar Value="80" Name="ProgressBar1"
+        VerticalAlignment="Top" HorizontalAlignment="Left" 
+                Margin="41,12,0,0" Height="100" Width="100" 
+                Minimum="0" Maximum="100"
+                Style="{StaticResource EllipseProgressBar}" />
+        <Button Content="START" Height="23" HorizontalAlignment="Left" Margin="12,116,0,0" 
+            Name="btnStart" VerticalAlignment="Top" Width="75" />
+        <Button Content="STOP" Height="23" Margin="92,116,0,0" Name="btnStop" 
+            VerticalAlignment="Top" HorizontalAlignment="Left" Width="75" />
+    </Grid>
+</UserControl>

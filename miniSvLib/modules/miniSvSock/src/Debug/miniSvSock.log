@@ -1,0 +1,27 @@
+﻿Build started 2016/1/13 11:29:25.
+     1>Project "C:\Users\hello\Desktop\acsl\miniSvLib\modules\miniSvSock\src\miniSvSock.vcxproj" on node 4 (Rebuild target(s)).
+     1>ClCompile:
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\include /I..\..\..\include /I..\..\..\..\commonLib\include /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Debug\miniSvSockD.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\include /I..\..\..\include /I..\..\..\..\commonLib\include /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\miniSvSockD.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt MyNetworkExtension.cpp NpNetworkExtension.cpp
+         NpNetworkExtension.cpp
+         MyNetworkExtension.cpp
+         Generating Code...
+       Lib:
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"..\lib\miniSvSockD.lib" /NOLOGO Debug\MyNetworkExtension.obj
+         Debug\NpNetworkExtension.obj
+         Debug\stdafx.obj
+         miniSvSock.vcxproj -> C:\Users\hello\Desktop\acsl\miniSvLib\modules\miniSvSock\src\..\lib\miniSvSockD.lib
+       PostBuildEvent:
+         copy ..\include\*.h ..\..\..\include\
+         copy ..\lib\miniSvSockD.lib ..\..\..\lib\
+         :VCEnd
+         ..\include\MyNetworkExtension.h
+         ..\include\NpNetworkExtension.h
+         已复制         2 个文件。
+         已复制         1 个文件。
+     1>Done Building Project "C:\Users\hello\Desktop\acsl\miniSvLib\modules\miniSvSock\src\miniSvSock.vcxproj" (Rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:05.27

@@ -1,0 +1,105 @@
+﻿<UserControl x:Class="XMonitor_GUI.Plan_FineTuning"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             Height="432" Width="210" Name="Main" Stylus.IsPressAndHoldEnabled="False" >
+    <Viewbox Unloaded="Grid_Unloaded">
+        <StackPanel Name="PlanWindow" Orientation="Vertical"  HorizontalAlignment="Center" VerticalAlignment="Center" >
+            <StackPanel VerticalAlignment="Center">
+                <GroupBox Header="The Point Of Take Off:" FontWeight="Light" BorderThickness="0.5" VerticalAlignment="Top" Margin="0,5,5,5" FontSize="10" >
+                    <StackPanel Margin="0,0,0,1">
+                        <Label x:Name="Start_Lng" Content="Lng：" FontSize="10"/>
+                        <Label Name="Edit_Start_Lng" FontWeight="Light" Content="0.0" Margin="80,-25,10,0"  />
+                        <Label x:Name="Start_Lat" Content="Lat：" FontSize="10"/>
+                        <Label Name="Edit_Start_Lat" FontWeight="Light" Content="0.0" Margin="80,-25,10,0"  />
+                        <Button Name="Start_Btn_ChooseSure" Content="Make Sure" Click="Start_Btn_ChooseSure_Click"></Button>
+                    </StackPanel>
+                </GroupBox>
+
+            </StackPanel>
+            <StackPanel VerticalAlignment="Center">
+                <GroupBox Header="The Point Of Obstacle:" FontWeight="Light" BorderThickness="0.5" VerticalAlignment="Top" Margin="0,5,5,5" FontSize="10" >
+                    <StackPanel Margin="0,0,0,1">
+                        <Label x:Name="name_zhangai_lng" Content="Lng：" FontSize="10"/>
+                        <TextBox Name="Edit_Obstacle_Lng" FontWeight="Light" Text="0.0" Margin="80,-25,10,0"  />
+                        <Label x:Name="name_zhangai_lat" Content="Lat：" FontSize="10"/>
+                        <TextBox Name="Edit_Obstacle_Lat" FontWeight="Light" Text="0.0" Margin="80,-25,10,0"  />
+                        <Label x:Name="name_zhangai_Radius" Content="Radius：" FontSize="10"/>
+                        <TextBox Name="Edit_Obstacle_Radius" FontWeight="Light" Text="1.0" Margin="80,-25,10,0"  />                        
+                        <Button Name="Add_Obstacle_Point" Content="Add Obstacle" Margin="0,0,113,0" Click="Add_Obstacle_Point_Click"  ></Button>
+                        <Button Name="Delete_Obstacle_Point" Content="Delete Obstacle" Click="Delete_Obstacle_Point_Click" Margin="125,-20,10,0" ></Button>
+                        <Button Name="Success_Obstacle_Point" Content="Start Up Obstacle"  Click="Success_Obstacle_Point_Click"  ></Button>                        
+                    </StackPanel>
+                </GroupBox>
+            </StackPanel>
+
+            <StackPanel VerticalAlignment="Center">
+                <GroupBox Header="Retraction:" FontWeight="Light" BorderThickness="0.5" VerticalAlignment="Top" Margin="0,0,0,0" FontSize="10" >
+                    <StackPanel Margin="0,0,0,1">
+                        <Slider Name="RetractionSlider" SelectionStart="0" SelectionEnd="10" Margin="0,0" ValueChanged="RetractionSlider_ValueChanged"  Maximum="10" Width="152"></Slider>
+                        <Label Name="Static_Retracted_Show" FontWeight="Light" Content="0.0" Margin="200,-22,0,0" Width="43"  />
+                    </StackPanel>
+                </GroupBox>
+            </StackPanel>
+
+            <StackPanel>
+                <Grid Width="210" Height="200">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Border Margin="5,5,5,5" Grid.Column="0" Grid.Row="0" BorderBrush="{x:Null}" BorderThickness="2" Name="AziDownBorder"/>
+                    <Border Margin="5,5,5,5" Grid.Column="1" Grid.Row="0" BorderBrush="{x:Null}" BorderThickness="2" Name="LatUpBorder"/>
+                    <Border Margin="5,5,5,5" Grid.Column="2" Grid.Row="0" BorderBrush="{x:Null}" BorderThickness="2" Name="AziUpBorder"/>
+                    <Border Margin="5,5,5,5" Grid.Column="0" Grid.Row="1" BorderBrush="{x:Null}" BorderThickness="2" Name="LngDownBorder"/>
+                    <Border Margin="5,5,5,5" Grid.Column="1" Grid.Row="1" BorderBrush="{x:Null}" BorderThickness="2" Name="MarkerSetBorder"/>
+                    <Border Margin="5,5,5,5" Grid.Column="2" Grid.Row="1" BorderBrush="{x:Null}" BorderThickness="2" Name="LngUpBorder"/>
+                    <Border Margin="5,5,5,5" Grid.Column="0" Grid.Row="2" BorderBrush="{x:Null}" BorderThickness="2" Name="AltDownBorder"/>
+                    <Border Margin="5,5,5,5" Grid.Column="1" Grid.Row="3" BorderBrush="{x:Null}" BorderThickness="2" Name="LatDownBorder"/>
+                    <Border Margin="5,5,5,5" Grid.Column="2" Grid.Row="4" BorderBrush="{x:Null}" BorderThickness="2" Name="AltUpBorder"/>
+
+
+                    <!--Alt-->
+                    <Label Name="AltUp"   Content="+" Visibility="Hidden"  Margin="5,5,5,5" Grid.Column="2" Grid.Row="2" Foreground="#FF505050" FontFamily="Meiryo UI" FontSize="40" FontWeight="Bold"  Background="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="2"/>
+                    <Label Name="AltDown" Content="-" Visibility="Hidden" Margin="5,5,5,5" Grid.Column="0" Grid.Row="2" Foreground="#FF505050" FontFamily="Meiryo UI" FontSize="40" FontWeight="Bold"  Background="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="2"/>
+                    <!--Azi-->
+                    <Label Name="AziUp"   Margin="15" Grid.Column="2" Grid.Row="0" BorderBrush="White" BorderThickness="2" Visibility="Hidden" Background="#FF505050">
+                        <Label.OpacityMask>
+                            <ImageBrush ImageSource="/X-Monitor;component/Resources/rghtR.png"/>
+                        </Label.OpacityMask>
+                    </Label>
+                    <Label Name="AziDown" Margin="15" Grid.Column="0" Grid.Row="0" BorderBrush="White" BorderThickness="2" Background="#FF505050" Visibility="Hidden">
+                        <Label.OpacityMask>
+                            <ImageBrush ImageSource="/X-Monitor;component/Resources/leftR.png"/>
+                        </Label.OpacityMask>
+                    </Label>
+                    <!--Lat-->
+                    <Button Name="Lat_North" ToolTip="1 Meter From Current To North "  Margin="5" Grid.Column="1" Grid.Row="0" BorderBrush="White" BorderThickness="2"  Background="#FF505050"   Foreground="{x:Null}" Click="Lat_North_Btn_Click">
+                        <Image Source="/X-Monitor;component/Resources/up.png"/>
+                    </Button>
+                    <Button Name="Lat_South" ToolTip="1 Meter From Current To South " Margin="5" Grid.Column="1" Grid.Row="2" BorderBrush="White" BorderThickness="2" Background="#FF505050" Foreground="#FF150F0F" Click="Lat_South_Btn_Click">
+                        <Image Source="/X-Monitor;component/Resources/down.png"/>
+                    </Button>
+                    <!--Lng-->
+                    <Button Name="Lng_East" ToolTip="1 Meter From Current To East "  Margin="5" Grid.Column="2" Grid.Row="1" BorderBrush="White" BorderThickness="2"  Background="#FF505050" Click="Lat_East_Btn_Click">
+                        <Image Source="/X-Monitor;component/Resources/right.png"/>
+                    </Button>
+                    <Button Name="Lng_West" Margin="5" ToolTip="1 Meter From Current To West " Grid.Column="0" Grid.Row="1" BorderBrush="White" BorderThickness="2" Background="#FF505050" Click="Lat_West_Btn_Click">
+                        <Image Source="/X-Monitor;component/Resources/left.png"/>
+                    </Button>
+                    <!--MarkerSet-->
+                    <Button Name="MarkerSet" ToolTip="Recovery" Margin="5" Grid.Column="1" Grid.Row="1" BorderBrush="White" BorderThickness="2" Click="Reback_Before_Click" Background="#FF505050">
+                        <Image Source="/X-Monitor;component/Resources/maker.png"/>
+                    </Button>
+                </Grid>
+            </StackPanel>
+        </StackPanel>
+    </Viewbox>
+</UserControl>

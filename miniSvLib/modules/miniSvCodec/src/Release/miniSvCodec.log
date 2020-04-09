@@ -1,0 +1,25 @@
+﻿生成启动时间为 2017/4/24 星期一 下午 4:01:38。
+     1>项目“D:\VS2013_Project\acsl\miniSvLib\modules\miniSvCodec\src\miniSvCodec.vcxproj”在节点 2 上(Rebuild 个目标)。
+     1>ClCompile:
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\include /I..\..\..\include /I..\..\..\..\commonLib\include /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Release\miniSvCodec.pch" /Fo"Release\\" /Fd"Release\vc120.pdb" /FR"Release\\" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\include /I..\..\..\include /I..\..\..\..\commonLib\include /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /FR"Release\\" /Gd /TP /analyze- /errorReport:prompt ..\..\..\include\Common\DataConv.cpp
+         DataConv.cpp
+       Lib:
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"..\lib\miniSvCodec.lib" /NOLOGO /LTCG Release\DataConv.obj
+         Release\stdafx.obj
+         miniSvCodec.vcxproj -> D:\VS2013_Project\acsl\miniSvLib\modules\miniSvCodec\src\..\lib\miniSvCodec.lib
+       BscMake:
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\bscmake.exe /nologo /o"..\lib\miniSvCodec.bsc" /n Release\DataConv.sbr Release\stdafx.sbr
+       PostBuildEvent:
+         copy ..\include\*.h ..\..\..\include\
+         copy ..\lib\miniSvCodec.lib ..\..\..\lib\
+         :VCEnd
+         ..\include\Codec.h
+         已复制         1 个文件。
+         已复制         1 个文件。
+     1>已完成生成项目“D:\VS2013_Project\acsl\miniSvLib\modules\miniSvCodec\src\miniSvCodec.vcxproj”(Rebuild 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:01.99

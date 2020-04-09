@@ -1,0 +1,50 @@
+﻿<Window x:Class="XMonitor_GUI.AboutWindow"
+     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:metro="http://schemas.codeplex.com/elysium/theme"
+        Title="AboutWindow" Height="500" Width="650" Background="{DynamicResource WindowBackgroundBrush}" WindowStyle="None" WindowStartupLocation="CenterScreen" Icon="/X-Monitor;component/Resources/minisv3.ico">
+    <Window.Resources>
+        <ResourceDictionary Source="../MainWindowStyles.xaml"/>
+    </Window.Resources>
+
+    <WindowChrome.WindowChrome>
+		<WindowChrome CaptionHeight="50" ResizeBorderThickness="5" />
+    </WindowChrome.WindowChrome>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="120" />
+			<RowDefinition Height="*" />
+			<RowDefinition Height="50" />
+			<RowDefinition Height="50" />
+            <RowDefinition Height="5" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="5" />
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="3" Grid.Row="0" Orientation="Horizontal"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Top" Height="30" Width="30">
+            <Button Content="r" Style="{DynamicResource CaptionButtonStyleKey}" FontSize="20" BorderBrush="White" Click="ButAboutEnd" Width="30" />
+        </StackPanel>
+		<StackPanel Grid.Column="3" Grid.Row="1" >
+			<Image Margin="5,0,5,0" VerticalAlignment="Top" Source="/X-Monitor;component/Resources/minisurveyorlogo.png" />
+			<Label Content="http://www.aydrone.com/" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="200" Foreground="#FFEFAC27" FontFamily="Meiryo UI" FontSize="12" FontWeight="Bold" Height="24" HorizontalContentAlignment="Center" MouseDoubleClick="AboutMiniSuvURL" />
+			<Label Content="南京傲翼飞控智能科技有限公司" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Foreground="#FFEFAC27" FontFamily="Meiryo UI" FontSize="12" FontWeight="Bold" Height="24" HorizontalContentAlignment="Center" MouseDoubleClick="AboutACSLURL" />
+		</StackPanel>
+		<StackPanel Grid.Column="3" Grid.Row="2" >
+			<Label Name="XMonitorVer" Margin="0,20,0,0" Content="1. X-Monitor Ver " Foreground="#FFEFAC27" FontFamily="Meiryo UI" FontSize="12" FontWeight="Bold" />
+			<Label Name="APFCVer_L" Margin="0" Content="2. APFC(L) Ver " Foreground="#FFEFAC27" FontFamily="Meiryo UI" FontSize="12" FontWeight="Bold" />
+			<Label Name="APFCVer_H" Margin="0" Content="3. APFC(H) Ver " Foreground="#FFEFAC27" FontFamily="Meiryo UI" FontSize="12" FontWeight="Bold" />
+		</StackPanel>
+		<Label Grid.Column="1" Content="About" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" FontSize="18" Width="82" FontWeight="Bold"/>
+        <TextBox Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="4" x:Name="AboutText" Text="***" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" />
+		<Button Content="确定" HorizontalAlignment="Left" VerticalAlignment="Top" Width="142" Grid.Column="3" Margin="29,10,0,0" Grid.Row="3" Height="35" Background="{x:Null}" BorderBrush="White" Foreground="White" FontSize="18" Click="Updata_Click" />
+		<Button Content="关闭" HorizontalAlignment="Left" VerticalAlignment="Top" Width="142" Grid.Column="3" Margin="29,10,0,0" Grid.Row="4" Height="35" Background="{x:Null}" BorderBrush="White" Foreground="White" Click="ButAboutEnd2" FontSize="18" />
+	</Grid>
+</Window>

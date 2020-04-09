@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="App &amp; Dialog">
+      <UniqueIdentifier>{c3e8ca8f-aceb-44e7-a2d0-f91cfac48c0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App &amp; Dialog\ヘッダー">
+      <UniqueIdentifier>{3e8615af-9339-4c06-b17e-596f66d3a2d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="App &amp; Dialog\ソース">
+      <UniqueIdentifier>{729cf2ac-d5aa-41cb-abbf-b847d6f7e5b3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Resource.h">
+      <Filter>App &amp; Dialog\ヘッダー</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>App &amp; Dialog\ヘッダー</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>App &amp; Dialog\ヘッダー</Filter>
+    </ClInclude>
+    <ClInclude Include="X-Monitor.h">
+      <Filter>App &amp; Dialog\ヘッダー</Filter>
+    </ClInclude>
+    <ClInclude Include="X-MonitorDlg.h">
+      <Filter>App &amp; Dialog\ヘッダー</Filter>
+    </ClInclude>
+    <ClInclude Include="AppSetting.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="CLogEdit.h">
+      <Filter>App &amp; Dialog\ヘッダー</Filter>
+    </ClInclude>
+    <ClInclude Include="UavLinkManage.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="XmlMsgDef.h">
+      <Filter>App &amp; Dialog\ヘッダー</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>App &amp; Dialog\ソース</Filter>
+    </ClCompile>
+    <ClCompile Include="X-Monitor.cpp">
+      <Filter>App &amp; Dialog\ソース</Filter>
+    </ClCompile>
+    <ClCompile Include="X-MonitorDlg.cpp">
+      <Filter>App &amp; Dialog\ソース</Filter>
+    </ClCompile>
+    <ClCompile Include="AppSetting.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="CLogEdit.cpp">
+      <Filter>App &amp; Dialog\ソース</Filter>
+    </ClCompile>
+    <ClCompile Include="UavLinkManage.cpp">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="X-Monitor.rc">
+      <Filter>リソース ファイル</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\XMonitor.rc2">
+      <Filter>リソース ファイル</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\X-Monitor.ico">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

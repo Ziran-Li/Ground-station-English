@@ -1,0 +1,17 @@
+C:\Users\hello\Desktop\acsl\2ndPartyLib\XmlBase\bin\Debug\XmlBase.dll
+C:\Users\hello\Desktop\acsl\2ndPartyLib\XmlBase\bin\Debug\XmlBase.pdb
+C:\Users\hello\Desktop\acsl\2ndPartyLib\XmlBase\bin\Debug\GMap.NET.Core.dll
+C:\Users\hello\Desktop\acsl\2ndPartyLib\XmlBase\bin\Debug\Health.dll
+C:\Users\hello\Desktop\acsl\2ndPartyLib\XmlBase\bin\Debug\MulitWaypoint.dll
+C:\Users\hello\Desktop\acsl\2ndPartyLib\XmlBase\bin\Debug\Plot.dll
+C:\Users\hello\Desktop\acsl\2ndPartyLib\XmlBase\bin\Debug\Point.dll
+C:\Users\hello\Desktop\acsl\2ndPartyLib\XmlBase\bin\Debug\SysTime.dll
+C:\Users\hello\Desktop\acsl\2ndPartyLib\XmlBase\bin\Debug\GMap.NET.Core.pdb
+C:\Users\hello\Desktop\acsl\2ndPartyLib\XmlBase\bin\Debug\Health.pdb
+C:\Users\hello\Desktop\acsl\2ndPartyLib\XmlBase\bin\Debug\MulitWaypoint.pdb
+C:\Users\hello\Desktop\acsl\2ndPartyLib\XmlBase\bin\Debug\Plot.pdb
+C:\Users\hello\Desktop\acsl\2ndPartyLib\XmlBase\bin\Debug\Point.pdb
+C:\Users\hello\Desktop\acsl\2ndPartyLib\XmlBase\bin\Debug\SysTime.pdb
+C:\Users\hello\Desktop\acsl\2ndPartyLib\XmlBase\obj\Debug\XmlBase.csprojResolveAssemblyReference.cache
+C:\Users\hello\Desktop\acsl\2ndPartyLib\XmlBase\obj\Debug\XmlBase.dll
+C:\Users\hello\Desktop\acsl\2ndPartyLib\XmlBase\obj\Debug\XmlBase.pdb

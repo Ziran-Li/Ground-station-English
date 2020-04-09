@@ -1,0 +1,129 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="XMonitor_GUI.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="MainWindow_Width" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">1280</Value>
+    </Setting>
+    <Setting Name="MainWindow_Height" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">720</Value>
+    </Setting>
+    <Setting Name="MainWindow_Left" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">200</Value>
+    </Setting>
+    <Setting Name="MainWindow_Top" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">100</Value>
+    </Setting>
+    <Setting Name="Lat" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">32.0104045907</Value>
+    </Setting>
+    <Setting Name="Lng" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">118.7827322301</Value>
+    </Setting>
+    <Setting Name="CoreIPaddress" Type="System.String" Scope="User">
+      <Value Profile="(Default)">127.0.0.1</Value>
+    </Setting>
+    <Setting Name="CorePort" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">53799</Value>
+    </Setting>
+    <Setting Name="COMPort" Type="System.String" Scope="User">
+      <Value Profile="(Default)">COM0</Value>
+    </Setting>
+    <Setting Name="AlertLink" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">66</Value>
+    </Setting>
+    <Setting Name="AlertRCrec" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">66</Value>
+    </Setting>
+    <Setting Name="VoltageMin" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">3.4</Value>
+    </Setting>
+    <Setting Name="VoltageMax" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">4.2</Value>
+    </Setting>
+    <Setting Name="AlertVoltage" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">3.7</Value>
+    </Setting>
+    <Setting Name="PowerStatus_level3" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">20</Value>
+    </Setting>
+    <Setting Name="PowerStatus_level2" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="PowerStatus_level1" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="FlightLogReplyWait" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">30</Value>
+    </Setting>
+    <Setting Name="FlightPlanReplyWait" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">15</Value>
+    </Setting>
+    <Setting Name="Waypoint_Speed" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="Initialization" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="AlertLinkSound" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="AlertVoltageSound" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="AlertLinkView" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="AlertVoltageView" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="XMonitorVersion" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1.2.1</Value>
+    </Setting>
+    <Setting Name="APFCVersion" Type="System.String" Scope="User">
+      <Value Profile="(Default)">3.4.1</Value>
+    </Setting>
+    <Setting Name="AlertGPS" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">7</Value>
+    </Setting>
+    <Setting Name="AlertGPSView" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="LatSub" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="LngSub" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="Provider" Type="System.String" Scope="User">
+      <Value Profile="(Default)">国土地理院地図(航空)</Value>
+    </Setting>
+    <Setting Name="ConfigRecord" Type="Config.ConfigData" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="AlertRepeatTime" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">30</Value>
+    </Setting>
+    <Setting Name="ACSLMessageNumber" Type="System.Int64" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="ACSLMessageDate" Type="System.DateTime" Scope="User">
+      <Value Profile="(Default)">08/07/2015 22:28:00</Value>
+    </Setting>
+    <Setting Name="ACSLMessageFlag" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="AlertGPSSound" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="Function1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">xxx</Value>
+    </Setting>
+    <Setting Name="Function2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">xxx</Value>
+    </Setting>
+    <Setting Name="Function3" Type="System.String" Scope="User">
+      <Value Profile="(Default)">xxx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

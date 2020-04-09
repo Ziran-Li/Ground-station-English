@@ -1,0 +1,1179 @@
+﻿<UserControl x:Class="XMonitor_GUI.Index_SoftWare_Set"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:XMonitor_GUI"
+             xmlns:d3="http://research.microsoft.com/DynamicDataDisplay/1.0"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:control="clr-namespace:ControlsUnit;assembly=ControlsUnit"
+             mc:Ignorable="d" Width="250" Height="1100.0" >
+    <Grid Unloaded="Grid_Unloaded">
+        <!-- 主体部分 -->
+        <Border BorderBrush="Black" BorderThickness="1" ClipToBounds="True" SnapsToDevicePixels="True" >
+            <TabControl Name="m_TabControl_Title" Style="{DynamicResource TabControlStyle2}" Margin="0,2,0,-48">
+                <TabItem Header="StatusInfo" IsSelected="True" Style="{DynamicResource TabItemStyle2}">
+                    <StackPanel Margin="0,0,0,84">
+                        <StackPanel>
+                            <Label Content="Voltage："  FontWeight="Light" Foreground="White" Margin="0,0,147,0"/>
+                            <Label Name="Label_Volt" HorizontalContentAlignment="Center" Content="0.0V"  FontWeight="Light" Foreground="White" Margin="155,-28,0,0"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="0,5,0,0" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="Stars："  FontWeight="Light" Foreground="White" Margin="0,0,147,0"/>
+                            <Label Name="Label_Star" HorizontalContentAlignment="Center" Content="0"  FontWeight="Light" Foreground="White" Margin="155,-28,0,0"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="0,5,0,0" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="Acceleration："  FontWeight="Light" Foreground="White" Margin="0,0,122,0"/>
+                            <Label Name="Label_Acc" HorizontalContentAlignment="Center" Content="Abnormal"  FontWeight="Light" Foreground="White" Margin="151,-28,0,0"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="0,5,0,0" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="Attitude："  FontWeight="Light" Foreground="White" Margin="0,0,147,0"/>
+                            <Label Name="Label_Att" HorizontalContentAlignment="Center" Content="Abnomal"  FontWeight="Light" Foreground="White" Margin="149,-28,0,0"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="0,5,0,0" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="Geomagnetic："  FontWeight="Light" Foreground="White" Margin="0,0,117,0"/>
+                            <Label Name="Label_Mag" HorizontalContentAlignment="Center" Content="Abnomal"  FontWeight="Light" Foreground="White" Margin="148,-28,0,0"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="0,5,0,0" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="Gyroscope："  FontWeight="Light" Foreground="White" Margin="0,0,117,0"/>
+                            <Label Name="Label_Gyro" HorizontalContentAlignment="Center" Content="Abnomal"  FontWeight="Light" Foreground="White" Margin="149,-28,0,0"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="0,5,0,0" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="FlightModels："  FontWeight="Light" Foreground="White" Margin="0,0,117,0"/>
+                            <Label Name="Label_Flight" HorizontalContentAlignment="Center" Content="Null"  FontWeight="Light" Foreground="White" Margin="140,-28,0,0"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="0,5,0,0" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="RemoteControl："  FontWeight="Light" Foreground="White" Margin="0,0,102,0"/>
+                            <Label Name="Label_Ykq" HorizontalContentAlignment="Center" Content="Null"  FontWeight="Light" Foreground="White" Margin="155,-28,0,0"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="0,5,0,0" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel Name="fuzhistatic_height" Height="28">
+                            <Label Content="SprayRange："  FontWeight="Light" Foreground="White" Margin="0,0,111,0"/>
+                            <Label Name="Label_Range" HorizontalContentAlignment="Center" Content="0.0M"  FontWeight="Light" Foreground="White" Margin="155,-28,0,0"/>
+                        </StackPanel>
+                        <StackPanel Name="fuzhiline_height">
+                            <Label Background="White" Margin="0,5,0,0" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="CruisingVel："  FontWeight="Light" Foreground="White" Margin="0,0,128,0"/>
+                            <Label Name="Label_LimitVel" HorizontalContentAlignment="Center" Content="0.0M/S"  FontWeight="Light" Foreground="White" Margin="155,-28,0,0"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="0,5,0,0" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="HeightLimit："  FontWeight="Light" Foreground="White" Margin="0,0,126,0"/>
+                            <Label Name="Label_LimitHeight" HorizontalContentAlignment="Center" Content="0.0M"  FontWeight="Light" Foreground="White" Margin="155,-28,0,0"/>
+                        </StackPanel>
+
+                        <StackPanel>
+                            <Label Background="White" Margin="0,5,0,0" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="DistanceLimit："  FontWeight="Light" Foreground="White" Margin="0,0,105,0"/>
+                            <Label Name="Label_LimitDistance" HorizontalContentAlignment="Center" Content="0.0M"  FontWeight="Light" Foreground="White" Margin="155,-28,0,0"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="0,5,0,0" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="Z Axis Noise："  FontWeight="Light" Foreground="White" Margin="0,0,119,0"/>
+                            <Label Name="Acc_Noise" HorizontalContentAlignment="Center" Content="0.0"  FontWeight="Light" Foreground="White" Margin="155,-28,0,0"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="0,5,0,0" Height="1"></Label>
+                        </StackPanel>
+
+                        <StackPanel>
+                            <Label Content="1level Notice Volt："  FontWeight="Light" Foreground="White" Margin="0,0,76,0"/>
+                            <Label Name="FirstLevel_volt" HorizontalContentAlignment="Center" Content="0.00V"  FontWeight="Light" Foreground="White" Margin="155,-28,0,0"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="0,5,0,0" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="2level Notice Volt："  FontWeight="Light" Foreground="White" Margin="0,0,76,0"/>
+                            <Label Name="SecondLevel_volt" HorizontalContentAlignment="Center" Content="0.00V"  FontWeight="Light" Foreground="White" Margin="155,-28,0,0"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="0,5,0,0" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="2level Notice Action："  FontWeight="Light" Foreground="White" Margin="0,0,71,0"/>
+                            <Label Name="SecondLevel_Action" HorizontalContentAlignment="Center" Content="Null"  FontWeight="Light" Foreground="White" Margin="155,-28,0,0"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="0,5,0,0" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="Reback Height："  FontWeight="Light" Foreground="White" Margin="0,0,92,0"/>
+                            <Label Name="Reback_Height" HorizontalContentAlignment="Center" Content="0.0M"  FontWeight="Light" Foreground="White" Margin="155,-28,0,0"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="0,5,0,0" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="Lose Control Action："  FontWeight="Light" Foreground="White" Margin="0,0,76,0"/>
+                            <Label Name="LoseControl_Action" HorizontalContentAlignment="Center" Content="Null"  FontWeight="Light" Foreground="White" Margin="155,-28,0,0"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="0,5,0,0" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="Hand Speed："  FontWeight="Light" Foreground="White" Margin="0,0,119,0"/>
+                            <Label Name="Hand_Speed" HorizontalContentAlignment="Center" Content="0.0M/S"  FontWeight="Light" Foreground="White" Margin="155,-28,0,0"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="0,5,0,0" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="Take Off Height："  FontWeight="Light" Foreground="White" Margin="0,0,97,0"/>
+                            <Label Name="AutoFly_Height" HorizontalContentAlignment="Center" Content="0.0M"  FontWeight="Light" Foreground="White" Margin="155,-28,0,0"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="0,5,0,0" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="Max Up Speed："  FontWeight="Light" Foreground="White" Margin="0,0,119,0"/>
+                            <Label Name="MaxUp_Speed" HorizontalContentAlignment="Center" Content="0.0M/S"  FontWeight="Light" Foreground="White" Margin="155,-28,0,0"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="0,5,0,0" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="Max Down Speed："  FontWeight="Light" Foreground="White" Margin="0,0,91,0"/>
+                            <Label Name="MaxDown_Speed" HorizontalContentAlignment="Center" Content="0.0M/S"  FontWeight="Light" Foreground="White" Margin="155,-28,0,0"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="0,5,0,0" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="Attitude Range："  FontWeight="Light" Foreground="White" Margin="0,0,100,0"/>
+                            <Label Name="Attitude_AngleLimit" HorizontalContentAlignment="Center" Content="0°"  FontWeight="Light" Foreground="White" Margin="155,-28,0,0"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="0,5,0,0" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="Max Angular Speed："  FontWeight="Light" Foreground="White" Margin="0,0,76,0"/>
+                            <Label Name="MaxYaw_Velocity" HorizontalContentAlignment="Center" Content="0°/s"  FontWeight="Light" Foreground="White" Margin="155,-28,0,0"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="0,5,0,0" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel Name="duanyaostatic_height">
+                            <Label Content="Pesti Break Action："  FontWeight="Light" Foreground="White" Margin="0,0,76,0"/>
+                            <Label Name="Break_Action" HorizontalContentAlignment="Center" Content="Null"  FontWeight="Light" Foreground="White" Margin="155,-28,0,0"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Name="duanyaoline_height" Background="White" Margin="0,5,0,0" Height="1"></Label>
+                        </StackPanel>                        
+                        
+                        
+                        <StackPanel>
+                            <Label Content="Flight Model："  FontWeight="Light" Foreground="White" Margin="0,0,119,0"/>
+                            <Label Name="CurrentFlight_Model" HorizontalContentAlignment="Center" Content="Null"  FontWeight="Light" Foreground="White" Margin="142,-28,0,0"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="0,5,0,0" Height="1"></Label>
+                        </StackPanel>
+                        
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="设置信息" Width="0" Style="{DynamicResource TabItemStyle2}">
+                    <StackPanel>
+                        <StackPanel>
+                            <Button Focusable="False" Name="jitipeizhiback" Content="Back" Background="Transparent" Foreground="White" FontWeight="Light" Height="30" Margin="-2,0,192,0" Click="jitipeizhiback_Click"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Button Content="FlightBody Set" Margin="6,20,12,404" Background="Transparent" Focusable="False" Foreground="White" FontWeight="Light" FontSize="15" Height="50" Click="Button_Click_FlightSet"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="-10,-390,-10,404" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel>
+                            <Button Content="Flight Set" Margin="6,-390,12,404"   Background="Transparent" Focusable="False" Foreground="White" FontWeight="Light" FontSize="15" Height="50" Click="Button_Click_IndexSet" />
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="-10,-390,-10,404" Height="1"></Label>
+                        </StackPanel>
+
+                        <StackPanel>
+                            <Button Content="Remote Calibration" Margin="6,-390,12,404" Background="Transparent" Focusable="False" Foreground="White" FontWeight="Light" FontSize="15" Height="50" Click="Button_Click_YKCHECKSet"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="-10,-390,-10,404" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel>
+                            <Button Content="Motor Test" Margin="6,-390,12,404" Background="Transparent" Focusable="False" Foreground="White" FontWeight="Light" FontSize="15" Height="50" Click="Button_Click_MotorTest"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="-10,-390,-10,404" Height="1"></Label>
+                        </StackPanel>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="参数设置" Width="0" Style="{DynamicResource TabItemStyle2}" >
+                    <StackPanel>
+
+                        <StackPanel>
+                            <Button Focusable="False" Name="qifeigaoduback" Content="Back" Background="Transparent" Foreground="White" FontWeight="Light" Height="30" Margin="-2,0,192,0" Click="qifeigaoduback_Click" />
+                        </StackPanel>
+
+                        <StackPanel Margin="6,10,0,10">
+                            <Label Content="Hand Speed："  FontWeight="Light" Foreground="White"/>
+                            <TextBox Name="Edit_Fly_Speed" FontWeight="Light" Margin="120,-25,60,0"  />
+                            <Label Content="m/s" Margin="165,-25,10,0" FontWeight="Light" Foreground="White"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White"  Height="1"></Label>
+                        </StackPanel>
+
+                        <StackPanel Margin="6,10,146,10">
+                            <Label Content="MaxUp Speed：" FontWeight="Light" Foreground="White" Margin="0,0,-41,0"/>
+                            <TextBox Name="Edit_Up_Speed" FontWeight="Light" Margin="120,-25,-86,0" />
+                            <Label Content="m/s" Margin="165,-25,-132,0" FontWeight="Light" Foreground="White"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel Margin="6,10,146,10">
+                            <Label Content="Maxde Speed："  FontWeight="Light" Foreground="White" Margin="0,0,-41,0"/>
+                            <TextBox Name="Edit_Down_Speed" FontWeight="Light" Margin="120,-25,-86,0" />
+                            <Label Content="m/s" Margin="165,-25,-132,0" FontWeight="Light" Foreground="White"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel Margin="6,10,146,10">
+                            <Label Content="TakeoffHeight："  FontWeight="Light" Foreground="White" Margin="0,0,-41,0"/>
+                            <TextBox Name="Edit_Fly_Height" FontWeight="Light" Margin="120,-25,-86,0" />
+                            <Label Content="m" Margin="165,-25,-134,0" FontWeight="Light" Foreground="White"/>
+                        </StackPanel >
+                        <StackPanel>
+                            <Label Background="White" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel Margin="6,10,146,10">
+                            <Label Content="Attitu Range："  FontWeight="Light" Foreground="White" Margin="0,0,-41,0"/>
+                            <TextBox Name="Edit_Attitude_Value" FontWeight="Light" Margin="120,-25,-86,0" />
+                            <Label Content="°" Margin="165,-25,-134,0" FontWeight="Light" Foreground="White"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Height="1"></Label>
+                        </StackPanel>
+
+
+                        <StackPanel Margin="6,10,146,10">
+                            <Label Content="Maxyaw Speed："  FontWeight="Light" Foreground="White" Margin="0,0,-41,0"/>
+                            <TextBox Name="Edit_Maxrad_Value" FontWeight="Light" Margin="120,-25,-86,0" />
+                            <Label Content="°/s" Margin="165,-25,-139,0" FontWeight="Light" Foreground="White"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Height="1"></Label>
+                        </StackPanel>
+
+
+                        <StackPanel Margin="6,20,146,30">
+                            <Button Name="Btn_WorkIndex_Get" Content="Get Index" Height="32" Background="Transparent" Foreground="White" FontWeight="Light" Click="Btn_WorkIndex_Get_Click"></Button>
+                            <Button Name="Btn_WorkIndex_Set" Content="Set Index" Margin="117,-30,-118,0" Height="32" Background="Transparent" Foreground="White" FontWeight="Light" Click="Btn_WorkIndex_Set_Click"/>
+                        </StackPanel>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="机型设置" Width="0" Style="{DynamicResource TabItemStyle2}" >
+                    <StackPanel>
+                        <StackPanel>
+                            <Button Focusable="False" Name="jitixuanzeback" Content="Back" Background="Transparent" Foreground="White" FontWeight="Light" Height="30" Margin="-2,0,192,0" Click="jitixuanzeback_Click" />
+                        </StackPanel>
+                        <StackPanel Margin="0,10,0,466">
+                            <Label Content="Model："  FontWeight="Light" Foreground="White" Margin="0,0,146,0"/>
+                            <Button Name="Btn_FlightModel_Choose" Content="FourForkClo" Height="30" Margin="130,-30,10,0" Background="Transparent" Foreground="White" FontWeight="Light" Click="Button_Click_JiXingPic"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="0,-450,0,466" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel Margin="0,-450,0,466">
+                            <Label Content="Battery："  FontWeight="Light" Foreground="White" Margin="0,0,146,0"/>
+                            <Button Name="Btn_BatteryModel_Choose" Content="6S" Height="30" Margin="130,-30,10,0" Background="Transparent" Foreground="White" FontWeight="Light" Click="Btn_BatteryModel_Choose_Click"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="0,-450,0,466" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel Margin="0,-450,0,466">
+                            <Label Content="Remotecontr："  FontWeight="Light" Foreground="White" Margin="0,0,122,0"/>
+                            <Button Name="Btn_TelModel_Choose" Content="14SG" Height="30" Margin="130,-30,10,0" Background="Transparent" Foreground="White" FontWeight="Light" Click="Btn_TelModel_Choose_Click"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="0,-450,0,466" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel Margin="0,-450,0,466">
+                            <Label Content="Back in："  FontWeight="Light" Foreground="White" Margin="0,0,146,0"/>
+                            <ComboBox Name="m_YesOrNo" Height="30"  Margin="130,-30,10,0" Background="White" Foreground="Black" FontWeight="Light" SelectionChanged="m_YesOrNo_SelectionChanged" />
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="0,-450,0,466" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel Margin="0,-450,0,466">
+                            <Label Content="Idle："  FontWeight="Light" Foreground="White" Margin="0,0,146,0"/>
+                            <Label Name="m_idle_value"  Content="5%" Height="30" Margin="130,-30,10,0"  Foreground="White" FontWeight="Light"/>
+                            <Slider Name="Idle_Speed_Slider"  IsSnapToTickEnabled="True" IsSelectionRangeEnabled="True" Margin="10,0" Minimum="5" Maximum="25" ValueChanged="Idle_Speed_Slider_ValueChanged" />
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="0,-450,0,466" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel Margin="0,-450,0,466">
+                            <Button Name="Btn_IndexSet_All" Content="Set Index" Height="30" Margin="20,0,10,0" Background="Transparent" Foreground="White" FontWeight="Light" Click="Btn_IndexSet_All_Click"/>
+                        </StackPanel>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="PID设置" Width="0" Style="{DynamicResource TabItemStyle2}"  >
+                    <StackPanel>
+                        <StackPanel>
+                            <Button Focusable="False" Name="ziwentiaojieback" Content="Back" Background="Transparent" Foreground="White" FontWeight="Light" Height="30" Margin="0,0,190,0" Click="ziwentiaojieback_Click" />
+                        </StackPanel>
+                        <Label Content="Homeostasis Control：" Foreground="White" Margin="0,0,0,0" FontWeight="Light"></Label>
+                        <Slider Name="slider_ziwen_pid" SelectionStart="0" SelectionEnd="10" Margin="10,10,47,10" ValueChanged="slider_ziwen_pid_ValueChanged"   TickFrequency="1" LargeChange="1"  SmallChange="1"  Maximum="10" PreviewMouseLeftButtonDown="slider_ziwen_pid_PreviewMouseLeftButtonDown" PreviewMouseLeftButtonUp="slider_ziwen_pid_PreviewMouseLeftButtonUp"></Slider>
+                        <Label Name="label_ziwen_pid"  Content="0%" Height="30" Margin="179,-30,0,0"  Foreground="White" FontWeight="Light"/>
+                        <Label >
+                            <TextBlock TextWrapping="Wrap" Text="Tips:Normal Is 50%，If Wheelbase Is Below 1m，The Value Need Below 50%，If The Body Is shaking ，The Value Need More Below 50%" Foreground="White" FontWeight="Light"></TextBlock>
+                        </Label>
+
+
+                        <StackPanel>
+                            <Label Content="Gyro_KP_RP"  FontWeight="Light" FontSize="11" Foreground="White" Margin="0,0,151,0"/>
+                            <Label Content="Gyro_KI_RP"  FontWeight="Light" FontSize="11" Foreground="White" Margin="75,-25,77,0"/>
+                            <Label Content="Gyro_KD_RP"  FontWeight="Light" FontSize="11" Foreground="White" Margin="149,-25,0,0"/>
+                            <TextBox Name="Edit_GyproKp_Rp" Margin="0,0,156,0" FontWeight="Light" />
+                            <TextBox Name="Edit_GyproKi_Rp" Margin="75,-25,82,0" FontWeight="Light" />
+                            <TextBox Name="Edit_GyproKd_Rp" Margin="149,-25,0,0" FontWeight="Light" />
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="0,15,0,0" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="Gyro_KP_Y"  FontWeight="Light" FontSize="11" Foreground="White" Margin="0,0,151,0"/>
+                            <Label Content="Gyro_KI_Y"  FontWeight="Light" FontSize="11" Foreground="White" Margin="75,-25,77,0"/>
+                            <Label Content="Gyro_KD_Y"  FontWeight="Light" FontSize="11" Foreground="White" Margin="149,-25,0,0"/>
+                            <TextBox Name="Edit_GyproKp_Y" Margin="0,0,156,0" FontWeight="Light" />
+                            <TextBox Name="Edit_GyproKi_Y" Margin="75,-25,82,0" FontWeight="Light" />
+                            <TextBox Name="Edit_GyproKd_Y" Margin="149,-25,0,0" FontWeight="Light" />
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="0,15,0,0" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="Prop_KP_RP"  FontWeight="Light" FontSize="11" Foreground="White" Margin="0,0,151,0"/>
+                            <Label Content="Prop_KI_RP"  FontWeight="Light" FontSize="11" Foreground="White" Margin="149,-25,0,0"/>
+                            <TextBox Name="Edit_PropKp_Rp" Margin="0,0,156,0" FontWeight="Light" />
+                            <TextBox Name="Edit_PropKi_Rp" Margin="149,-25,0,0" FontWeight="Light" />
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="0,15,0,0" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="Prop_KP_Y"  FontWeight="Light" FontSize="11" Foreground="White" Margin="0,0,151,0"/>
+                            <Label Content="Gyro_KI_Y"  FontWeight="Light" FontSize="11" Foreground="White" Margin="149,-25,0,0"/>
+                            <TextBox Name="Edit_PropKp_Y" Margin="0,0,156,0" FontWeight="Light" />
+                            <TextBox Name="Edit_PropKi_Y" Margin="149,-25,0,0" FontWeight="Light" />
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="0,15,0,0" Height="1"></Label>
+                        </StackPanel>
+
+                        <StackPanel>
+                            <Button Name="Btn_PIDIndex_Get" Content="Get Index" Background="Transparent" Foreground="White" FontWeight="Light" Height="35" Margin="0,30,119,0" Click="Btn_PIDIndex_Get_Click"/>
+                            <Button Content="Set Index" Background="Transparent" Foreground="White" FontWeight="Light" Height="35" Margin="123,-36,0,0" Click="Button_PID_SETClick"/>
+                        </StackPanel>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="数据回放" Width="0" Style="{DynamicResource TabItemStyle2}" >
+                    <StackPanel>
+                        <StackPanel>
+                            <Button Focusable="False" Name="shujuhuifangback" Content="Back" Background="Transparent" Foreground="White" FontWeight="Light" Height="30" Margin="0,0,190,0" Click="shujuhuifangback_Click" />
+                        </StackPanel>
+                        <Label Foreground="White" Content="File Name：" Margin="0,10,0,0"></Label>
+                        <TextBox Name="File_Path_Name" FontWeight="Light"  Margin="0,10,0,0"></TextBox>
+                        <Label Foreground="White" Content="Playback Progress："></Label>
+                        <ProgressBar Name="Data_Rate" Height="23" Margin="0,10,0,0"></ProgressBar>
+                        <Button Name="Insert_File" Content="Import File" Background="Transparent" Foreground="White" FontWeight="Light" Height="30" Margin="0,20,127,0" Click="Insert_File_Click" ></Button>
+                        <Button Name="Data_Play_Back" Content="PlayBack" Background="Transparent" Foreground="White" FontWeight="Light" Margin="125,-60,0,-30" Height="30" Click="Data_Play_Back_Click" ></Button>
+
+                        <Button Name="Front_Speed" Content="Forward》》" Background="Transparent" Foreground="White" FontWeight="Light" Height="30" Margin="0,20,127,0" Click="Front_Speed_Click"  ></Button>
+                        <Button Name="Back_Speed" Content="Back《《" Background="Transparent" Foreground="White" FontWeight="Light" Margin="125,-60,0,-30" Height="30" Click="Back_Speed_Click" ></Button>
+
+                        <Button Name="Stop_Or_Reback_N" Content="Suspend" Background="Transparent" Foreground="White" FontWeight="Light" Margin="0,20,0,-30" Height="30" Click="Stop_Or_Reback" ></Button>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="机型图片" Width="0" Style="{DynamicResource TabItemStyle2}" >
+                    <StackPanel>
+                        <StackPanel x:Name="ImagePanel" Width="200" Height="200" ClipToBounds="True">
+                            <local:CanvasWithPhoto x:Name="PhotoCanvas"  IndexChanged="CanvasWithPhoto_IndexChanged">
+                                <Image Source="/X-Monitor;component/Resources/四轴叉字顺时针.png" Height="200" Width="200" Margin="0,0,0,0"/>
+                                <Image Source="/X-Monitor;component/Resources/四轴叉字逆时针.png" Height="200" Width="200"  />
+                                <Image Source="/X-Monitor;component/Resources/四轴十字顺时针.png" Height="200" Width="200"  />
+                                <Image Source="/X-Monitor;component/Resources/四轴十字逆时针.png" Height="200" Width="200"  />
+                                <Image Source="/X-Monitor;component/Resources/六轴V字顺时针.png" Height="200" Width="200"  />
+                                <Image Source="/X-Monitor;component/Resources/六轴V字逆时针.png" Height="200" Width="200"  />
+                                <Image Source="/X-Monitor;component/Resources/六轴一字顺时针.png" Height="200" Width="200"  />
+                                <Image Source="/X-Monitor;component/Resources/六轴一字逆时针.png" Height="200" Width="200"  />
+                                <Image Source="/X-Monitor;component/Resources/八轴叉字顺时针.png" Height="200" Width="200"  />
+                                <Image Source="/X-Monitor;component/Resources/八轴叉字逆时针.png" Height="200" Width="200"  />
+                                <Image Source="/X-Monitor;component/Resources/八轴十字顺时针.png" Height="200" Width="200"  />
+                                <Image Source="/X-Monitor;component/Resources/八轴十字逆时针.png" Height="200" Width="200"  />
+                                <Image Source="/X-Monitor;component/Resources/共轴叉字顺时针.png" Height="200" Width="200"  />
+                                <Image Source="/X-Monitor;component/Resources/共轴叉字逆时针.png" Height="200" Width="200"  />
+                            </local:CanvasWithPhoto>
+                        </StackPanel>
+                        <StackPanel Margin="0,-180,204,0">
+                            <Button Name="Left_Move_Btn" Content="《" Focusable="False" Height="167" Width="20" Margin="3,0,0,0" HorizontalAlignment="Left" Background="Transparent" Foreground="White" FontWeight="Light" Click="Left_Move_Btn_Click"></Button>
+                        </StackPanel>
+                        <StackPanel Margin="204,-180,0,0" >
+                            <Button Name="Right_Move_Btn" Content="》" Focusable="False" Height="167" Margin="2,0,0,0" Background="Transparent" Foreground="White" FontWeight="Light" Click="Right_Move_Btn_Click"/>
+                        </StackPanel>
+                        <StackPanel Margin="0,20,0,0" Height="63">
+                            <Button Name="Btn_Flight_Model" Content="四轴叉字顺" Height="50" Margin="20,0,10,0" Background="Transparent" Foreground="White" FontWeight="Light" Click="Btn_Flight_Model_Click"/>
+                        </StackPanel>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="电池图片" Width="0" Style="{DynamicResource TabItemStyle2}" >
+                    <StackPanel>
+                        <StackPanel x:Name="BatteryImagePanel" Width="200" Height="200" ClipToBounds="True">
+                            <local:CanvasWithPhoto x:Name="BatteryPhotoCanvas"  IndexChanged="BatteryCanvasWithPhoto_IndexChanged">
+                                <Image Source="/X-Monitor;component/Resources/6s.png" Height="200" Width="200" Margin="0,0,0,0"/>
+                                <Image Source="/X-Monitor;component/Resources/12s.png" Height="200" Width="200"  />
+                                <Image Source="/X-Monitor;component/Resources/4s.png" Height="200" Width="200"  />
+                                <Image Source="/X-Monitor;component/Resources/3s.png" Height="200" Width="200"  />
+                            </local:CanvasWithPhoto>
+                        </StackPanel>
+                        <StackPanel Margin="0,-200,202,0" Height="167">
+                            <Button Name="LeftBattery_Move_Btn" Content="《" Focusable="False" Height="167" Width="20" Margin="3,0,0,0" HorizontalAlignment="Left" Background="Transparent" Foreground="White" FontWeight="Light" Click="LeftBattery_Move_Btn_Click" ></Button>
+                        </StackPanel>
+                        <StackPanel Margin="203,-200,0,0" Height="168" >
+                            <Button Name="RightBattery_Move_Btn" Content="》" Focusable="False" Height="167" Width="20" Margin="3,0,0,0" HorizontalAlignment="Right" Background="Transparent" Foreground="White" FontWeight="Light" Click="RightBattery_Move_Btn_Click" ></Button>
+                        </StackPanel>
+                        <StackPanel Margin="0,20,0,0" Height="63">
+                            <Button Name="Btn_Battery_Model" Content="6S" Height="50" Margin="20,0,10,0" Background="Transparent" Foreground="White" FontWeight="Light" Click="Btn_Battery_Model_Click"/>
+                        </StackPanel>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="遥控图片" Width="0" Style="{DynamicResource TabItemStyle2}" >
+                    <StackPanel>
+                        <StackPanel x:Name="TelImagePanel" Width="200" Height="200" ClipToBounds="True">
+                            <local:CanvasWithPhoto x:Name="TelPhotoCanvas"  IndexChanged="TelCanvasWithPhoto_IndexChanged">
+                                <Image Source="/X-Monitor;component/Resources/14SG.png" Height="200" Width="200" Margin="0,0,0,0"/>
+                                <Image Source="/X-Monitor;component/Resources/其它.png" Height="200" Width="200"  />
+                            </local:CanvasWithPhoto>
+                        </StackPanel>
+
+                        <StackPanel Margin="0,-200,202,0" Height="167">
+                            <Button Name="LeftYK_Move_Btn" Content="《" Focusable="False" Height="167" Width="20" Margin="3,0,0,0" HorizontalAlignment="Left" Background="Transparent" Foreground="White" FontWeight="Light" Click="LeftYK_Move_Btn_Click"></Button>
+                        </StackPanel>
+                        <StackPanel Margin="203,-200,0,0" Height="168" >
+                            <Button Name="RightYK_Move_Btn" Content="》" Focusable="False" Height="167" Width="20" Margin="3,0,0,0" HorizontalAlignment="Right" Background="Transparent" Foreground="White" FontWeight="Light" Click="RightYK_Move_Btn_Click"></Button>
+                        </StackPanel>
+                        <StackPanel Margin="0,20,0,0" Height="63">
+                            <Button Name="Btn_Tel_Model" Content="14SG" Height="50" Margin="20,0,10,0" Background="Transparent" Foreground="White" FontWeight="Light" Click="Btn_Tel_Model_Click"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label >
+                                <TextBlock TextWrapping="Wrap" FontSize="10" Text="14SG Tip:选择14SG遥控器前，请先设置遥控器通道5-12分别对应SA-SG。"  Foreground="Red"></TextBlock>
+                            </Label>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label >
+                                <TextBlock TextWrapping="Wrap" FontSize="10" Text="其它 Tip:选择其它遥控器前，请先设置遥控器，通道5-模式切换（GPS-低位、姿态-高位）、通道6-水泵开关（关-低位、定速-中位、随速-高位）、通道7-返航（空中是返航、地面上是清除航点）、通道8-AB点（0点-低位、A点-中位、B点-高位）" Foreground="Red"></TextBlock>
+                            </Label>
+                        </StackPanel>
+                    </StackPanel>
+                </TabItem>
+
+                <TabItem Header="遥控校准" Width="0" Style="{DynamicResource TabItemStyle2}" >
+                    <StackPanel>
+                        <StackPanel>
+                            <Label Content="Roll" Background="Transparent" Foreground="White" FontWeight="Light" Margin="4,0,182,0"></Label>
+                            <Label Content="Pitch" Background="Transparent" Foreground="White" FontWeight="Light" Margin="59,-29,118,0"></Label>
+                            <Label Content="Yaw" Background="Transparent" Foreground="White" FontWeight="Light" Margin="122,-29,65,0"></Label>
+                            <Label Content="Thro" Background="Transparent" Foreground="White" FontWeight="Light" Margin="182,-29,0,0"></Label>
+                        </StackPanel>
+                        <StackPanel Height="188">
+                            <Canvas Name="Prop_Canvas_First">
+                                <Rectangle Name="m_roll_Backrectangle" Width="40" Height="150" Stroke="White" Fill="White"  StrokeThickness="2"></Rectangle>
+                                <Label Name="m_label_RollValue" Canvas.Left="0" Canvas.Top="150" Width="40" Height="0"  Foreground="Black" Background="Blue"  ></Label>
+                                <Label Name="m_lable_RollMax" Canvas.Top="150" Canvas.Left="0" Width="40" Height="3" Foreground="Black" Background="Red"  ></Label>
+                                <Label Name="m_lable_RollMin" Canvas.Top="150" Canvas.Left="0" Width="40" Height="3" Foreground="Black" Background="Green" ></Label>
+
+                                <Rectangle Name="m_pitch_rectangle" Canvas.Left="60" Width="40" Height="150" Stroke="White" Fill="White"  StrokeThickness="2"></Rectangle>
+                                <Label Name="m_label_PitchValue" Canvas.Left="60" Canvas.Top="150" Width="40" Height="0"  Foreground="Black" Background="Blue"  ></Label>
+                                <Label Name="m_lable_PitchMax" Canvas.Top="150" Canvas.Left="60" Width="40" Height="3" Foreground="Black" Background="Red"  ></Label>
+                                <Label Name="m_lable_PitchMin" Canvas.Top="150" Canvas.Left="60" Width="40" Height="3" Foreground="Black" Background="Green" ></Label>
+
+                                <Rectangle Name="m_yaw_rectangle" Canvas.Left="120" Width="40" Height="150" Stroke="White" Fill="White"  StrokeThickness="2"></Rectangle>
+                                <Label Name="m_label_YawValue" Canvas.Left="120" Canvas.Top="150" Width="40" Height="0"  Foreground="Black" Background="Blue"  ></Label>
+                                <Label Name="m_lable_YawMax" Canvas.Top="150" Canvas.Left="120" Width="40" Height="3" Foreground="Black" Background="Red"  ></Label>
+                                <Label Name="m_lable_YawMin" Canvas.Top="150" Canvas.Left="120" Width="40" Height="3" Foreground="Black" Background="Green" ></Label>
+
+                                <Rectangle Name="m_throttle_rectangle" Canvas.Left="180" Width="40" Height="150" Stroke="White" Fill="White"  StrokeThickness="2"></Rectangle>
+                                <Label Name="m_label_throttleValue" Canvas.Left="180" Canvas.Top="150" Width="40" Height="0"  Foreground="Black" Background="Blue"  ></Label>
+                                <Label Name="m_lable_ThrottleMax" Canvas.Top="150" Canvas.Left="180" Width="40" Height="3" Foreground="Black" Background="Red"  ></Label>
+                                <Label Name="m_lable_ThrottleMin" Canvas.Top="150" Canvas.Left="180" Width="40" Height="3" Foreground="Black" Background="Green" ></Label>
+
+                                <Label Name="RollProp_Value" Canvas.Top="160" Canvas.Left="5" HorizontalContentAlignment="Center" Content="0.0" Background="Transparent" Foreground="White" FontWeight="Light"></Label>
+                                <Label Name="PitchProp_Value" Canvas.Top="160" Canvas.Left="65" HorizontalContentAlignment="Center" Content="0.0" Background="Transparent" Foreground="White" FontWeight="Light"></Label>
+                                <Label Name="YawProp_Value" Canvas.Top="160" Canvas.Left="125" HorizontalContentAlignment="Center" Content="0.0" Background="Transparent" Foreground="White" FontWeight="Light"></Label>
+                                <Label Name="ThroProp_Value" Canvas.Top="160" Canvas.Left="185" HorizontalContentAlignment="Center" Content="0.0" Background="Transparent" Foreground="White" FontWeight="Light"></Label>
+                            </Canvas>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="SW1" Background="Transparent" Foreground="White" FontWeight="Light" Margin="0,-5,178,0"></Label>
+                            <Label Content="SW2" Background="Transparent" Foreground="White" FontWeight="Light" Margin="60,-28,120,0"></Label>
+                            <Label Content="SW3" Background="Transparent" Foreground="White" FontWeight="Light" Margin="120,-28,59,0"></Label>
+                            <Label Content="SW4" Background="Transparent" Foreground="White" FontWeight="Light" Margin="180,-28,0,0"></Label>
+                        </StackPanel>
+                        <StackPanel Height="188" >
+                            <Canvas Name="Prop_Canvas_Second">
+                                <Rectangle Name="m_sw1_rectangle" Width="40" Height="150" Stroke="Wheat" Fill="White"  StrokeThickness="2"></Rectangle>
+                                <Label Name="m_label_Sw1Value" Canvas.Left="0" Canvas.Top="150" Width="40" Height="0"  Foreground="Black" Background="Blue"  ></Label>
+                                <Label Name="m_lable_sw1Max" Canvas.Top="150" Canvas.Left="0" Width="40" Height="3" Foreground="Black" Background="Red"  ></Label>
+                                <Label Name="m_lable_sw1Min" Canvas.Top="150" Canvas.Left="0" Width="40" Height="3" Foreground="Black" Background="Green" ></Label>
+
+                                <Rectangle Name="m_sw2_rectangle" Canvas.Left="60" Width="40" Height="150" Stroke="White" Fill="White"  StrokeThickness="2"></Rectangle>
+                                <Label Name="m_label_Sw2Value" Canvas.Left="60" Canvas.Top="150" Width="40" Height="0"  Foreground="Black" Background="Blue"  ></Label>
+                                <Label Name="m_lable_sw2Max" Canvas.Top="150" Canvas.Left="60" Width="40" Height="3" Foreground="Black" Background="Red"  ></Label>
+                                <Label Name="m_lable_sw2Min" Canvas.Top="150" Canvas.Left="60" Width="40" Height="3" Foreground="Black" Background="Green" ></Label>
+
+                                <Rectangle Name="m_sw3_rectangle" Canvas.Left="120" Width="40" Height="150" Stroke="White" Fill="White"  StrokeThickness="2"></Rectangle>
+                                <Label Name="m_label_Sw3Value" Canvas.Left="120" Canvas.Top="150" Width="40" Height="0"  Foreground="Black" Background="Blue"  ></Label>
+                                <Label Name="m_lable_sw3Max" Canvas.Top="150" Canvas.Left="120" Width="40" Height="3" Foreground="Black" Background="Red"  ></Label>
+                                <Label Name="m_lable_sw3Min" Canvas.Top="150" Canvas.Left="120" Width="40" Height="3" Foreground="Black" Background="Green" ></Label>
+
+                                <Rectangle Name="m_sw4_rectangle" Canvas.Left="180" Width="40" Height="150" Stroke="White" Fill="White"  StrokeThickness="2"></Rectangle>
+                                <Label Name="m_label_Sw4Value" Canvas.Left="180" Canvas.Top="150" Width="40" Height="0"  Foreground="Black" Background="Blue"  ></Label>
+                                <Label Name="m_lable_sw4Max" Canvas.Top="150" Canvas.Left="180" Width="40" Height="3" Foreground="Black" Background="Red"  ></Label>
+                                <Label Name="m_lable_sw4Min" Canvas.Top="150" Canvas.Left="180" Width="40" Height="3" Foreground="Black" Background="Green" ></Label>
+
+                                <Label Name="SW1Prop_Value" Canvas.Top="160" Canvas.Left="5" HorizontalContentAlignment="Center" Content="0.0" Background="Transparent" Foreground="White" FontWeight="Light" ></Label>
+                                <Label Name="SW2Prop_Value" Canvas.Top="160" Canvas.Left="65" HorizontalContentAlignment="Center" Content="0.0" Background="Transparent" Foreground="White" FontWeight="Light" ></Label>
+                                <Label Name="SW3Prop_Value" Canvas.Top="160" Canvas.Left="125" HorizontalContentAlignment="Center" Content="0.0" Background="Transparent" Foreground="White" FontWeight="Light" ></Label>
+                                <Label Name="SW4Prop_Value" Canvas.Top="160" Canvas.Left="185" HorizontalContentAlignment="Center" Content="0.0" Background="Transparent" Foreground="White" FontWeight="Light" ></Label>
+
+
+                            </Canvas>
+                        </StackPanel>
+                        <StackPanel>
+                            <Button Name="YKJZ_Start" Content="Start" Background="Transparent" Foreground="White" FontWeight="Light" Height="33" Margin="0,0,129,0" Click="YKJZ_Start_Click" />
+                            <Button Name="YKJZ_Success" Content="Next" Background="Transparent" Foreground="White" FontWeight="Light" Height="33" Margin="129,-33,0,0" Click="YKJZ_Success_Click" />
+                        </StackPanel>
+                    </StackPanel>
+                </TabItem>
+
+                <TabItem Header="校准确认" Style="{DynamicResource TabItemStyle2}" Width="0" RenderTransformOrigin="0.5,0.5">
+                    <StackPanel>
+                        <StackPanel>
+                            <RadioButton Content="America" Name="America_radio" GroupName="Country_Name" IsChecked="True" FontWeight="Light" Foreground="White"  Checked="RadioButton_Checked"/>
+                            <RadioButton Margin="137,-19,0,0" Name="Japan_radio" Content="Japan" GroupName="Country_Name" FontWeight="Light" Foreground="White"  Checked="RadioButton_Checked_1"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Canvas Width="200"  Height="200"  Name="canvas" Margin="0,0,0,0">
+                                <Ellipse Name="m_circle" Fill="GreenYellow" Width="10" Height="10" Canvas.Left="96" Canvas.Top="96"/>
+                                <Path Stroke="White" StrokeThickness="1" Data="M 0,0,0,200"/>
+                                <Path Stroke="White" StrokeThickness="1" Data="M 0,0,200,0"/>
+                                <Path Stroke="White" StrokeThickness="1" Data="M 200,0,200,200"/>
+                                <Path Stroke="White" StrokeThickness="1" Data="M 0,200,200,200"/>
+                                <Path Stroke="White" StrokeThickness="1" Data="M 0,100,200,100"/>
+                                <Path Stroke="White" StrokeThickness="1" Data="M 100,0,100,200"/>
+                            </Canvas>
+                        </StackPanel>
+                        <StackPanel>
+                            <CheckBox Name="m_leftcheck_amercia_x" Content="Yaw Rev" FontWeight="Light" Foreground="White" Margin="0,0,136,0" Checked="Left_X_Checked" Unchecked="Left_X_UnChecked" ></CheckBox>
+                            <CheckBox Name="m_leftcheck_amercia_y" Content="Thr Rev" FontWeight="Light" Foreground="White" Margin="149,-18,0,0" Checked="Left_Y_Checked" Unchecked="Left_Y_UnChecked" ></CheckBox>
+                        </StackPanel>
+                        <StackPanel>
+                            <Canvas Width="200"  Height="200"  Name="canvastwo" Margin="0,10,0,0">
+                                <Ellipse Name="m_circletwo" Fill="GreenYellow" Width="10" Height="10" Canvas.Left="96" Canvas.Top="96"/>
+                                <Path Stroke="White" StrokeThickness="1" Data="M 0,0,0,200"/>
+                                <Path Stroke="White" StrokeThickness="1" Data="M 0,0,200,0"/>
+                                <Path Stroke="White" StrokeThickness="1" Data="M 200,0,200,200"/>
+                                <Path Stroke="White" StrokeThickness="1" Data="M 0,200,200,200"/>
+                                <Path Stroke="White" StrokeThickness="1" Data="M 0,100,200,100"/>
+                                <Path Stroke="White" StrokeThickness="1" Data="M 100,0,100,200"/>
+                            </Canvas>
+                        </StackPanel>
+                        <StackPanel>
+                            <CheckBox Name="m_rightcheck_amercia_x" Content="Roll Rev" FontWeight="Light" Foreground="White" Margin="0,0,149,0"  Checked="Right_X_Checked" Unchecked="Right_X_UnChecked"></CheckBox>
+                            <CheckBox Name="m_rightcheck_amercia_y" Content="Pitch Rev" FontWeight="Light" Foreground="White" Margin="149,-18,0,0"  Checked="Right_Y_Checked" Unchecked="Right_Y_UnChecked"></CheckBox>
+                        </StackPanel>
+                        <StackPanel>
+                            <CheckBox Style="{DynamicResource SliderCheckBox}"   x:Name="Switch1" IsChecked="{Binding WindowsAutomatically, Mode=TwoWay}"  Margin="-4,20,190,15"  Foreground="White" RenderTransformOrigin="0.5,0.5" Height="20">
+                                <CheckBox.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="-90"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </CheckBox.RenderTransform>
+                            </CheckBox>
+                            <CheckBox Style="{DynamicResource SliderCheckBox}"   x:Name="Switch2" IsChecked="{Binding WindowsAutomatically, Mode=TwoWay}"  Margin="54,-80,90,15"  Foreground="White" RenderTransformOrigin="0.5,0.5" Height="40">
+                                <CheckBox.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="-90"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </CheckBox.RenderTransform>
+                            </CheckBox>
+                            <CheckBox Style="{DynamicResource SliderCheckBox}"   x:Name="Switch3" IsChecked="{Binding WindowsAutomatically, Mode=TwoWay}"  Margin="132,-40,56,15"  Foreground="White" RenderTransformOrigin="0.5,0.5" Height="32">
+                                <CheckBox.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="-90"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </CheckBox.RenderTransform>
+                            </CheckBox>
+                            <CheckBox Style="{DynamicResource SliderCheckBox}"   x:Name="Switch4" IsChecked="{Binding WindowsAutomatically, Mode=TwoWay}"  Margin="176,-80,-22,15"  Foreground="White" RenderTransformOrigin="0.5,0.5" Height="23">
+                                <CheckBox.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="-90"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </CheckBox.RenderTransform>
+                            </CheckBox>
+                            <Label Content="SW1" FontWeight="Light" Foreground="White" FontSize="12" Margin="0,-10,189,-10" />
+                            <Label Content="SW2" FontWeight="Light" Foreground="White" FontSize="12" Margin="67,-16,119,-10" />
+                            <Label Content="SW3" FontWeight="Light" Foreground="White" FontSize="12" Margin="127,-16,56,-10" />
+                            <Label Content="SW4" FontWeight="Light" Foreground="White" FontSize="12" Margin="191,-16,0,-10" />
+                        </StackPanel>
+                        <StackPanel Margin="-6,10,0,0">
+                            <CheckBox Name="m_check_sw1" Foreground="White" FontWeight="Light" FontSize="10" Content="SW1Re" Margin="0,0,172,0"  Checked="SW1_Checked" Unchecked="SW1_UnChecked"></CheckBox>
+                            <CheckBox Name="m_check_sw2" Foreground="White" FontWeight="Light" FontSize="10" Content="SW2Re" Margin="60,-12,113,0"  Checked="SW2_Checked" Unchecked="SW2_UnChecked"></CheckBox>
+                            <CheckBox Name="m_check_sw3" Foreground="White" FontWeight="Light" FontSize="10" Content="SW3Re" Margin="119,-12,55,0"  Checked="SW3_Checked" Unchecked="SW3_UnChecked"></CheckBox>
+                            <CheckBox Name="m_check_sw4" Foreground="White" FontWeight="Light" FontSize="10" Content="SW4Re" Margin="177,-12,-10,0"  Checked="SW4_Checked" Unchecked="SW4_UnChecked"></CheckBox>
+                        </StackPanel>
+                        <StackPanel>
+                            <Button Height="23" Name="Ykq_Dire_Sure"  Content="Make Sure" Background="Transparent" Foreground="White" FontWeight="Light" Margin="0,18,142,-10" Click="Ykq_Dire_Sure_Click"/>
+                            <Button Height="23" Name="YKQ_Back"  Content="Back" FontWeight="Light" Background="Transparent" Foreground="White" Margin="125,-15,7,-10" RenderTransformOrigin="0.5,0.5" Click="YKQ_BackButton_Click"/>
+                        </StackPanel>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="Motor Test" Width="0" Style="{DynamicResource TabItemStyle2}" >
+                    <StackPanel>
+                        <StackPanel>
+                            <Button Focusable="False" Name="dianjiceshiback" Content="Back" Background="Transparent" Foreground="White" FontWeight="Light" Height="30" Margin="-2,0,192,0" Click="dianjiceshiback_Click" />
+                        </StackPanel>
+                        <StackPanel x:Name="Motor_Test">
+                            <StackPanel>
+                                <Label Content="Motor Test：" FontWeight="Light" Foreground="White" FontSize="12" Margin="0,0,129,0"></Label>
+                                <Button Name="First_Motor_Btn" Content="Open" Background="Transparent" Foreground="White" FontWeight="Light" Margin="134,-24,0,0" Click="First_Motor_Btn_Click"></Button>
+                            </StackPanel>
+                            <StackPanel>
+                                <Label Background="White" Margin="0,5,0,0" Height="1"></Label>
+                            </StackPanel>
+                            <StackPanel>
+                                <Label Content="" FontWeight="Light" Foreground="White" FontSize="12" Margin="0,0,156,0"></Label>
+                                <Button Name="Second_Motor_Btn" Content="Close" Background="Transparent" Foreground="White" FontWeight="Light" Margin="134,-24,0,0" Click="Second_Motor_Btn_Click"></Button>
+                            </StackPanel>
+                            <StackPanel>
+                                <Label Background="White" Margin="0,5,0,0" Height="1"></Label>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </TabItem>
+
+
+                <TabItem Header="杆量设置" Width="0" Style="{DynamicResource TabItemStyle2}"  >
+                    <StackPanel>
+                        <!--<StackPanel>
+                            <Label Content="姿态P"  FontWeight="Light" FontSize="11" Foreground="White" Margin="0,0,151,0"/>
+                            <Label Content="姿态I"  FontWeight="Light" FontSize="11" Foreground="White" Margin="75,-25,77,0"/>
+                            <Label Content="姿态D"  FontWeight="Light" FontSize="11" Foreground="White" Margin="149,-25,0,0"/>
+                            <TextBox Name="Edit_Zitai_P" Text="0" Margin="0,0,156,0" FontWeight="Light" PreviewTextInput="Edit_Zitai_P_PreviewTextInput" TextChanged="Edit_Zitai_P_TextChanged" />
+                            <TextBox Name="Edit_Zitai_I" Text="0" Margin="75,-25,82,0" FontWeight="Light" PreviewTextInput="Edit_Zitai_I_PreviewTextInput" TextChanged="Edit_Zitai_I_TextChanged" />
+                            <TextBox Name="Edit_Zitai_D" Text="0" Margin="149,-25,0,0" FontWeight="Light" PreviewTextInput="Edit_Zitai_D_PreviewTextInput" TextChanged="Edit_Zitai_D_TextChanged" />
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="0,15,0,0" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="航向P"  FontWeight="Light" FontSize="11" Foreground="White" Margin="0,0,151,0"/>
+                            <Label Content="航向I"  FontWeight="Light" FontSize="11" Foreground="White" Margin="75,-25,77,0"/>
+                            <Label Content="航向D"  FontWeight="Light" FontSize="11" Foreground="White" Margin="149,-25,0,0"/>
+                            <TextBox Name="Edit_HangXiang_P" Text="0" Margin="0,0,156,0" FontWeight="Light" PreviewTextInput="Edit_HangXiang_P_PreviewTextInput" TextChanged="Edit_HangXiang_P_TextChanged" />
+                            <TextBox Name="Edit_HangXiang_I" Text="0" Margin="75,-25,82,0" FontWeight="Light" PreviewTextInput="Edit_HangXiang_I_PreviewTextInput" TextChanged="Edit_HangXiang_I_TextChanged" />
+                            <TextBox Name="Edit_HangXiang_D" Text="0" Margin="149,-25,0,0" FontWeight="Light" PreviewTextInput="Edit_HangXiang_D_PreviewTextInput" TextChanged="Edit_HangXiang_D_TextChanged" />
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="0,15,0,0" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="速度P"  FontWeight="Light" FontSize="11" Foreground="White" Margin="0,0,151,0"/>
+                            <Label Content="速度I"  FontWeight="Light" FontSize="11" Foreground="White" Margin="75,-25,77,0"/>
+                            <Label Content="速度D"  FontWeight="Light" FontSize="11" Foreground="White" Margin="149,-25,0,0"/>
+                            <TextBox Name="Edit_SuDu_P" Text="0" Margin="0,0,156,0" FontWeight="Light" PreviewTextInput="Edit_SuDu_P_PreviewTextInput" TextChanged="Edit_SuDu_P_TextChanged" />
+                            <TextBox Name="Edit_SuDu_I" Text="0" Margin="75,-25,82,0" FontWeight="Light" PreviewTextInput="Edit_SuDu_I_PreviewTextInput" TextChanged="Edit_SuDu_I_TextChanged" />
+                            <TextBox Name="Edit_SuDu_D" Text="0" Margin="149,-25,0,0" FontWeight="Light" PreviewTextInput="Edit_SuDu_D_PreviewTextInput" TextChanged="Edit_SuDu_D_TextChanged" />
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="0,15,0,0" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="高度P"  FontWeight="Light" FontSize="11" Foreground="White" Margin="0,0,151,0"/>
+                            <Label Content="高度I"  FontWeight="Light" FontSize="11" Foreground="White" Margin="75,-25,77,0"/>
+                            <Label Content="高度D"  FontWeight="Light" FontSize="11" Foreground="White" Margin="149,-25,0,0"/>
+                            <TextBox Name="Edit_GaoDu_P" Text="0" Margin="0,0,156,0" FontWeight="Light" PreviewTextInput="Edit_GaoDu_P_PreviewTextInput" TextChanged="Edit_GaoDu_P_TextChanged" />
+                            <TextBox Name="Edit_GaoDu_I" Text="0" Margin="75,-25,82,0" FontWeight="Light" PreviewTextInput="Edit_GaoDu_I_PreviewTextInput" TextChanged="Edit_GaoDu_I_TextChanged" />
+                            <TextBox Name="Edit_GaoDu_D" Text="0" Margin="149,-25,0,0" FontWeight="Light" PreviewTextInput="Edit_GaoDu_D_PreviewTextInput" TextChanged="Edit_GaoDu_D_TextChanged" />
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="0,15,0,0" Height="1"></Label>
+                        </StackPanel>-->
+                        <StackPanel>
+                            <Button Focusable="False" Name="zitaitiaojieback" Content="Back" Background="Transparent" Foreground="White" FontWeight="Light" Height="30" Margin="0,0,190,0" Click="zitaitiaojieback_Click" />
+                        </StackPanel>
+                        <StackPanel>
+                            <Button Content="Admin Set"  Background="Transparent" Focusable="False" Foreground="White" FontWeight="Light" FontSize="15" Height="27" Click="Button_Click_PIDSet" Margin="126,0,0,0"/>
+                        </StackPanel>
+
+                        <StackPanel>
+                            <Label Background="White" Margin="0,5,0,0" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="Attitude Adjust：" Foreground="White" FontWeight="Light"></Label>
+                            <Slider Name="slider_zitai_pid1" SelectionStart="0" SelectionEnd="10" Margin="10,10,47,10" ValueChanged="slider_zitai_pid_ValueChanged1"  TickFrequency="1" LargeChange="1"  SmallChange="1"  Maximum="10" PreviewMouseLeftButtonDown="slider_zitai_pid1_PreviewMouseLeftButtonDown" PreviewMouseLeftButtonUp="slider_zitai_pid1_PreviewMouseLeftButtonUp" ></Slider>
+                            <Label Name="label_zitai_pid1"  Content="0%" Height="30" Margin="179,-30,0,0"  Foreground="White" FontWeight="Light"/>
+                            <Label >
+                                <TextBlock TextWrapping="Wrap" Text="Tips:Normal The Value Is 50%，When Wheelbase Bigger The Value Bigger" Foreground="White" FontWeight="Light"></TextBlock>
+                            </Label>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="Height Adjust：" Foreground="White" FontWeight="Light"></Label>
+                            <Slider Name="slider_zitai_pid2" SelectionStart="0" SelectionEnd="10" Margin="10,10,47,10" ValueChanged="slider_zitai_pid_ValueChanged2"  TickFrequency="1" LargeChange="1"  SmallChange="1"  Maximum="10" PreviewMouseLeftButtonDown="slider_zitai_pid2_PreviewMouseLeftButtonDown" PreviewMouseLeftButtonUp="slider_zitai_pid2_PreviewMouseLeftButtonUp"></Slider>
+                            <Label Name="label_zitai_pid2"  Content="0%" Height="30" Margin="179,-30,0,0"  Foreground="White" FontWeight="Light"/>
+                            <Label >
+                                <TextBlock TextWrapping="Wrap" Text="Tips:Normal The Value Is 50%，When Wheelbase Bigger The Value Bigger" Foreground="White" FontWeight="Light"></TextBlock>
+                            </Label>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="Velocity Adjust：" Foreground="White" FontWeight="Light"></Label>
+                            <Slider Name="slider_zitai_pid3" SelectionStart="0" SelectionEnd="10" Margin="10,10,47,10" ValueChanged="slider_zitai_pid_ValueChanged3"  TickFrequency="1" LargeChange="1"  SmallChange="1"  Maximum="10" PreviewMouseLeftButtonDown="slider_zitai_pid3_PreviewMouseLeftButtonDown" PreviewMouseLeftButtonUp="slider_zitai_pid3_PreviewMouseLeftButtonUp" ></Slider>
+                            <Label Name="label_zitai_pid3"  Content="0%" Height="30" Margin="179,-30,0,0"  Foreground="White" FontWeight="Light"/>
+                            <Label >
+                                <TextBlock TextWrapping="Wrap" Text="Tips:Normal The Value Is 50%，When Wheelbase Bigger The Value Bigger" Foreground="White" FontWeight="Light"></TextBlock>
+                            </Label>
+                        </StackPanel>
+
+                        <StackPanel>
+                            <Button Content="Get Index" Background="Transparent" Foreground="White" FontWeight="Light" Height="35" Margin="36,30,40,0" Click="Btn_ShangCengPIDIndex_Get_Click"/>
+                            <!--<Button Content="参数设置" Background="Transparent" Foreground="White" FontWeight="Light" Height="35" Margin="123,-36,0,0" Click="Button_ShangCengPID_SETClick"/>-->
+                        </StackPanel>
+                    </StackPanel>
+                </TabItem>
+
+                <TabItem Header="水泵校准" Width="0" Style="{DynamicResource TabItemStyle2}"  >
+                    <StackPanel>
+                        <StackPanel>
+                            <Button Focusable="False" Name="shuibengback" Content="Back" Background="Transparent" Foreground="White" FontWeight="Light" Height="30" Margin="0,0,190,0" Click="shuibengback_Click" />
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="Intelligent Spraying:" FontWeight="Light" Foreground="White" Height="27"></Label>
+                        </StackPanel>
+                        <StackPanel>
+                            <control:SilderArrange x:Name="SLA_V" SliderTickFrequency="1" SilderWidth="210" Minimum="0" Maximum="100" RenderTransformOrigin="0.5,0.5"  Margin="-180,50,12,20" Height="66" PreviewMouseLeftButtonDown="SLA_V_PreviewMouseLeftButtonDown" PreviewMouseLeftButtonUp="SLA_V_PreviewMouseLeftButtonUp" PreviewMouseMove="SLA_V_PreviewMouseMove" >
+                                <control:SilderArrange.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="-90"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </control:SilderArrange.RenderTransform>
+                            </control:SilderArrange>
+                            <control:SilderArrange x:Name="SLA_H" SliderTickFrequency="1"  SilderWidth="200" Minimum="0" Maximum="80" RenderTransformOrigin="0.5,0.5"  Margin="-12,60,0,0" Height="116" PreviewMouseLeftButtonDown="SLA_H_PreviewMouseLeftButtonDown" PreviewMouseLeftButtonUp="SLA_H_PreviewMouseLeftButtonUp" PreviewMouseMove="SLA_H_PreviewMouseMove">
+                            </control:SilderArrange>
+                            <Label Name="Max_Vel" Content="8m/s" Foreground="White" FontSize="10" FontWeight="Light" Margin="190,-60,0,0" Height="33"></Label>
+                            <Label Name="Min_Vel" Content="0m/s" Foreground="White" FontSize="10" FontWeight="Light" Margin="10,-50,174,0"></Label>
+                            <Label Name="Max_Percent" Content="100%" Foreground="White" FontSize="10" FontWeight="Light" Margin="-8,-590,193,0" Height="26"></Label>
+                            <Label Name="Min_Percent" Content="0%" Foreground="White" FontSize="10" FontWeight="Light" Margin="-8,-120,202,0" Height="24"></Label>
+                            <Label Content="Vel" Foreground="White" FontSize="10" FontWeight="Light" Margin="190,-170,0,0" Height="24"></Label>
+                            <Label Content="Pump" Foreground="White" FontSize="10" FontWeight="Light" Margin="30,-595,0,0" Height="24"></Label>
+                        </StackPanel>
+                        <StackPanel Margin="30,-275,0,0">
+                            <Canvas  Width="200"  Height="200"  Name="Plot_Chart" Margin="0,0,0,0">
+                                <Path Stroke="White" StrokeThickness="1" Data="M 0,0,0,200"/>
+                                <Path Stroke="White" StrokeThickness="1" Data="M 0,0,200,0"/>
+                            </Canvas>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="Atomizing Motor：" Foreground="White" FontSize="10" FontWeight="Light"></Label>
+                            <Slider Name="Fog_Slider" Margin="0,0,33,0" SelectionStart="0" SelectionEnd="100" ValueChanged="Slider_ValueChanged" Maximum="100" PreviewMouseLeftButtonDown="Fog_Slider_PreviewMouseLeftButtonDown" PreviewMouseLeftButtonUp="Fog_Slider_PreviewMouseLeftButtonUp"></Slider>
+                            <Label Name="Fog_Value" Content="0%" Foreground="White" FontSize="10" FontWeight="Light" Margin="190,-23,0,0"></Label>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="Constant Pump Value：" FontWeight="Light" Foreground="White"></Label>
+                        </StackPanel>
+
+                        <StackPanel>
+                            <Label Content="Atomizing Motor：" Foreground="White" FontSize="10" FontWeight="Light"></Label>
+                            <Slider Name="Fog_ConstantSlider" Margin="0,0,33,0" SelectionStart="0" SelectionEnd="100"  Maximum="100" ValueChanged="Fog_ConstantSlider_ValueChanged" PreviewMouseLeftButtonDown="Fog_ConstantSlider_PreviewMouseLeftButtonDown" PreviewMouseLeftButtonUp="Fog_ConstantSlider_PreviewMouseLeftButtonUp"></Slider>
+                            <Label Name="Fog_ConstantValue" Content="0%" Foreground="White" FontSize="10" FontWeight="Light" Margin="190,-23,0,0"></Label>
+                        </StackPanel>
+
+                        <StackPanel>
+                            <Label Content="Pump Value：" Foreground="White" FontSize="10" FontWeight="Light"></Label>
+                            <Slider Name="Fog_ConstantPumpSlider" Margin="0,0,33,0" SelectionStart="0" SelectionEnd="100"  Maximum="100" ValueChanged="Fog_ConstantPumpSlider_ValueChanged" PreviewMouseLeftButtonDown="Fog_ConstantPumpSlider_PreviewMouseLeftButtonDown" PreviewMouseLeftButtonUp="Fog_ConstantPumpSlider_PreviewMouseLeftButtonUp"></Slider>
+                            <Label Name="Fog_ConstantPumpValue" Content="0%" Foreground="White" FontSize="10" FontWeight="Light" Margin="190,-23,0,0"></Label>
+                        </StackPanel>
+                        <StackPanel Margin="0,10,0,0">
+                            <Label Foreground="White" FontWeight="Light" Content="Break Value"></Label>
+                            <ComboBox Name="M_Duanyao_Action" Height="24"  Margin="146,-30,10,0" Background="White" Foreground="Black" FontWeight="Light" />
+                        </StackPanel>
+                        <StackPanel>
+                            <Button Content="Get Index" Background="Transparent" Foreground="White" FontWeight="Light" Height="35" Margin="0,30,124,0" Click="Btn_PumPIndex_Get_Click"/>
+                            <Button Content="Set Index" Background="Transparent" Foreground="White" FontWeight="Light" Height="35" Margin="123,-36,0,0" Click="Button_PumP_SETClick"/>
+                        </StackPanel>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="校准修正" Style="{DynamicResource TabItemStyle2}" Width="0" RenderTransformOrigin="0.5,0.5">
+                    <StackPanel>
+                        <StackPanel>
+                            <RadioButton Content="Amecria" GroupName="Modify_Country_Name" IsChecked="True" FontWeight="Light" Foreground="White" Checked="RadioButton_Checked_2"/>
+                            <RadioButton Margin="137,-19,0,0" Content="Japan" GroupName="Modify_Country_Name" FontWeight="Light" Foreground="White" Checked="RadioButton_Checked_3"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Canvas Width="200"  Height="200"  Name="modifycanvas" Margin="0,0,0,0">
+                                <Ellipse Name="m_modifycircle" Fill="GreenYellow" Width="10" Height="10" Canvas.Left="96" Canvas.Top="96"/>
+                                <Path Stroke="White" StrokeThickness="1" Data="M 0,0,0,200"/>
+                                <Path Stroke="White" StrokeThickness="1" Data="M 0,0,200,0"/>
+                                <Path Stroke="White" StrokeThickness="1" Data="M 200,0,200,200"/>
+                                <Path Stroke="White" StrokeThickness="1" Data="M 0,200,200,200"/>
+                                <Path Stroke="White" StrokeThickness="1" Data="M 0,100,200,100"/>
+                                <Path Stroke="White" StrokeThickness="1" Data="M 100,0,100,200"/>
+                            </Canvas>
+                        </StackPanel>
+                        <StackPanel>
+                            <Canvas Width="200"  Height="200"  Name="modifycanvastwo" Margin="0,10,0,0">
+                                <Ellipse Name="m_modifycircletwo" Fill="GreenYellow" Width="10" Height="10" Canvas.Left="96" Canvas.Top="96"/>
+                                <Path Stroke="White" StrokeThickness="1" Data="M 0,0,0,200"/>
+                                <Path Stroke="White" StrokeThickness="1" Data="M 0,0,200,0"/>
+                                <Path Stroke="White" StrokeThickness="1" Data="M 200,0,200,200"/>
+                                <Path Stroke="White" StrokeThickness="1" Data="M 0,200,200,200"/>
+                                <Path Stroke="White" StrokeThickness="1" Data="M 0,100,200,100"/>
+                                <Path Stroke="White" StrokeThickness="1" Data="M 100,0,100,200"/>
+                            </Canvas>
+                        </StackPanel>
+                        <StackPanel>
+                            <Button Height="23" Name="Ykq_Middle_Modify"  Content="Modify Mid" Background="Transparent" Foreground="White" FontWeight="Light" Margin="0,18,142,-10" Click="Ykq_Middle_Modify_Click"/>
+                            <Button Height="23" Name="YKQ_Middle_Next"  Content="Cancel" FontWeight="Light" Background="Transparent" Foreground="White" Margin="0,-15,7,-10" RenderTransformOrigin="0.5,0.5" Click="YKQ_Middle_Next_Click" HorizontalAlignment="Right" Width="94"/>
+                        </StackPanel>
+                    </StackPanel>
+                </TabItem>
+
+
+                <TabItem Header="磁偏角及航线设置" Style="{DynamicResource TabItemStyle2}" Width="0" RenderTransformOrigin="0.5,0.5">
+                    <StackPanel>
+                        <StackPanel>
+                            <Button Focusable="False" Name="cipianjiaoback" Content="Back" Background="Transparent" Foreground="White" FontWeight="Light" Height="30" Margin="0,0,190,0" Click="cipianjiaoback_Click"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="Andle："  FontWeight="Light" Foreground="White" Margin="0,0,164,0"/>
+                            <TextBox Name="Edit_Mag_OffsetAngle" FontWeight="Light" Margin="80,-25,61,0" />
+                            <Label Content="°" Margin="185,-25,0,0" FontWeight="Light" Foreground="White"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="Line Range："  FontWeight="Light" Foreground="White" Margin="0,0,124,0"/>
+                            <TextBox Name="Edit_AB_ApproachLine_Range" FontWeight="Light" Margin="0,0,124,0"  />
+                            <Label Content="Line Dead："  FontWeight="Light" Foreground="White" Margin="120,-52,0,0"/>
+                            <TextBox Name="Edit_AB_ApproachLine_DeadZone" FontWeight="Light" Margin="120,-23,0,0"  />
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="Point Range："  FontWeight="Light" Foreground="White" Margin="0,0,124,0"/>
+                            <TextBox Name="Edit_AB_ApproachPoint_Range" FontWeight="Light" Margin="0,0,124,0"  />
+                            <Label Content="ABPoint Acc："  FontWeight="Light" Foreground="White" Margin="120,-52,0,0"/>
+                            <TextBox Name="Edit_AB_HorizoMove_Acc" FontWeight="Light" Margin="120,-23,0,0"  />
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="ABPoint Range："  FontWeight="Light" Foreground="White" Margin="0,0,111,0"/>
+                            <TextBox Name="Edit_AB_HorizoMove_Range" FontWeight="Light" Margin="0,0,124,0"  />
+                            <Label Content="ABPoint Acc："  FontWeight="Light" Foreground="White" Margin="120,-52,-11,0"/>
+                            <TextBox Name="Edit_AB_FowardMove_Acc" FontWeight="Light" Margin="120,-23,0,0"  />
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="V To P P："  FontWeight="Light" Foreground="White" Margin="0,0,111,0"/>
+                            <TextBox Name="Edit_AB_VelToPosition_Percent" FontWeight="Light" Margin="0,0,124,0"  />
+                            <Label Content="B To P："  FontWeight="Light" Foreground="White" Margin="115,-52,0,0"/>
+                            <TextBox Name="Edit_AB_BToThreshold_Percent" FontWeight="Light" Margin="120,-23,0,0"  />
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="A To P："  FontWeight="Light" Foreground="White" Margin="0,0,111,0"/>
+                            <TextBox Name="Edit_AB_AToThreshold_Percen" FontWeight="Light" Margin="0,0,124,0"  />
+                            <Label Content="Back Value："  FontWeight="Light" Foreground="White" Margin="115,-52,0,0"/>
+                            <TextBox Name="Edit_AB_BackThreshold_Value" FontWeight="Light" Margin="120,-23,0,0"  />
+                        </StackPanel>                
+                        <StackPanel>
+                            <Button Name="Btn_MagAndABIndex_Set" Content="Index Set" Background="Transparent" Foreground="White" FontWeight="Light" Height="35" Margin="0,30,0,0" Click="Btn_MagAndABIndex_Set_Click" />
+                        </StackPanel>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="SettingInfo" Style="{DynamicResource TabItemStyle2}">
+                    <StackPanel>
+                        <Button Content="Aerial" Name="Aerial_Mode" Focusable="False" Background="Transparent" Foreground="White" FontWeight="Light" Width="200" Height="60" Margin="0,80" Click="Aerial_Mode_Click"></Button>
+                        <Button Content="Plant" Name="Plant_Protection_Mode" Focusable="False" Background="Transparent" Foreground="White" FontWeight="Light" Width="200" Height="60" Margin="0,10" Click="Plant_Protection_Mode_Click"></Button>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="设置选项" Width="0" Style="{DynamicResource TabItemStyle2}">
+                    <StackPanel>
+                        <Button Focusable="False" Name="jichuxuanxiangback" Content="Back" Background="Transparent" Foreground="White" FontWeight="Light" Height="30" Margin="-2,0,192,0" Click="jichuxuanxiangback_Click" />
+                        <Button Content="Basic Setting" Name="Basis_Set" Focusable="False" Background="Transparent" Foreground="White" FontWeight="Light" Width="200" Height="50" Margin="0,20,0,0" Click="Basis_Set_Click"  ></Button>
+                        <Button Content="Task Setting" Name="Workstyle_Set" Focusable="False" Background="Transparent" Foreground="White" FontWeight="Light" Width="200" Height="50" Margin="0,20,0,0" Click="Workstyle_Set_Click" ></Button>
+                        <Button Content="Index Setting" Name="AdjustThe_Set" Focusable="False" Background="Transparent" Foreground="White" FontWeight="Light" Width="200" Height="50" Margin="0,20,0,0" Click="AdjustThe_Set_Click"  ></Button>
+                        <Button Content="Security Setting" Name="SecurityStrategy_Set" Focusable="False" Background="Transparent" Foreground="White" FontWeight="Light" Width="200" Height="50" Margin="0,20,0,0" Click="SecurityStrategy_Set_Click" ></Button>
+                        <Button Content="Playback Setting" Background="Transparent" Focusable="False" Foreground="White" FontWeight="Light" FontSize="15" Width="200" Height="50" Margin="0,20,0,0" Click="Button_Click_DatePlayBack"/>
+                    </StackPanel>
+                </TabItem>
+
+
+                <TabItem Header="航拍作业参数" Width="0" Style="{DynamicResource TabItemStyle2}">
+                    <StackPanel>
+                        <StackPanel>
+                            <Button Focusable="False" Name="M9back" Content="Back" Background="Transparent" Foreground="White" FontWeight="Light" Height="30" Margin="0,0,188,0" Click="M9back_Click"  />
+                        </StackPanel>
+                        <StackPanel Margin="6,10,0,10">
+                            <Label Content="Cruising Speed："  FontWeight="Light" Foreground="White"/>
+                            <TextBox Name="Edit_Photo_Speed" FontWeight="Light" Margin="120,-25,60,0"  />
+                            <Label Content="m/s" Margin="165,-25,10,0" FontWeight="Light" Foreground="White"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White"  Height="1"></Label>
+                        </StackPanel>
+
+                        <StackPanel Margin="6,10,0,10">
+                            <Label Content="Up Speed："  FontWeight="Light" Foreground="White"/>
+                            <TextBox Name="Edit_Photo_upSpeed" FontWeight="Light" Margin="120,-25,60,0"  />
+                            <Label Content="m/s" Margin="165,-25,10,0" FontWeight="Light" Foreground="White"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White"  Height="1"></Label>
+                        </StackPanel>
+
+                        <StackPanel Margin="6,10,0,10">
+                            <Label Content="Down Speed："  FontWeight="Light" Foreground="White"/>
+                            <TextBox Name="Edit_Photo_downSpeed" FontWeight="Light" Margin="120,-25,60,0"  />
+                            <Label Content="m/s" Margin="165,-25,10,0" FontWeight="Light" Foreground="White"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White"  Height="1"></Label>
+                        </StackPanel>
+
+
+                        <StackPanel>
+                            <Label Content="M9" Foreground="White" FontWeight="Light" Margin="0,10,0,0"  Height="25"></Label>
+                        </StackPanel>
+                        <StackPanel Margin="6,10,0,10">
+                            <Label Content="LowCycle："  FontWeight="Light" Foreground="White" Margin="19,0,116,0"/>
+                            <TextBox Name="Edit_M9Low_Position" FontWeight="Light" Margin="120,-25,60,0"  />
+                            <StackPanel>
+                                <Label Background="White" Margin="10,10,0,0" Height="1"></Label>
+                            </StackPanel>
+                            <Label Content="MidCycle："  FontWeight="Light" Foreground="White" Margin="19,0,116,0"/>
+                            <TextBox Name="Edit_M9Middle_Position" FontWeight="Light" Margin="120,-25,60,0"  />
+                            <StackPanel>
+                                <Label Background="White" Margin="10,10,0,0" Height="1"></Label>
+                            </StackPanel>
+                            <Label Content="HighCycle："  FontWeight="Light" Foreground="White" Margin="19,0,116,0"/>
+                            <TextBox Name="Edit_M9High_Position" FontWeight="Light" Margin="120,-25,60,0"  />
+                            <StackPanel>
+                                <Label Background="White" Margin="0,10,0,0" Height="1"></Label>
+                            </StackPanel>
+                        </StackPanel>
+
+                        <StackPanel>
+                            <Label Content="M10" Foreground="White" FontWeight="Light" Margin="0,0,0,0"  Height="25"></Label>
+                        </StackPanel>
+                        <StackPanel Margin="6,10,0,10">
+                            <Label Content="LowCycle："  FontWeight="Light" Foreground="White" Margin="21,0,116,0"/>
+                            <TextBox Name="Edit_M10Low_Position" FontWeight="Light" Margin="120,-25,60,0"  />
+                            <StackPanel>
+                                <Label Background="White" Margin="10,10,0,0" Height="1"></Label>
+                            </StackPanel>
+                            <Label Content="HighCycle:"  FontWeight="Light" Foreground="White" Margin="21,0,116,0"/>
+                            <TextBox Name="Edit_M10Middle_Position" FontWeight="Light" Margin="120,-25,60,0"  />
+                            <StackPanel>
+                                <Label Background="White" Margin="10,10,0,0" Height="1"></Label>
+                            </StackPanel>
+                            <Label Content="Duration："  FontWeight="Light" Foreground="White" Margin="21,0,116,0"/>
+                            <TextBox Name="Edit_M10High_Position" FontWeight="Light" Margin="120,-25,60,0"  />
+                            <StackPanel>
+                                <Label Background="White" Margin="0,10,0,0" Height="1"></Label>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel>
+                            <Button Content="Get Index" Background="Transparent" Foreground="White" FontWeight="Light" Height="35" Margin="0,10,126,0" Click="Button_Click_1" />
+                            <Button Content="Set Index" Name="hangpaicanshushezhi" Background="Transparent" Foreground="White" FontWeight="Light" Height="35" Margin="123,-36,0,0" Click="hangpaicanshushezhi_Click" />
+                        </StackPanel>
+
+                    </StackPanel>
+                </TabItem>
+
+                <TabItem Header="植保作业参数" Width="0" Style="{DynamicResource TabItemStyle2}">
+                    <StackPanel Margin="0,50,0,0">
+                        <StackPanel>
+                            <Button Focusable="False" Name="pensafuduback" Content="Back" Background="Transparent" Foreground="White" FontWeight="Light" Height="30" Margin="-10,-90,196,0" Click="pensafuduback_Click"  />
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="Cruising Speed："  FontWeight="Light" Foreground="White"/>
+                            <TextBox Name="Edit_Zhibao_Speed" FontWeight="Light" Margin="120,-25,60,0"  />
+                            <Label Content="m/s" Margin="165,-25,10,0" FontWeight="Light" Foreground="White"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="0,10,0,0" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel>
+                            <StackPanel>
+                                <Label Content="Sprinkler Range："  FontWeight="Light" Foreground="White"/>
+                                <TextBox Name="Edit_Zhibao_Range" FontWeight="Light" Margin="120,-25,60,0"  />
+                                <Label Content="m/s" Margin="165,-25,10,0" FontWeight="Light" Foreground="White"/>
+                            </StackPanel>
+                            <StackPanel>
+                                <Label Background="White" Margin="0,10,0,0" Height="1"></Label>
+                            </StackPanel>
+                        </StackPanel>
+
+                        <StackPanel>
+                            <StackPanel>
+                                <Label Content="Smart Follow："  FontWeight="Light" Foreground="White"/>
+                                <ComboBox Name="m_TerrainFollowYesOrNo" Height="30"  Margin="120,-30,58,0" Background="White" Foreground="Black" FontWeight="Light" SelectionChanged="m_TerrainFollowYesOrNo_SelectionChanged"  />
+                            </StackPanel>
+                            <StackPanel>
+                                <Label Background="White" Margin="0,10,0,0" Height="1"></Label>
+                            </StackPanel>
+                        </StackPanel>
+
+                        <StackPanel>
+                            <Button Content="Pump Calibration" Margin="0,10,0,0" Background="Transparent" Focusable="False" Foreground="White" FontWeight="Light" FontSize="15" Height="27" Click="Button_Click_WaterPump"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="0,10,0,0" Height="1"></Label>
+                        </StackPanel>
+
+                        <StackPanel>
+                            <Button Content="Declination And Turning" Margin="0,10,0,0"  Background="Transparent" Focusable="False" Foreground="White" FontWeight="Light" FontSize="15" Height="27" Click="Button_Click_MagnetAngle_TurnSpeed"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="0,10,0,0" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel>
+                            <Button Content="Get Index" Background="Transparent" Foreground="White" FontWeight="Light" Height="35" Margin="0,10,126,0" Click="Button_Click" />
+                            <Button Content="Set Index" Name="zhibaocanshushezhi" Background="Transparent" Foreground="White" FontWeight="Light" Height="35" Margin="123,-36,0,0" Click="zhibaocanshushezhi_Click" />
+                        </StackPanel>
+                    </StackPanel>
+                </TabItem>
+
+                <TabItem Header="安全策略" Width="0" Style="{DynamicResource TabItemStyle2}">
+                    <StackPanel>
+                        <StackPanel>
+                            <Button Focusable="False" Name="anquancelueback" Content="Back" Background="Transparent" Foreground="White" FontWeight="Light" Height="30" Margin="0,0,190,0" Click="anquancelueback_Click"  />
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Foreground="White" FontWeight="Light" Content="Low Voltage"></Label>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="0,3,0,0" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="1LevelNotice："  FontWeight="Light" Foreground="White" Margin="41,0,0,0"/>
+                            <TextBox Name="Edit_FirstNotice_Volt" Text="3.70" FontWeight="Light" Margin="146,-25,36,0"  />
+                            <Label Content="V" Margin="195,-25,-12,0" FontWeight="Light" Foreground="White"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="40,3,0,0" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="2LevelNotice："  FontWeight="Light" Foreground="White" Margin="41,0,0,0"/>
+                            <TextBox Name="Edit_SecondNotice_Volt" Text="3.60" FontWeight="Light" Margin="146,-25,36,0"  />
+                            <Label Content="V" Margin="195,-25,-12,0" FontWeight="Light" Foreground="White"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="40,3,0,0" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="2LevelAction："  FontWeight="Light" Foreground="White" Margin="41,0,0,0"/>
+                            <ComboBox Name="M_Lowvolt_Action" Height="24"  Margin="146,-30,10,0" Background="White" Foreground="Black" FontWeight="Light" />
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="0,3,0,0" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Foreground="White" FontWeight="Light" Content="LoseControl"></Label>
+                            <ComboBox Name="M_Losecontrol_Action" Height="24"  Margin="146,-30,10,0" Background="White" Foreground="Black" FontWeight="Light" />
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="0,3,0,0" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Foreground="White" FontWeight="Light" Content="Enclosure"></Label>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="0,3,0,0" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="Distance："  FontWeight="Light" Foreground="White" Margin="41,0,0,0"/>
+                            <TextBox Name="Edit_Enclosuree_Distance" Text="0.0" FontWeight="Light" Margin="146,-25,31,0"  />
+                            <Label Content="M" Margin="195,-25,-12,0" FontWeight="Light" Foreground="White"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="40,3,0,0" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Content="Height："  FontWeight="Light" Foreground="White" Margin="41,0,0,0"/>
+                            <TextBox Name="Edit_Enclosuree_Height" Text="0.0" FontWeight="Light" Margin="146,-25,31,0"  />
+                            <Label Content="M" Margin="195,-25,-12,0" FontWeight="Light" Foreground="White"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Background="White" Margin="0,3,0,0" Height="1"></Label>
+                        </StackPanel>
+
+                        <StackPanel>
+                            <Label Foreground="White" FontWeight="Light" Content="Back Height"></Label>
+                            <TextBox Name="M_FangHangHeight" Height="24" Text="2.0"  Margin="146,-30,31,0" Background="White" Foreground="Black" FontWeight="Light" />
+                            <Label Content="M" Margin="195,-25,-12,0" FontWeight="Light" Foreground="White"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <Label Foreground="Red" FontWeight="Light" FontSize="10" Content="Tip:The Height From The Current Height"></Label>
+                            <Label Background="White" Margin="0,3,0,0" Height="1"></Label>
+                        </StackPanel>
+                        <StackPanel>
+                            <Button Content="Get Index" Name="AnquancelueHuoqu_Btn" Background="Transparent" Foreground="White" FontWeight="Light" Height="35" Margin="0,10,126,0" Click="AnquancelueHuoqu_Btn_Click" />
+                            <Button Content="Set Index" Name="AnquancelueShezhi_Btn" Background="Transparent" Foreground="White" FontWeight="Light" Height="35" Margin="123,-36,0,0" Click="AnquancelueShezhi_Btn_Click" />
+                        </StackPanel>
+                    </StackPanel>
+                </TabItem>
+
+            </TabControl>
+        </Border>
+    </Grid>
+</UserControl>

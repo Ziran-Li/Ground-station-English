@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <message type="mainlink send">
+    <Data>
+      <UAV>
+        <Wpt>
+          <SendFlag t="B"></SendFlag>
+          <Lat></Lat>
+          <Lon></Lon>
+          <Alt></Alt>
+          <Yaw></Yaw>
+          <Spd></Spd>
+        </Wpt>
+      </UAV>
+    </Data>
+  </message>
+</root>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <message type="set" a="Config">
+    <Config>
+      <COM>
+        <Port t="UI"></Port>
+      </COM>
+    </Config>
+  </message>
+</root>

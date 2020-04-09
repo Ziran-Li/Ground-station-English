@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="Shift_JIS"?>
+<root>
+	<App>
+		<MonitorIdName>UAV-001</MonitorIdName>
+	</App>
+	<Comm>
+		<MainPort>93</MainPort>
+		<SubLinkEnable>0</SubLinkEnable>
+		<SubPort>1</SubPort>
+	</Comm>
+	<XMonitorServer>
+		<Enabled>1</Enabled>
+		<PortNo>53799</PortNo>
+	</XMonitorServer>
+	<FlightLog>
+		<FilePath>C:\Users\Public\Documents\</FilePath>
+		<RecStopTimeFromDataStop>5</RecStopTimeFromDataStop>
+		<DivideSizeInByte>100000000</DivideSizeInByte>
+		<StoragePeriodInDay>180</StoragePeriodInDay>
+	</FlightLog>
+</root>

@@ -1,0 +1,17 @@
+<project outputDir="C:\Users\ogawa\Documents\02_開発\02_飛行計画SW\02_開発\20150203_01\trunk\Version1\ACSL\Y-Planner" baseDir="C:\Users\ogawa\Documents\02_開発\02_飛行計画SW\02_開発\20150203_01\trunk\Version1\ACSL\Y-Planner" xmlns="http://confuser.codeplex.com">
+  <rule pattern="true" preset="maximum" inherit="false" />
+  <module path="Y-Planner.exe" />
+  <module path="FlightPlanning.dll" />
+  <module path="GMap.NET.WindowsPresentation.dll" />
+  <module path="GMapNetInterFace.dll" />
+  <module path="Health.dll" />
+  <module path="Microsoft.Windows.Shell.dll" />
+  <module path="MulitWaypoint.dll" />
+  <module path="Plot.dll" />
+  <module path="Point.dll" />
+  <module path="RibbonControlsLibrary.dll" />
+  <module path="SettingData.dll" />
+  <module path="SysTime.dll" />
+  <module path="TouchControls.dll" />
+  <module path="XmlBase.dll" />
+</project>

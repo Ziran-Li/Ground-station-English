@@ -1,0 +1,6 @@
+C:\Users\hello\Desktop\acsl\2ndPartyLib\SettingData\bin\Debug\SettingData.dll
+C:\Users\hello\Desktop\acsl\2ndPartyLib\SettingData\bin\Debug\SettingData.pdb
+C:\Users\hello\Desktop\acsl\2ndPartyLib\SettingData\bin\Debug\GMap.NET.Core.dll
+C:\Users\hello\Desktop\acsl\2ndPartyLib\SettingData\bin\Debug\GMap.NET.Core.pdb
+C:\Users\hello\Desktop\acsl\2ndPartyLib\SettingData\obj\Debug\SettingData.dll
+C:\Users\hello\Desktop\acsl\2ndPartyLib\SettingData\obj\Debug\SettingData.pdb

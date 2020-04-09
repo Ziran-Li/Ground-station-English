@@ -1,0 +1,50 @@
+float Rotation_Angle(double first_destination_la,double first_destination_lo,double second_destination_la,double second_destination_lo)
+{
+  float Actual_angle=0.0;
+  double Actual_C=0.0;
+  double Actual_A=0.0;
+  
+  Actual_C=cos((90-second_destination_la)*3.1415926/180.0)*cos((90-first_destination_la)*3.1415926/180.0)+sin((90-second_destination_la)*3.1415926/180.0)*sin((90-first_destination_la)*3.1415926/180.0)*cos((second_destination_lo-first_destination_lo)*3.1415926/180.0);
+  Actual_A=sqrt((1-Actual_C*Actual_C));
+  if(Actual_A!=0)
+  {
+    Actual_angle=asin(((sin((90-second_destination_la)*3.1415926/180.0))*sin((second_destination_lo-first_destination_lo)*3.1415926/180.0))/Actual_A);
+    
+    Actual_angle=Actual_angle*180.0/3.1415926;
+    ////////////////////////////////四个象限/////////////////////////////////////////////////////////////
+    if(second_destination_la>first_destination_la&&second_destination_lo>first_destination_lo)
+    {
+      Actual_angle=-Actual_angle;
+    }
+    if(second_destination_la<first_destination_la&&second_destination_lo>first_destination_lo)
+    {
+      Actual_angle=-180+Actual_angle;
+    }
+    if(second_destination_la<first_destination_la&&second_destination_lo<first_destination_lo)
+    {
+      Actual_angle=180+Actual_angle;
+    }
+    if(second_destination_la>first_destination_la&&second_destination_lo<first_destination_lo)
+    {
+      Actual_angle=-Actual_angle;
+    }
+    ///////////////////////////////四个象限////////////////////////////////////////////////////////////////
+  }
+  if(second_destination_la==first_destination_la&&second_destination_lo>=first_destination_lo)
+  {
+    Actual_angle=-90;
+  }
+  if(second_destination_la==first_destination_la&&second_destination_lo<=first_destination_lo)
+  {
+    Actual_angle=90;
+  }
+  if(second_destination_la>=first_destination_la&&second_destination_lo==first_destination_lo)
+  {
+    Actual_angle=0;
+  }
+  if(second_destination_la<=first_destination_la&&second_destination_lo==first_destination_lo)
+  {
+    Actual_angle=180;
+  }
+  return Actual_angle*PI/180;
+}

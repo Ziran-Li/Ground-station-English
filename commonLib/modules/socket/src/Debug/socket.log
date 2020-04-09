@@ -1,0 +1,31 @@
+﻿Build started 2016/1/13 11:29:44.
+     1>Project "C:\Users\hello\Desktop\acsl\commonLib\modules\socket\src\socket.vcxproj" on node 2 (Rebuild target(s)).
+     1>ClCompile:
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\include /I..\..\..\include /ZI /nologo /W3 /WX- /sdl- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Debug\socketD.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\include /I..\..\..\include /ZI /nologo /W3 /WX- /sdl- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\socketD.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt WinsockTCP2.cpp WSADebug.cpp
+         WSADebug.cpp
+         WinsockTCP2.cpp
+     1>c:\users\hello\desktop\acsl\commonlib\modules\socket\src\winsocktcp2.cpp(934): warning C4996: 'gethostbyname': Use getaddrinfo() or GetAddrInfoW() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+                 c:\program files\windows kits\8.1\include\um\winsock2.h(2238) : see declaration of 'gethostbyname'
+     1>c:\users\hello\desktop\acsl\commonlib\modules\socket\src\winsocktcp2.cpp(974): warning C4996: 'gethostbyaddr': Use getnameinfo() or GetNameInfoW() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+                 c:\program files\windows kits\8.1\include\um\winsock2.h(2216) : see declaration of 'gethostbyaddr'
+         Generating Code...
+       Lib:
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"..\lib\socketD.lib" /NOLOGO Debug\stdafx.obj
+         Debug\WinsockTCP2.obj
+         Debug\WSADebug.obj
+         socket.vcxproj -> C:\Users\hello\Desktop\acsl\commonLib\modules\socket\src\..\lib\socketD.lib
+       PostBuildEvent:
+         copy ..\include\*.h ..\..\..\include\
+         copy ..\lib\socketD.lib ..\..\..\lib\
+         :VCEnd
+         ..\include\WinsockTCP2.h
+         ..\include\WSADebug.h
+         已复制         2 个文件。
+         已复制         1 个文件。
+     1>Done Building Project "C:\Users\hello\Desktop\acsl\commonLib\modules\socket\src\socket.vcxproj" (Rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.92

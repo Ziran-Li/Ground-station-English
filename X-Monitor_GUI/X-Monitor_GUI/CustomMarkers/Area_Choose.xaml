@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="XMonitor_GUI.CustomMarkers.Area_Choose"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             Height="50" Width="50"
+             Name="Main_AreaMarker" RenderTransformOrigin="0.5,0.5"
+             Unloaded="AreaMarker_Unloaded" Loaded="AreaMarker_Loaded"
+             MouseEnter="AreaMarkerControl_MouseEnter" MouseLeave="AreaMarkerControl_MouseLeave"
+             MouseLeftButtonUp="AreaMarker_MouseLeftButtonUp" MouseLeftButtonDown="AreaMarker_MouseLeftButtonDown"
+             TouchEnter="AreaMarkerControl_TouchEnter" TouchLeave="AreaMarkerControl_TouchLeave" 
+             TouchDown="AreaMarkerControl_TouchDown" TouchUp="AreaMarkerControl_TouchUp" >
+    <Grid>
+        <Image Name="icon" Source="/X-Monitor;component/Resources/Area_blue.png" VerticalAlignment="Top" />
+        <Canvas Name="canv" Visibility="Hidden"/>
+        <Label Name="Number" Margin="0,0,0,0" Content="1区" Panel.ZIndex="100" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontStyle="Italic" FontSize="20" />
+    </Grid>
+</UserControl>

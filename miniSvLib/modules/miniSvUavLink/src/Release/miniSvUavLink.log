@@ -1,0 +1,32 @@
+﻿生成启动时间为 2017/4/24 星期一 下午 4:01:24。
+     1>项目“D:\VS2013_Project\acsl\miniSvLib\modules\miniSvUavLink\src\miniSvUavLink.vcxproj”在节点 5 上(Rebuild 个目标)。
+     1>ClCompile:
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\include /I..\..\..\include /I..\..\..\..\commonLib\include /Zi /nologo /W3 /WX- /sdl- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Release\miniSvUavLink.pch" /Fo"Release\\" /Fd"Release\vc120.pdb" /FR"Release\\" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\include /I..\..\..\include /I..\..\..\..\commonLib\include /Zi /nologo /W3 /WX- /sdl- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /FR"Release\\" /Gd /TP /analyze- /errorReport:prompt ..\..\..\include\Common\Udp.cpp ..\..\..\include\Lib\SCIDevice.cpp ..\..\..\include\Lib\SCI_Win.cpp
+         Udp.cpp
+         SCIDevice.cpp
+         SCI_Win.cpp
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\include /I..\..\..\include /I..\..\..\..\commonLib\include /Zi /nologo /W3 /WX- /sdl- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Release\miniSvUavLink.pch" /Fo"Release\\" /Fd"Release\vc120.pdb" /FR"Release\\" /Gd /TP /analyze- /errorReport:prompt UavLink.cpp
+         UavLink.cpp
+       Lib:
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"..\lib\miniSvUavLink.lib" /NOLOGO /LTCG Release\Udp.obj
+         Release\SCIDevice.obj
+         Release\SCI_Win.obj
+         Release\stdafx.obj
+         Release\UavLink.obj
+         miniSvUavLink.vcxproj -> D:\VS2013_Project\acsl\miniSvLib\modules\miniSvUavLink\src\..\lib\miniSvUavLink.lib
+       BscMake:
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\bscmake.exe /nologo /o"..\lib\miniSvUavLink.bsc" /n Release\Udp.sbr Release\SCIDevice.sbr Release\SCI_Win.sbr Release\stdafx.sbr Release\UavLink.sbr
+       PostBuildEvent:
+         copy ..\include\*.h ..\..\..\include\
+         copy ..\lib\miniSvUavLink.lib ..\..\..\lib\
+         :VCEnd
+         ..\include\UavLink.h
+         已复制         1 个文件。
+         已复制         1 个文件。
+     1>已完成生成项目“D:\VS2013_Project\acsl\miniSvLib\modules\miniSvUavLink\src\miniSvUavLink.vcxproj”(Rebuild 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:11.71

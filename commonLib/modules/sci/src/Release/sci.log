@@ -1,0 +1,28 @@
+﻿生成启动时间为 2017/4/24 星期一 下午 4:01:45。
+     1>项目“D:\VS2013_Project\acsl\commonLib\modules\sci\src\sci.vcxproj”在节点 2 上(Rebuild 个目标)。
+     1>ClCompile:
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\include /I..\..\..\include /I..\..\..\..\miniSvLib\include /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Release\sci.pch" /Fo"Release\\" /Fd"Release\vc120.pdb" /FR"Release\\" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\include /I..\..\..\include /I..\..\..\..\miniSvLib\include /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Release\sci.pch" /Fo"Release\\" /Fd"Release\vc120.pdb" /FR"Release\\" /Gd /TP /analyze- /errorReport:prompt SCI.cpp SCIDeviceBase.cpp
+         SCI.cpp
+         SCIDeviceBase.cpp
+       Lib:
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"..\lib\sci.lib" /NOLOGO /LTCG Release\SCI.obj
+         Release\SCIDeviceBase.obj
+         Release\stdafx.obj
+         sci.vcxproj -> D:\VS2013_Project\acsl\commonLib\modules\sci\src\..\lib\sci.lib
+       BscMake:
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\bscmake.exe /nologo /o"..\lib\sci.bsc" /n Release\SCI.sbr Release\SCIDeviceBase.sbr Release\stdafx.sbr
+       PostBuildEvent:
+         copy ..\include\*.h ..\..\..\include\
+         copy ..\lib\sci.lib ..\..\..\lib\
+         :VCEnd
+         ..\include\SCI.h
+         ..\include\SCIDeviceBase.h
+         已复制         2 个文件。
+         已复制         1 个文件。
+     1>已完成生成项目“D:\VS2013_Project\acsl\commonLib\modules\sci\src\sci.vcxproj”(Rebuild 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:07.17

@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="ControlsUnit.TimerView"
+              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             Height="100" Width="100">
+	<Border Name="ControlsUnitBorder" BorderBrush="White"  CornerRadius="0" BorderThickness="1">
+		<Grid>
+			<!--現在時刻-->
+			<Label Content="Clock" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Meiryo UI" FontSize="10" Foreground="White" FontWeight="Bold" Margin="-3,-4,0,0" />
+			<Label Name="TotalVal" Content="34:56.78" FontFamily="Meiryo UI" FontSize="18" Foreground="White" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,5,-0.4,62.6" MouseDoubleClick="TotalVal_MouseDoubleClick"/>
+			<!---->
+			<Line X2="100" Y1="34" Y2="34" Stroke="White" StrokeThickness="1" />
+			<Label Name="ConnectName" Content="Disconnect" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Meiryo UI" FontSize="10" Foreground="White" FontWeight="Bold" Margin="-3,29,-0.4,0" Width="98" />
+			<Label x:Name="cTimerVal" Content="34:56.78" FontFamily="Meiryo UI" FontSize="18" Foreground="White" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,38,-0.4,26.6" MouseDoubleClick="cTimerVal_MouseDoubleClick"/>
+			<!---->
+			<Line X2="100" Y1="67" Y2="67" Stroke="White" StrokeThickness="1" />
+			<Label Content="Control Mode" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Meiryo UI" FontSize="10" Foreground="White" FontWeight="Bold" Margin="-3,63,0,0" />
+			<Label x:Name="mTimerVal" Content="34:56.78" FontFamily="Meiryo UI" FontSize="18" Foreground="White" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,71,-0.4,-5.4" MouseDoubleClick="TimerVal_MouseDoubleClick"/>
+		</Grid>
+	</Border>
+</UserControl>

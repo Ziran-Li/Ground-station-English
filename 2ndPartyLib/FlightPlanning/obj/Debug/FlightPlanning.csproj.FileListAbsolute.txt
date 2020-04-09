@@ -1,0 +1,10 @@
+C:\Users\hello\Desktop\acsl\2ndPartyLib\FlightPlanning\bin\Debug\FlightPlanning.dll
+C:\Users\hello\Desktop\acsl\2ndPartyLib\FlightPlanning\bin\Debug\FlightPlanning.pdb
+C:\Users\hello\Desktop\acsl\2ndPartyLib\FlightPlanning\bin\Debug\GMap.NET.Core.dll
+C:\Users\hello\Desktop\acsl\2ndPartyLib\FlightPlanning\bin\Debug\GMap.NET.WindowsPresentation.dll
+C:\Users\hello\Desktop\acsl\2ndPartyLib\FlightPlanning\bin\Debug\Xceed.Wpf.Toolkit.dll
+C:\Users\hello\Desktop\acsl\2ndPartyLib\FlightPlanning\bin\Debug\GMap.NET.Core.pdb
+C:\Users\hello\Desktop\acsl\2ndPartyLib\FlightPlanning\bin\Debug\GMap.NET.WindowsPresentation.pdb
+C:\Users\hello\Desktop\acsl\2ndPartyLib\FlightPlanning\obj\Debug\FlightPlanning.csprojResolveAssemblyReference.cache
+C:\Users\hello\Desktop\acsl\2ndPartyLib\FlightPlanning\obj\Debug\FlightPlanning.dll
+C:\Users\hello\Desktop\acsl\2ndPartyLib\FlightPlanning\obj\Debug\FlightPlanning.pdb

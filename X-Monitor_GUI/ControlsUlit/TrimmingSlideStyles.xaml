@@ -1,0 +1,311 @@
+﻿<!--
+    ScrollBarコントロールの再生用スタイル (TrimmingSlide)
+-->
+
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:xctk="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
+                    xmlns:local="clr-namespace:ControlsUnit">
+
+    <local:TrimmingSlideStyle x:Key="TrimmingConverter" />
+
+    <!--Xceed.Wpf.Toolkit-->
+    <!--[トリミング]-->
+    <Style x:Key="LowerRangeStyle3"
+             TargetType="{x:Type RepeatButton}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RepeatButton}">
+                    <Grid x:Name="MainGrid"
+                        Height="19">
+                        <Rectangle Fill="Black"  Opacity="0.5"/>
+                        <Rectangle x:Name="MainBorder"
+                                Fill="{TemplateBinding Background}"
+                                Opacity="0.5" />
+                        <StackPanel x:Name="HorizontalContentPanel"
+                                 Orientation="Horizontal"
+                                 HorizontalAlignment="Center"
+                                 VerticalAlignment="Center">
+                            
+                        </StackPanel>
+                        <StackPanel x:Name="VerticalContentPanel"
+                                 Orientation="Vertical"
+                                 Visibility="Collapsed"
+                                 VerticalAlignment="Center">
+                            <TextBlock Text="L"
+                                   Foreground="White" />
+                        </StackPanel>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver"
+                              Value="True">
+                            <Setter TargetName="MainBorder"
+                                Property="Opacity"
+                                Value="0.75" />
+                        </Trigger>
+                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Orientation}"
+                                  Value="Vertical">
+                            <Setter Property="Height"
+                                TargetName="MainGrid"
+                                Value="Auto" />
+                            <Setter Property="Width"
+                                TargetName="MainGrid"
+                                Value="30" />
+                            <Setter Property="Visibility"
+                                TargetName="VerticalContentPanel"
+                                Value="Visible" />
+                            <Setter Property="Visibility"
+                                TargetName="HorizontalContentPanel"
+                                Value="Collapsed" />
+                        </DataTrigger>
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="RangeStyle3"
+             TargetType="{x:Type RepeatButton}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RepeatButton}">
+                    <Grid x:Name="MainGrid"
+                        Height="19">
+                        <Rectangle Fill="White"  Opacity="0.5"/>
+                        <Rectangle x:Name="MainBorder"
+                                Fill="{TemplateBinding Background}"
+                                Opacity="1" />
+                        <StackPanel x:Name="HorizontalContentPanel"
+                                 Orientation="Horizontal"
+                                 HorizontalAlignment="Center"
+                                 VerticalAlignment="Center">
+                            <TextBlock x:Name="TextContentLower"
+                                   Text="{Binding Path=LowerValue,RelativeSource={RelativeSource AncestorType={x:Type xctk:RangeSlider}}, Converter={StaticResource TrimmingConverter}}"
+                                   Foreground="Black"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center" />
+                            <TextBlock  Text=" - "
+                                    Foreground="Turquoise"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center" />
+                            <TextBlock x:Name="TextContentHigher"
+                                   Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type xctk:RangeSlider}}, Path=HigherValue, Converter={StaticResource TrimmingConverter}}"
+                                   Foreground="Black"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center" />
+                        </StackPanel>
+                        <StackPanel x:Name="VerticalContentPanel"
+                                 Orientation="Vertical"
+                                 Visibility="Collapsed"
+                                 VerticalAlignment="Center">
+                            <TextBlock Text="R"
+                                   Foreground="White" />
+                        </StackPanel>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver"
+                              Value="True">
+                            <Setter TargetName="TextContentLower"
+                                Property="Foreground"
+                                Value="Fuchsia" />
+                            <Setter TargetName="TextContentHigher"
+                                Property="Foreground"
+                                Value="Fuchsia" />
+                        </Trigger>
+
+                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Orientation}"
+                                  Value="Vertical">
+                            <Setter Property="Height"
+                                TargetName="MainGrid"
+                                Value="Auto" />
+                            <Setter Property="Width"
+                                TargetName="MainGrid"
+                                Value="30" />
+                            <Setter Property="Visibility"
+                                TargetName="VerticalContentPanel"
+                                Value="Visible" />
+                            <Setter Property="Visibility"
+                                TargetName="HorizontalContentPanel"
+                                Value="Collapsed" />
+                        </DataTrigger>
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="HigherRangeStyle3"
+             TargetType="{x:Type RepeatButton}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RepeatButton}">
+                    <Grid x:Name="MainGrid"
+                        Height="19">
+                        <Rectangle Fill="Black" Opacity="0.5"/>
+                        <Rectangle x:Name="MainBorder"
+                                Fill="{TemplateBinding Background}"
+                                Opacity="0.5" />
+                        <StackPanel x:Name="HorizontalContentPanel"
+                                 Orientation="Horizontal"
+                                 HorizontalAlignment="Center"
+                                 VerticalAlignment="Center">
+                            
+                        </StackPanel>
+                        <StackPanel x:Name="VerticalContentPanel"
+                                 Orientation="Vertical"
+                                 Visibility="Collapsed"
+                                 VerticalAlignment="Center">
+                            <TextBlock Text="H"
+                                   Foreground="White" />
+                        </StackPanel>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver"
+                              Value="True">
+                            <Setter TargetName="MainBorder"
+                                Property="Opacity"
+                                Value="0.75" />
+                        </Trigger>
+
+                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Orientation}"
+                                  Value="Vertical">
+                            <Setter Property="Height"
+                                TargetName="MainGrid"
+                                Value="Auto" />
+                            <Setter Property="Width"
+                                TargetName="MainGrid"
+                                Value="30" />
+                            <Setter Property="Visibility"
+                                TargetName="VerticalContentPanel"
+                                Value="Visible" />
+                            <Setter Property="Visibility"
+                                TargetName="HorizontalContentPanel"
+                                Value="Collapsed" />
+                        </DataTrigger>
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--[再生]-->
+    <LinearGradientBrush x:Key="ThumbBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientBrush.GradientStops>
+            <GradientStopCollection>
+                <GradientStop Color="#C5CDEB" Offset="0.0"/>
+                <GradientStop Color="#C5CDEB" Offset="0.125"/>
+                <GradientStop Color="#7D98D6" Offset="0.25"/>
+                <GradientStop Color="#507CCB" Offset="0.375"/>
+                <GradientStop Color="#073FB1" Offset="0.5"/>
+                <GradientStop Color="#004CC7" Offset="0.625"/>
+                <GradientStop Color="#0A89EF" Offset="0.75"/>
+                <GradientStop Color="#6BE8FF" Offset="0.875"/>
+                <GradientStop Color="#6BE8FF" Offset="1.0"/>
+            </GradientStopCollection>
+        </GradientBrush.GradientStops>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="OverThumbBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientBrush.GradientStops>
+            <GradientStopCollection>
+                <GradientStop Color="#D1DEF7" Offset="0.0"/>
+                <GradientStop Color="#D1DEF7" Offset="0.125"/>
+                <GradientStop Color="#8DB2F1" Offset="0.25"/>
+                <GradientStop Color="#609CF5" Offset="0.375"/>
+                <GradientStop Color="#0E63F5" Offset="0.5"/>
+                <GradientStop Color="#1477F8" Offset="0.625"/>
+                <GradientStop Color="#3DBAFD" Offset="0.75"/>
+                <GradientStop Color="#A6FFFF" Offset="0.875"/>
+                <GradientStop Color="#A6FFFF" Offset="1.0"/>
+            </GradientStopCollection>
+        </GradientBrush.GradientStops>
+    </LinearGradientBrush>
+    <Style x:Key="leftRepeatButton" TargetType="{x:Type RepeatButton}">
+        <Setter Property="Height" Value="3" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RepeatButton}">
+                    <Rectangle RadiusX="1" RadiusY="1" Fill="#0F41CD" Stroke="#84C5FF" StrokeThickness="1" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="rightRepeatButton" TargetType="{x:Type RepeatButton}">
+        <Setter Property="Height" Value="3" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RepeatButton}">
+                    <Border Background="Transparent" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="WMPThumb" TargetType="{x:Type Thumb}">
+        <Setter Property="SnapsToDevicePixels" Value="true"/>
+        <Setter Property="OverridesDefaultStyle" Value="true"/>
+        <Setter Property="Visibility" Value="Hidden"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Thumb}">
+                    <Rectangle Name="rectThumb" Width="16" Height="20" RadiusX="4" RadiusY="4" Fill="{StaticResource ThumbBrush}" Stroke="#3F66A0" StrokeThickness="1" />
+
+                    <!--
+                    <Grid Height="80" Width="16">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Ellipse Grid.RowSpan="2" Fill="{StaticResource ThumbBrush}" Margin="0,0,0,6" />
+                    <Polygon Grid.Row="1" Points="0,0 1,0 0.5,1" Fill="{StaticResource ThumbBrush}" Stretch="Fill" Height="10" Width="30" VerticalAlignment="Bottom"/>
+                    <TextBlock Grid.RowSpan="2" VerticalAlignment="Center" Foreground="White" Margin="0,3,0,8" Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type Slider}}, Path=Value, StringFormat=\{0:0.0\}}" TextAlignment="Center" />
+                    <Rectangle Name="rectThumb" Grid.Row="2" Width="16" Height="20" RadiusX="4" RadiusY="4" Fill="{StaticResource ThumbBrush}" Stroke="#3F66A0" StrokeThickness="1" />
+                    </Grid>
+                    -->
+                    
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="rectThumb" Property="Fill" Value="{StaticResource OverThumbBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter TargetName="rectThumb" Property="Fill" Value="Cyan"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="WMPSlider" TargetType="{x:Type ScrollBar}">
+        <Setter Property="Height" Value="6" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ScrollBar}">
+                    <Border Background="Transparent">
+                        <Grid>
+                            <Rectangle RadiusX="3" RadiusY="3" Margin="7,0,7,0" Fill="#0C2032" Height="6" Width="Auto" Stroke="#54616F" StrokeThickness="1"/>
+                            <Track x:Name="PART_Track" >
+                                <Track.DecreaseRepeatButton>
+                                    <RepeatButton Margin="8,1,-8,0" Style="{StaticResource leftRepeatButton}" Command="{x:Static Slider.DecreaseLarge}"/>
+                                </Track.DecreaseRepeatButton>
+                                <Track.IncreaseRepeatButton>
+                                    <RepeatButton Margin="8,1,8,0" Style="{StaticResource rightRepeatButton}" Command="{x:Static Slider.IncreaseLarge}"/>
+                                </Track.IncreaseRepeatButton>
+                                <Track.Thumb>
+                                    <Thumb x:Name="Thumb" Style="{StaticResource WMPThumb}" />
+                                </Track.Thumb>
+                            </Track>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Thumb" Property="Visibility" Value="Visible"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

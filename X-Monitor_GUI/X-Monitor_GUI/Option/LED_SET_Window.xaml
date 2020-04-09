@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="XMonitor_GUI.LED_SET_Window"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             Name="LedSet_Show" Height="300" Width="250" Stylus.IsPressAndHoldEnabled="False" Background="#FF5A4D66" >
+    <StackPanel>
+        <Label Content="LED Set："  Margin="90,10,65,10" Foreground="White" FontSize="20"/>
+        <CheckBox Style="{DynamicResource SliderCheckBox}" Content="                                     Night Led" 
+                  Name="Night_Switch" IsChecked="{Binding WindowsAutomatically, Mode=TwoWay}" Margin="10,20,10,15" Checked="NightCheckBox_Checked" Unchecked="NightUncheckBox_UnChecked" Foreground="White"/>
+        <CheckBox Style="{DynamicResource SliderCheckBox}" Content="                                 Forward Led" 
+                  Name="Forward_Switch" IsChecked="{Binding WindowsAutomatically, Mode=TwoWay}" Margin="10,20,10,15" Checked="ForwardCheckBox_Checked" Unchecked="ForwardUncheckBox_UnChecked" Foreground="White"/>
+        <CheckBox Style="{DynamicResource SliderCheckBox}" Content="                           Background Led" 
+                  Name="Back_Switch" IsChecked="{Binding WindowsAutomatically, Mode=TwoWay}" Margin="10,20,10,15" Checked="BackCheckBox_Checked" Unchecked="BackUncheckBox_UnChecked" Foreground="White"/>
+        <Label Content="Dark To Light："  Margin="10,10" Foreground="White"/>
+        <Slider Name="DarktoLightSlider" SelectionStart="0" SelectionEnd="100" Margin="10,0" ValueChanged="DarktoLightSlider_ValueChanged" MouseLeftButtonDown="DarktoLightSlider_MouseLeftButtonDown" MouseLeftButtonUp="DarktoLightSlider_MouseLeftButtonUp" Maximum="100"></Slider>
+    </StackPanel>
+</UserControl>

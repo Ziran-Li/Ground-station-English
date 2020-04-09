@@ -1,0 +1,5 @@
+C:\Users\hello\Desktop\acsl\2ndPartyLib\Pipe\bin\Debug\Pipe.dll
+C:\Users\hello\Desktop\acsl\2ndPartyLib\Pipe\bin\Debug\Pipe.pdb
+C:\Users\hello\Desktop\acsl\2ndPartyLib\Pipe\obj\Debug\Pipe.csprojResolveAssemblyReference.cache
+C:\Users\hello\Desktop\acsl\2ndPartyLib\Pipe\obj\Debug\Pipe.dll
+C:\Users\hello\Desktop\acsl\2ndPartyLib\Pipe\obj\Debug\Pipe.pdb

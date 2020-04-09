@@ -1,0 +1,33 @@
+﻿Build started 2016/1/13 11:29:37.
+     1>Project "C:\Users\hello\Desktop\acsl\miniSvLib\modules\miniSvUavLink\src\miniSvUavLink.vcxproj" on node 2 (Rebuild target(s)).
+     1>ClCompile:
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\include /I..\..\..\include /I..\..\..\..\commonLib\include /ZI /nologo /W3 /WX- /sdl- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Debug\miniSvUavLinkD.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\include /I..\..\..\include /I..\..\..\..\commonLib\include /ZI /nologo /W3 /WX- /sdl- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\..\include\Common\Udp.cpp ..\..\..\include\Lib\SCIDevice.cpp ..\..\..\include\Lib\SCI_Win.cpp
+         SCI_Win.cpp
+         SCIDevice.cpp
+         Udp.cpp
+     1>c:\users\hello\desktop\acsl\minisvlib\include\common\udp.cpp(22): warning C4996: 'gethostbyname': Use getaddrinfo() or GetAddrInfoW() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+                 c:\program files\windows kits\8.1\include\um\winsock2.h(2238) : see declaration of 'gethostbyname'
+         Generating Code...
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\include /I..\..\..\include /I..\..\..\..\commonLib\include /ZI /nologo /W3 /WX- /sdl- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\miniSvUavLinkD.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt UavLink.cpp
+         UavLink.cpp
+       Lib:
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"..\lib\miniSvUavLinkD.lib" /NOLOGO Debug\Udp.obj
+         Debug\SCIDevice.obj
+         Debug\SCI_Win.obj
+         Debug\stdafx.obj
+         Debug\UavLink.obj
+         miniSvUavLink.vcxproj -> C:\Users\hello\Desktop\acsl\miniSvLib\modules\miniSvUavLink\src\..\lib\miniSvUavLinkD.lib
+       PostBuildEvent:
+         copy ..\include\*.h ..\..\..\include\
+         copy ..\lib\miniSvUavLinkD.lib ..\..\..\lib\
+         :VCEnd
+         ..\include\UavLink.h
+         已复制         1 个文件。
+         已复制         1 个文件。
+     1>Done Building Project "C:\Users\hello\Desktop\acsl\miniSvLib\modules\miniSvUavLink\src\miniSvUavLink.vcxproj" (Rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:06.62

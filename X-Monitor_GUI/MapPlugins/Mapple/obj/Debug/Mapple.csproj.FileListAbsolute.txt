@@ -1,0 +1,4 @@
+C:\Users\hello\Desktop\acsl\ACSL\mapPlugin\Mapple.dll
+C:\Users\hello\Desktop\acsl\ACSL\mapPlugin\Mapple.pdb
+C:\Users\hello\Desktop\acsl\X-Monitor_GUI\MapPlugins\Mapple\obj\Debug\Mapple.dll
+C:\Users\hello\Desktop\acsl\X-Monitor_GUI\MapPlugins\Mapple\obj\Debug\Mapple.pdb

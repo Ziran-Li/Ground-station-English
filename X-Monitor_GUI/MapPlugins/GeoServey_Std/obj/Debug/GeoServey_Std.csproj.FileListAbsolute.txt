@@ -1,0 +1,10 @@
+C:\Users\ogawa\Documents\02_開発\02_MSAP\minisv_gcs\trunk\Version1\ACSL\mapPlugin\GeoServey_Std.dll
+C:\Users\ogawa\Documents\02_開発\02_MSAP\minisv_gcs\trunk\Version1\ACSL\mapPlugin\GeoServey_Std.pdb
+C:\Users\ogawa\Documents\02_開発\02_MSAP\minisv_gcs\trunk\Version1\X-Monitor_GUI\MapPlugins\GeoServey_Std\obj\Debug\GeoServey_Std.csprojResolveAssemblyReference.cache
+C:\Users\ogawa\Documents\02_開発\02_MSAP\minisv_gcs\trunk\Version1\X-Monitor_GUI\MapPlugins\GeoServey_Std\obj\Debug\GeoServey_Std.dll
+C:\Users\ogawa\Documents\02_開発\02_MSAP\minisv_gcs\trunk\Version1\X-Monitor_GUI\MapPlugins\GeoServey_Std\obj\Debug\GeoServey_Std.pdb
+C:\Users\hello\Desktop\acsl\ACSL\mapPlugin\GeoServey_Std.dll
+C:\Users\hello\Desktop\acsl\ACSL\mapPlugin\GeoServey_Std.pdb
+C:\Users\hello\Desktop\acsl\X-Monitor_GUI\MapPlugins\GeoServey_Std\obj\Debug\GeoServey_Std.csprojResolveAssemblyReference.cache
+C:\Users\hello\Desktop\acsl\X-Monitor_GUI\MapPlugins\GeoServey_Std\obj\Debug\GeoServey_Std.dll
+C:\Users\hello\Desktop\acsl\X-Monitor_GUI\MapPlugins\GeoServey_Std\obj\Debug\GeoServey_Std.pdb

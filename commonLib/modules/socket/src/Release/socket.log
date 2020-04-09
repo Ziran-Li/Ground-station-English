@@ -1,0 +1,28 @@
+﻿生成启动时间为 2017/4/24 星期一 下午 4:01:48。
+     1>项目“D:\VS2013_Project\acsl\commonLib\modules\socket\src\socket.vcxproj”在节点 5 上(Rebuild 个目标)。
+     1>ClCompile:
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\include /I..\..\..\include /Zi /nologo /W3 /WX- /sdl- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Release\socket.pch" /Fo"Release\\" /Fd"Release\vc120.pdb" /FR"Release\\" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\include /I..\..\..\include /Zi /nologo /W3 /WX- /sdl- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Release\socket.pch" /Fo"Release\\" /Fd"Release\vc120.pdb" /FR"Release\\" /Gd /TP /analyze- /errorReport:prompt WinsockTCP2.cpp WSADebug.cpp
+         WinsockTCP2.cpp
+         WSADebug.cpp
+       Lib:
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"..\lib\socket.lib" /NOLOGO /LTCG Release\stdafx.obj
+         Release\WinsockTCP2.obj
+         Release\WSADebug.obj
+         socket.vcxproj -> D:\VS2013_Project\acsl\commonLib\modules\socket\src\..\lib\socket.lib
+       BscMake:
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\bscmake.exe /nologo /o"..\lib\socket.bsc" /n Release\stdafx.sbr Release\WinsockTCP2.sbr Release\WSADebug.sbr
+       PostBuildEvent:
+         copy ..\include\*.h ..\..\..\include\
+         copy ..\lib\socket.lib ..\..\..\lib\
+         :VCEnd
+         ..\include\WinsockTCP2.h
+         ..\include\WSADebug.h
+         已复制         2 个文件。
+         已复制         1 个文件。
+     1>已完成生成项目“D:\VS2013_Project\acsl\commonLib\modules\socket\src\socket.vcxproj”(Rebuild 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:05.81

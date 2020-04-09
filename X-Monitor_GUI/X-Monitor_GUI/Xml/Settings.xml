@@ -1,0 +1,258 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<root>
+	<Settings>
+		<FilePath>
+			<TempFile>C:/Users/Public/Documents/</TempFile>
+			<FlightLog>C:/Users/Public/Documents/</FlightLog>
+		</FilePath>
+		<UAV>
+			<Sys>
+				<Mode>
+					<Ctrl i='0' reset='N'>NO DATA</Ctrl>
+					<Ctrl i='1'>マニュアル</Ctrl>
+					<Ctrl i='2'>姿勢アシスト(ATT)</Ctrl>
+					<Ctrl i='3'>GPSアシスト</Ctrl>
+					<Ctrl i='4' reset='Y'>自律ナビゲーション</Ctrl>
+					<Ctrl i='5'>自動離陸</Ctrl>
+					<Ctrl i='6'>自動着陸</Ctrl>
+					<Auto i='0'>NO DATA</Auto>
+					<Auto i='1'>コマンド飛行</Auto>
+					<Auto i='2'>計画飛行</Auto>
+					<Auto i='3'>ゴーホーム</Auto>
+				</Mode>
+			</Sys>
+		</UAV>
+		<Plot>
+			<Tag a='H'>Time</Tag>
+		</Plot>
+		<PlotContents >
+			<IMU>
+				<Att t="R3" i="0">IMU姿态角(Roll)</Att>
+				<Att t="R3" i="1">IMU姿态角(Pitch)</Att>
+				<Att t="R3" i="2">IMU姿态角(Yaw)</Att>
+				<Gyro t="R3" i="0">IMU角速度(X轴/Roll)</Gyro>
+				<Gyro t="R3" i="1">IMU角速度(Y轴/Pitch)</Gyro>
+				<Gyro t="R3" i="2">IMU角速度(Z轴/Yaw)</Gyro>
+				<Acc t="R3" i="0">IMU加速度(X軸)</Acc>
+				<Acc t="R3" i="1">IMU加速度(Y軸)</Acc>
+				<Acc t="R3" i="2">IMU加速度(Z軸)</Acc>
+				<Mag t="R3" i="0">IMU磁束密度(X軸)</Mag>
+				<Mag t="R3" i="1">IMU磁束密度(Y軸)</Mag>
+				<Mag t="R3" i="2">IMU磁束密度(Z軸)</Mag>
+				<MagNorm>IMU磁束密度の大きさ</MagNorm>
+			</IMU>
+			<GPS>
+				<Sats t="X">GPS補足衛星数</Sats>
+				<hPosAcc t="R">GPS水平位置精度</hPosAcc>
+				<vPosAcc t="R">GPS垂直位置精度</vPosAcc>
+				<hVelAcc t="R">GPS水平速度精度</hVelAcc>
+				<vVelAcc t="R">GPS垂直速度精度</vVelAcc>
+				<Lat t="R">GPS緯度</Lat>
+				<Lon t="R">GPS経度</Lon>
+				<Alt t="R">GPS高度</Alt>
+				<Vel c="r" t="R3" i="0">GPS速度(North/X軸)</Vel>
+				<Vel c="r" t="R3" i="1">GPS速度(East/Y軸)</Vel>
+				<Vel c="r" t="R3" i="2">GPS速度(Down/Z軸)</Vel>
+			</GPS>
+			<PS>
+				<Alt t="R">気圧高度</Alt>
+			</PS>
+			<Nav>
+				<Lat t="R">航法演算-緯度</Lat>
+				<Lon t="R">航法演算-経度</Lon>
+				<Alt t="R">航法演算-高度</Alt>
+				<Vel c="r" t="R3" i="0">航法演算-速度(North/X軸)</Vel>
+				<Vel c="r" t="R3" i="1">航法演算-速度(East/Y軸)</Vel>
+				<Vel c="r" t="R3" i="2">航法演算-速度(Down/Z軸)</Vel>
+			</Nav>
+			<Ref>
+				<Att t="R3" i="0">姿勢目標値(Roll)</Att>
+				<Att t="R3" i="1">姿勢目標値(Pitch)</Att>
+				<Att t="R3" i="2">姿勢目標値(Yaw)</Att>
+				<Vel c="n" t="R3" i="0">速度目標値(X軸)</Vel>
+				<Vel c="n" t="R3" i="1">速度目標値(Y軸)</Vel>
+				<Vel c="n" t="R3" i="2">速度目標値(Z軸)</Vel>
+				<Alt>高度制御目標値</Alt>
+			</Ref>
+			<Wpt>
+				<Lat t="R">ウェイポイント緯度</Lat>
+				<Lon t="R">ウェイポイント経度</Lon>
+				<Alt t="R">ウェイポイント高度</Alt>
+				<Yaw t="R">ウェイポイント方位</Yaw>
+				<Spd t="R">ウェイポイント飛行速度</Spd>
+				<No t="USI">ウェイポイント飛行番号</No>
+			</Wpt>
+			<Home>
+				<Lat t="R">ホーム緯度</Lat>
+				<Lon t="R">ホーム経度</Lon>
+				<Alt t="R">ホーム高度</Alt>
+				<Yaw t="R">ホーム方位</Yaw>
+			</Home>
+			<Sys>
+				<Mode>
+					<Boot t="X">起動モード</Boot>
+					<Drv t="X">駆動モード</Drv>
+					<Ctrl t="X">制御モード</Ctrl>
+					<Auto t="X">自律モード</Auto>
+				</Mode>
+				<Flag a="L">内部フラグ(下位)</Flag>
+				<Flag a="H">内部フラグ(上位)</Flag>
+				<CPU t="X" a="L">AP-CPU使用率(下位)</CPU>
+				<CPU t="X" a="H">AP-CPU使用率(上位)</CPU>
+			</Sys>
+			<Voltage t="R">バッテリー</Voltage>
+			<Ctrl>
+				<Input a="H" t="R4" i="0">Throttle(上位)</Input>
+				<Input a="H" t="R4" i="1">Roll(上位)</Input>
+				<Input a="H" t="R4" i="2">Pitch(上位)</Input>
+				<Input a="H" t="R4" i="3">Yaw(上位)</Input>
+				<Input a="L" t="R4" i="0">Throttle(下位)</Input>
+				<Input a="L" t="R4" i="1">Roll(下位)</Input>
+				<Input a="L" t="R4" i="2">Pitch(下位)</Input>
+				<Input a="L" t="R4" i="3">Yaw)</Input>
+				<Rotor t="USI12" i="0">ロータ[1]</Rotor>
+				<Rotor t="USI12" i="1">ロータ[2]</Rotor>
+				<Rotor t="USI12" i="2">ロータ[3]</Rotor>
+				<Rotor t="USI12" i="3">ロータ[4]</Rotor>
+				<Rotor t="USI12" i="4">ロータ[5]</Rotor>
+				<Rotor t="USI12" i="5">ロータ[6]</Rotor>
+				<Rotor t="USI12" i="6">ロータ[7]</Rotor>
+				<Rotor t="USI12" i="7">ロータ[8]</Rotor>
+				<Rotor t="USI12" i="8">ロータ[9]</Rotor>
+				<Rotor t="USI12" i="9">ロータ[10]</Rotor>
+				<Rotor t="USI12" i="10">ロータ[11]</Rotor>
+				<Rotor t="USI12" i="11">ロータ[12]</Rotor>
+			</Ctrl>
+			<Health>
+				<ReceiverComm t="X">RC-MCU間通信健全度</ReceiverComm>
+				<ReceiverRecep t="X">RC-受信健全度</ReceiverRecep>
+				<GyroComm t="X">Gyro-MCU間通信健全度</GyroComm>
+				<GyroMeas t="X">Gyro計測健全度</GyroMeas>
+				<McuComm t="X" a="L">MCU-MCU間通信健全度(下位受信)</McuComm>
+				<McuComm t="X" a="H">MCU-MCU間通信健全度(上位受信)</McuComm>
+				<ImuComm t="X">IMU通信健全度</ImuComm>
+				<ImuGyroMeas t="X">IMU-Gyro計測健全度</ImuGyroMeas>
+				<ImuAccMeas t="X">IMU加速度計測健全度</ImuAccMeas>
+				<ImuMagMeas t="X">IMU磁気計測健全度</ImuMagMeas>
+				<PsComm t="X">気圧センサ-MCU間通信健全度</PsComm>
+				<PsMeas t="X">気圧センサ計測健全度</PsMeas>
+				<GpsComm t="X">GPS-MCU間通信健全度</GpsComm>
+				<GpsMeas t="X">GPS計測健全度</GpsMeas>
+        <Datalink t="X" a="D">Datalink通信健全度(UAV受信)</Datalink>
+        <Datalink t="X" a="U">Datalink通信健全度(UAV受信)</Datalink>
+			</Health>
+			<RSSI>
+        <Datalink t="SI" a="D">データリンク通信受信強度(UAV受信)</Datalink>
+				<Datalink t="SI" a="U">データリンク通信受信強度(UAV受信)</Datalink>
+			</RSSI>
+			<Propo>
+				<An t="USI16" i="0">プロポCh1</An>
+				<An t="USI16" i="1">プロポCh2</An>
+				<An t="USI16" i="2">プロポCh3</An>
+				<An t="USI16" i="3">プロポCh4</An>
+				<An t="USI16" i="4">プロポCh5</An>
+				<An t="USI16" i="5">プロポCh6</An>
+				<An t="USI16" i="6">プロポCh7</An>
+				<An t="USI16" i="7">プロポCh8</An>
+				<An t="USI16" i="8">プロポCh9</An>
+				<An t="USI16" i="9">プロポCh10</An>
+				<An t="USI16" i="10">プロポCh11</An>
+				<An t="USI16" i="11">プロポCh12</An>
+				<An t="USI16" i="12">プロポCh13</An>
+				<An t="USI16" i="13">プロポCh14</An>
+				<An t="USI16" i="14">プロポCh15</An>
+				<An t="USI16" i="15">プロポCh16</An>
+				<Dg t="X2" i="0">プロポCh17</Dg>
+				<Dg t="X2" i="1">プロポCh18</Dg>
+				<Lost t="X">プロポフレームロスト</Lost>
+				<FS t="X">プロポフェイルセーフ</FS>
+			</Propo>
+			<Action>
+				<Shot>
+					<Count t="USI">記録カウント</Count>
+					<Lat t="R">記録緯度</Lat>
+					<Lon t="R">記録経度</Lon>
+					<Alt t="R">記録高度</Alt>
+					<Att t="R3" i="0">記録姿勢角(Roll)</Att>
+					<Att t="R3" i="1">記録姿勢角(Pitch)</Att>
+					<Att t="R3" i="2">記録姿勢角(Yaw)</Att>
+					<GpsWeek t="USI">記録GPS週</GpsWeek>
+					<GpsWeekSec t="R">記録GPS週秒</GpsWeekSec>
+				</Shot>
+			</Action>
+			<Debug a="H" t="X8" i="0">上位デバッグ[0]</Debug>
+			<Debug a="H" t="X8" i="1">上位デバッグ[1]</Debug>
+			<Debug a="H" t="X8" i="2">上位デバッグ[2]</Debug>
+			<Debug a="H" t="X8" i="3">上位デバッグ[3]</Debug>
+			<Debug a="H" t="X8" i="4">上位デバッグ[4]</Debug>
+			<Debug a="H" t="X8" i="5">上位デバッグ[5]</Debug>
+			<Debug a="H" t="X8" i="6">上位デバッグ[6]</Debug>
+			<Debug a="H" t="X8" i="7">上位デバッグ[7]</Debug>
+			<Debug a="H" t="X8" i="8">上位デバッグ[8]</Debug>
+			<Debug a="H" t="X8" i="9">上位デバッグ[9]</Debug>
+			<Debug a="H" t="X8" i="10">上位デバッグ[10]</Debug>
+			<Debug a="H" t="X8" i="11">上位デバッグ[11]</Debug>
+			<Debug a="H" t="X8" i="12">上位デバッグ[12]</Debug>
+			<Debug a="H" t="X8" i="13">上位デバッグ[13]</Debug>
+			<Debug a="H" t="X8" i="14">上位デバッグ[14]</Debug>
+			<Debug a="H" t="X8" i="15">上位デバッグ[15]</Debug>
+      <Debug t="X16" i="0" a="L">下位デバッグ[0]</Debug>
+      <Debug t="X16" i="1" a="L">下位デバッグ[1]</Debug>
+      <Debug t="X16" i="2" a="L">下位デバッグ[2]</Debug>
+      <Debug t="X16" i="3" a="L">下位デバッグ[3]</Debug>
+      <Debug t="X16" i="4" a="L">下位デバッグ[4]</Debug>
+      <Debug t="X16" i="5" a="L">下位デバッグ[5]</Debug>
+      <Debug t="X16" i="6" a="L">下位デバッグ[6]</Debug>
+      <Debug t="X16" i="7" a="L">下位デバッグ[7]</Debug>
+      <Debug t="X16" i="8" a="L">下位デバッグ[8]</Debug>
+      <Debug t="X16" i="9" a="L">下位デバッグ[9]</Debug>
+      <Debug t="X16" i="10" a="L">下位デバッグ[10]</Debug>
+      <Debug t="X16" i="11" a="L">下位デバッグ[11]</Debug>
+      <Debug t="X16" i="12" a="L">下位デバッグ[12]</Debug>
+      <Debug t="X16" i="13" a="L">下位デバッグ[13]</Debug>
+      <Debug t="X16" i="14" a="L">下位デバッグ[14]</Debug>
+      <Debug t="X16" i="15" a="L">下位デバッグ[15]</Debug>
+      <Firm>
+        <Ver t="S" a="L">バージョン（下位）</Ver>
+        <BuildDate t="S" a="L">ビルド日付（下位）</BuildDate>
+        <Edition t="S" a="L">エディションコード（下位）</Edition>
+        <Ver t="S" a="H">バージョン（上位）</Ver>
+        <BuildDate t="S" a="H">ビルド日付（上位）</BuildDate>
+        <Edition t="S" a="H">エディションコード（上位）</Edition>
+      </Firm>
+      <Command>
+        <Response t="I">コマンド送信応答</Response>
+      </Command>
+			<Error>
+				<ID t="X2" i="0">エラークラスID[0]</ID>
+				<Level t="X2" i="0">エラーレベル[0]</Level>
+				<Ticks t="USI2" i="0">時間情報[0]</Ticks>
+				<Category t="I2" i="0">エラー種別[0]</Category>
+				<Param t="USI2" i="0">エラー固有パラメータ[0]</Param>
+				<ID t="X2" i="1">エラークラスID[1]</ID>
+				<Level t="X2" i="1">エラーレベル[1]</Level>
+				<Ticks t="USI2" i="1">時間情報[1]</Ticks>
+				<Category t="I2" i="1">エラー種別[1]</Category>
+				<Param t="USI2" i="1">エラー固有パラメータ[1]</Param>
+			</Error>
+				<GP>
+					<Type t="X">汎用データ形式</Type>
+					<Data t="R4" i="0">汎用データ1</Data>
+					<Data t="R4" i="1">汎用データ2</Data>
+					<Data t="R4" i="2">汎用データ3</Data>
+					<Data t="R4" i="3">汎用データ4</Data>
+				</GP>
+		</PlotContents>
+		<PilotLog>
+			<Must i="1">操縦者は、充分飛行訓練を行ったものである。</Must>
+			<Must i="2">操縦者及びモニタを含む作業員は、飲酒、睡眠不足の状態でない。</Must>
+			<Must i="3">許可なく本製品の改造、またはペイロードの変更を行っていない。</Must>
+			<Must i="4">ミニサーベイヤーを不時着させられるエリアを確保した。</Must>
+			<Must i="5">離着陸場所及びオペレーターの退避等エリアを充分確保した。</Must>
+			<Must i="6">ミニサーベイヤーの対地高度と等しい半径の円錐内に、オペレータを含む人間、第三者の財産が入らないことを確認した。（なお、やむを得ず、円錐内に人が入る場合はヘルメットの着用を義務付け、その他自身の安全を確保するために適切な装具を着用してください。また、緊急退避可能なエリアを確保した。）</Must>
+			<Must i="7">周辺地域/関係各社や飛行周辺の人への注意喚起を行った。（例：ミニサーベイヤーの進行方向に人を近づけないで下さい。特に、操縦者とミニサーベイヤーの間に絶対に人が入らないよう注意喚起した。）</Must>
+			<Must i="8">周囲環境に配慮した作業員の配置を行った。（例：道路際での運用にあたっては、車両の通行も考慮し、必要に応じて交通整理員等を配置した。）</Must>
+			<Disc i="1">賠償責任保険に加入済みである。</Disc>
+		</PilotLog>
+	</Settings>
+</root>

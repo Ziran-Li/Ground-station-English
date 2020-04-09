@@ -1,0 +1,558 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>X-Monitor</name>
+    </assembly>
+    <members>
+        <member name="T:XMonitor_GUI.CustomMarkers.CustomMap">
+            <summary>
+            CustomMap.xaml の相互作用ロジック
+            </summary>
+            <summary>
+            CustomMap
+            </summary>
+        </member>
+        <member name="M:XMonitor_GUI.CustomMarkers.CustomMap.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:XMonitor_GUI.CustomMarkers.CustomMarker">
+            <summary>
+            CustomMarker.xaml の相互作用ロジック
+            </summary>
+            <summary>
+            CustomMarker
+            </summary>
+        </member>
+        <member name="M:XMonitor_GUI.CustomMarkers.CustomMarker.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:XMonitor_GUI.CustomMarkers.MultiWaypoint">
+            <summary>
+            MultiWaypoint.xaml の相互作用ロジック
+            </summary>
+            <summary>
+            MultiWaypoint
+            </summary>
+        </member>
+        <member name="M:XMonitor_GUI.CustomMarkers.MultiWaypoint.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:XMonitor_GUI.CustomMarkers.Position">
+            <summary>
+            Position.xaml の相互作用ロジック
+            </summary>
+            <summary>
+            Position
+            </summary>
+        </member>
+        <member name="M:XMonitor_GUI.CustomMarkers.Position.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:XMonitor_GUI.CustomMarkers.Waypoint">
+            <summary>
+            Waypoint.xaml の相互作用ロジック
+            </summary>
+            <summary>
+            Waypoint
+            </summary>
+        </member>
+        <member name="M:XMonitor_GUI.CustomMarkers.Waypoint.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:XMonitor_GUI.HomePointWindow">
+            <summary>
+            WaypointWindow.xaml の相互作用ロジック
+            </summary>
+            <summary>
+            HomePointWindow
+            </summary>
+        </member>
+        <member name="M:XMonitor_GUI.HomePointWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:XMonitor_GUI.AboutWindow">
+            <summary>
+            AboutWindow.xaml の相互作用ロジック
+            </summary>
+            <summary>
+            AboutWindow
+            </summary>
+        </member>
+        <member name="M:XMonitor_GUI.AboutWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:XMonitor_GUI.ApplicationWindow">
+            <summary>
+            ApplicationWindow.xaml の相互作用ロジック
+            </summary>
+            <summary>
+            ApplicationWindow
+            </summary>
+        </member>
+        <member name="M:XMonitor_GUI.ApplicationWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:XMonitor_GUI.ChartWindow">
+            <summary>
+            ChartWindow.xaml の相互作用ロジック
+            </summary>
+            <summary>
+            ChartWindow
+            </summary>
+        </member>
+        <member name="M:XMonitor_GUI.ChartWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:XMonitor_GUI.DataWindow">
+            <summary>
+            DataWindow.xaml の相互作用ロジック
+            </summary>
+            <summary>
+            DataWindow
+            </summary>
+        </member>
+        <member name="M:XMonitor_GUI.DataWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="P:XMonitor_GUI.DataWindow.HealthDataSetting">
+            <summary>
+            Health Data
+            </summary>
+        </member>
+        <member name="T:XMonitor_GUI.Window.ModelWindow">
+            <summary>
+            ModelWindow.xaml の相互作用ロジック
+            </summary>
+            <summary>
+            ModelWindow
+            </summary>
+        </member>
+        <member name="M:XMonitor_GUI.Window.ModelWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:XMonitor_GUI.MessageWindow">
+            <summary>
+            MessageWindow.xaml の相互作用ロジック
+            </summary>
+            <summary>
+            MessageWindow
+            </summary>
+        </member>
+        <member name="M:XMonitor_GUI.MessageWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:XMonitor_GUI.MultiWaypointWindow">
+            <summary>
+            MultiWaypointWindow.xaml の相互作用ロジック
+            </summary>
+            <summary>
+            MultiWaypointWindow
+            </summary>
+        </member>
+        <member name="M:XMonitor_GUI.MultiWaypointWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:XMonitor_GUI.PilotLogWindow">
+            <summary>
+            PilotLogWindow
+            </summary>
+        </member>
+        <member name="M:XMonitor_GUI.PilotLogWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:XMonitor_GUI.SettingWindow">
+            <summary>
+            SettingWindow.xaml の相互作用ロジック
+            </summary>
+            <summary>
+            SettingWindow
+            </summary>
+        </member>
+        <member name="F:XMonitor_GUI.SettingWindow.dictGmapPlugin">
+            <summary>
+            GMap Plugin Dictionary
+            </summary>
+        </member>
+        <member name="M:XMonitor_GUI.SettingWindow.ElevationValue(System.String)">
+            <summary>
+            高度(標高)取得
+            【引数】
+            ElevationProvider　：HTTPリクエスト
+            </summary>
+            <remarks>
+            Google仕様のXML取得となっている。
+            </remarks>
+        </member>
+        <member name="M:XMonitor_GUI.SettingWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="P:XMonitor_GUI.SettingWindow.HealthDataSetting">
+            <summary>
+            ヘルスデータ
+            </summary>
+        </member>
+        <member name="P:XMonitor_GUI.SettingWindow.SetDataSetting">
+            <summary>
+            設定データ
+            </summary>
+        </member>
+        <member name="P:XMonitor_GUI.SettingWindow.AddressRecord">
+            <summary>
+            アドレス情報
+            </summary>
+        </member>
+        <member name="P:XMonitor_GUI.SettingWindow.AddressFlag">
+            <summary>
+            アドレス選択フラグ
+            </summary>
+        </member>
+        <member name="T:XMonitor_GUI.WaypointWindow">
+            <summary>
+            WaypointWindow.xaml の相互作用ロジック
+            </summary>
+            <summary>
+            WaypointWindow
+            </summary>
+        </member>
+        <member name="M:XMonitor_GUI.WaypointWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:XMonitor_GUI.App">
+            <summary>
+            App.xaml の相互作用ロジック
+            </summary>
+            <summary>
+            App
+            </summary>
+        </member>
+        <member name="M:XMonitor_GUI.App.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:XMonitor_GUI.App.Main">
+            <summary>
+            Application Entry Point.
+            </summary>
+        </member>
+        <member name="T:XMonitor_GUI.MainWindow">
+            <summary>
+            MainWindow.xaml の相互作用ロジック
+            </summary>
+            <remarks>
+            X-Monitorのメイン画面
+            </remarks>
+            <summary>
+            MainWindow
+            </summary>
+        </member>
+        <member name="F:XMonitor_GUI.MainWindow.GRID_SIZE">
+            <summary>
+            グリッド模様の構築
+            </summary>
+        </member>
+        <member name="M:XMonitor_GUI.MainWindow.#ctor">
+            <summary>
+            MainWindow
+            </summary>
+            <remarks>
+            MainWindow処理（設定XMLファイル編集/コア部起動プロセス/各初期化）
+            </remarks>
+        </member>
+        <member name="M:XMonitor_GUI.MainWindow.MainWindowCosing(System.Object,System.ComponentModel.CancelEventArgs)">
+            <summary>
+            MainWindow終了時イベント
+            </summary>
+            <remarks>
+            MainWindow終了処理（終了確認/Configファイル更新/コア部終了）
+            </remarks>
+        </member>
+        <member name="M:XMonitor_GUI.MainWindow.Init">
+            <summary>
+            X-Monitor初期化クラス
+            </summary>
+            <remarks>
+            X-Monitor初期化処理（タブレット設定/画面設定/GMap.Net設定/データ設定）
+            </remarks>
+        </member>
+        <member name="M:XMonitor_GUI.MainWindow.ConnectLoop">
+            <summary>
+            ConnectLoopクラス
+            </summary>
+            <remarks>
+            ConnectLoop処理（通信接続確認）
+            </remarks>
+            <returns>
+            ture:接続成功　false:接続失敗
+            </returns>
+        </member>
+        <member name="M:XMonitor_GUI.MainWindow.WorkThread">
+            <summary>
+            WorkThreadクラス
+            </summary>
+            <remarks>
+            WorkThread処理（通信スレッド/通信確認スレッド/描画更新スレッド/監視スレッド）
+            </remarks>
+        </member>
+        <member name="M:XMonitor_GUI.MainWindow.DoEvents">
+            <summary>
+            DoEventsクラス
+            </summary>
+            <remarks>
+            DoEvents処理
+            </remarks>
+        </member>
+        <member name="M:XMonitor_GUI.MainWindow.ExitFrames(System.Object)">
+            <summary>
+            ExitFramesクラス
+            </summary>
+            <remarks>
+            ExitFrames処理
+            </remarks>
+        </member>
+        <member name="M:XMonitor_GUI.MainWindow.Reply(System.Diagnostics.Stopwatch)">
+            <summary>
+            Replyクラス
+            </summary>
+            <remarks>
+            Reply通信確認処理（リプライ受信データ/タイムアウト処理）
+            </remarks>
+            <param name="WaitTime">タイムアウト時間</param>
+        </member>
+        <member name="M:XMonitor_GUI.MainWindow.MenuItem_Click_FplaOpen(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            MENU：「飛行計画を開く」メニュー
+            </summary>
+            <remarks>
+            飛行計画ファイルを開くダイアログを表示
+            </remarks>
+        </member>
+        <member name="M:XMonitor_GUI.MainWindow.MenuItem_Click_FplaClose(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            MENU：「飛行計画を閉じる」メニュー
+            </summary>
+            <remarks>
+            「飛行計画を閉じる」のダイアログ表示
+            </remarks>
+        </member>
+        <member name="M:XMonitor_GUI.MainWindow.MenuItem_Click_FplaTrans(System.Object,System.Windows.RoutedEventArgs)">
+             <summary>
+             MENU：「飛行計画を転送」メニュー
+             </summary>
+             <remarks>
+            「飛行計画を転送」の表示
+             </remarks>
+        </member>
+        <member name="M:XMonitor_GUI.MainWindow.MenuItem_Click_FlogSave(System.Object,System.Windows.RoutedEventArgs)">
+             <summary>
+             MENU：「切り取り保存」メニュー
+             </summary>
+             <remarks>
+            「切り取り保存」のダイアログの表示
+             </remarks>
+        </member>
+        <member name="M:XMonitor_GUI.MainWindow.MenuItem_Click_FlogClose(System.Object,System.Windows.RoutedEventArgs)">
+             <summary>
+             MENU：「飛行ログを閉じる」メニュー
+             </summary>
+             <remarks>
+            飛行ログを閉じる
+             </remarks>
+        </member>
+        <member name="M:XMonitor_GUI.MainWindow.MenuItem_Click_OpenExplorer(System.Object,System.Windows.RoutedEventArgs)">
+             <summary>
+             MENU：「エクスプローラを開く」メニュー
+             </summary>
+             <remarks>
+            飛行ログの保存先フォルダを開く
+             </remarks>
+        </member>
+        <member name="M:XMonitor_GUI.MainWindow.MenuItem_Click_UAVData(System.Object,System.Windows.RoutedEventArgs)">
+             <summary>
+             MENU：「UAV詳細情報」メニュー
+             </summary>
+             <remarks>
+            「UAV詳細情報」の表示
+             </remarks>
+        </member>
+        <member name="M:XMonitor_GUI.MainWindow.MenuItem_Click_Setting(System.Object,System.Windows.RoutedEventArgs)">
+             <summary>
+             MENU：「設定画面」メニュー
+             </summary>
+             <remarks>
+            「設定画面」の表示
+             </remarks>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:XMonitor_GUI.MainWindow.MenuItem_Click_Manual(System.Object,System.Windows.RoutedEventArgs)" -->
+        <member name="M:XMonitor_GUI.MainWindow.MenuItem_Click_About(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            MENU：「About画面」メニュー
+            </summary>
+            <remarks>
+            「About画面」の表示
+            </remarks>
+        </member>
+        <member name="M:XMonitor_GUI.MainWindow.MenuItem_Click_End(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            MENU：「終了」メニュー
+            </summary>
+            <remarks>
+            X-Monitorを終了する
+            </remarks>
+        </member>
+        <member name="M:XMonitor_GUI.MainWindow.MenuIsEnabled(System.Int32)">
+            <summary>
+            メニュー項目の表示/非表示機能
+            </summary>
+            <remarks>
+            メニュー項目表示/非表示
+            </remarks>
+            <param name="no">メニュー操作状態管理番号</param>
+        </member>
+        <member name="M:XMonitor_GUI.MainWindow.MultiWaypointFile">
+            <summary>
+            ファイル関連　ダイアログ
+            </summary>
+            <remarks>
+            飛行計画ファイル開くダイアログ
+            </remarks>
+        </member>
+        <member name="M:XMonitor_GUI.MainWindow.OpenDocument">
+             <summary>
+             ファイル関連　ダイアログ
+             </summary>
+             <remarks>
+            飛行ログファイル開くダイアログ
+             </remarks>
+        </member>
+        <member name="M:XMonitor_GUI.MainWindow.SaveDocument">
+            <summary>
+            ファイル関連　ダイアログ
+            </summary>
+            <remarks>
+            切り取り保存ダイアログ
+            </remarks>
+        </member>
+        <member name="M:XMonitor_GUI.MainWindow.CloseButton_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            ウィンドウボタン
+            </summary>
+            /// <remarks>
+            「×」ボタン：メイン画面の終了
+            </remarks>
+        </member>
+        <member name="M:XMonitor_GUI.MainWindow.MaxWindowButton_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            ウィンドウボタン
+            </summary>
+            <remarks>
+            メイン画面の最大化
+            </remarks>
+        </member>
+        <member name="M:XMonitor_GUI.MainWindow.MinWindowButton_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            ウィンドウボタン
+            </summary>
+            <remarks>
+            メイン画面の最小化
+            </remarks>
+        </member>
+        <member name="M:XMonitor_GUI.MainWindow.DefaultWindowButton_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            ウィンドウボタン
+            </summary>
+            <remarks>
+            メイン画面の元のサイズに戻す
+            </remarks>
+        </member>
+        <member name="M:XMonitor_GUI.MainWindow.MapZoomChanged(System.Object,System.Windows.RoutedPropertyChangedEventArgs{System.Double})">
+            <summary>
+            マップズームイベント
+            </summary>
+            <remarks>
+            地図拡大縮小に伴うグリッド線と対応した距離表記
+            </remarks>
+        </member>
+        <member name="M:XMonitor_GUI.MainWindow.CommandButtonNameChange(System.Int32)">
+            <summary>
+            コマンドボタン表示切替
+            </summary>
+            <param name="mode">コマンドモードの選択</param>
+        </member>
+        <member name="M:XMonitor_GUI.MainWindow.Map_TouchDown(System.Object,System.Windows.Input.TouchEventArgs)">
+            <summary>
+            マルチタッチ操作
+            WayPointコントロール
+            地図コントロール
+            </summary>      
+        </member>
+        <member name="M:XMonitor_GUI.MainWindow.WaypointSet(System.Windows.Point,System.Double,System.Double)">
+            <summary>
+            Waypoint指定 
+            </summary>
+        </member>
+        <member name="M:XMonitor_GUI.MainWindow.RotateAzimuthalValueChanged(System.Object,System.Windows.RoutedPropertyChangedEventArgs{System.Double})">
+            <summary>
+            メイン画面操作関連
+            </summary>
+        </member>
+        <member name="F:XMonitor_GUI.MainWindow.connectDone">
+            <summary>
+            TCP/IP　非同期　通信
+            </summary>
+        </member>
+        <member name="M:XMonitor_GUI.MainWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:XMonitor_GUI.Properties.Resources">
+            <summary>
+              ローカライズされた文字列などを検索するための、厳密に型指定されたリソース クラスです。
+            </summary>
+        </member>
+        <member name="P:XMonitor_GUI.Properties.Resources.ResourceManager">
+            <summary>
+              このクラスで使用されているキャッシュされた ResourceManager インスタンスを返します。
+            </summary>
+        </member>
+        <member name="P:XMonitor_GUI.Properties.Resources.Culture">
+            <summary>
+              厳密に型指定されたこのリソース クラスを使用して、すべての検索リソースに対し、
+              現在のスレッドの CurrentUICulture プロパティをオーバーライドします。
+            </summary>
+        </member>
+    </members>
+</doc>

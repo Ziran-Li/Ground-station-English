@@ -1,0 +1,424 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{16B20D87-544C-4854-860A-40CA89A7584A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Y_Planner</RootNamespace>
+    <AssemblyName>Y-Planner</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\ACSL\Y-Planner\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\ACSL\Y-Planner\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\minisv.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release_Beta|AnyCPU'">
+    <OutputPath>bin\Release_Beta\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'TypeMulti|AnyCPU'">
+    <OutputPath>bin\TypeMulti\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\ACSL\bin\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Windows.Shell, Version=3.5.41019.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="RibbonControlsLibrary, Version=3.5.41019.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Controls.Ribbon" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Wpf.AvalonDock">
+      <HintPath>bin\lib\Xceed.Wpf.AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=2.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\lib\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="CustomMarkers\Position.xaml.cs">
+      <DependentUpon>Position.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Option\AltitudeProperty.xaml.cs">
+      <DependentUpon>AltitudeProperty.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Option\MissionDock.xaml.cs">
+      <DependentUpon>MissionDock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Window\AboutWindow.xaml.cs">
+      <DependentUpon>AboutWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="CustomMarkers\BasePoint.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomMarkers\Position.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomMarkers\Waypoint.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CustomMarkers\BasePoint.xaml.cs">
+      <DependentUpon>BasePoint.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomMarkers\Waypoint.xaml.cs">
+      <DependentUpon>Waypoint.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="MainWindowStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Option\AltitudeProperty.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Option\MissionDock.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Dictionary1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Window\AboutWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Info\Y-Planner取扱説明書.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Info\Y-Planner取扱説明書.chm">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <EmbeddedResource Include="Xml\FlightPlanning.kml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\2ndPartyLib\FlightPlanning\FlightPlanning.csproj">
+      <Project>{953c768f-8156-497d-9a49-a45d527420cd}</Project>
+      <Name>FlightPlanning</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\2ndPartyLib\Health\Health.csproj">
+      <Project>{5fc7af36-6d02-4eb0-adbb-52a488621779}</Project>
+      <Name>Health</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\2ndPartyLib\Pipe\Pipe.csproj">
+      <Project>{07e77359-7fe7-4b8d-9c8f-7198727fcdf8}</Project>
+      <Name>Pipe</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\2ndPartyLib\Plot\Plot.csproj">
+      <Project>{b13e73f4-5ef7-45aa-9f04-905ae2096cc0}</Project>
+      <Name>Plot</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\2ndPartyLib\Point\Point.csproj">
+      <Project>{c58f0666-d543-445e-bd0f-4b65fafa3710}</Project>
+      <Name>Point</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\2ndPartyLib\SettingData\SettingData.csproj">
+      <Project>{e508589f-0a65-4a6a-8487-8a5a5d2ef17a}</Project>
+      <Name>SettingData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\2ndPartyLib\SysTime\SysTime.csproj">
+      <Project>{12493a9b-01e0-4c6b-9f4d-e1e854b32bb9}</Project>
+      <Name>SysTime</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\2ndPartyLib\TouchControls\TouchControls.csproj">
+      <Project>{3a5f8468-3a7c-4386-bad8-69ed00e5bc16}</Project>
+      <Name>TouchControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\2ndPartyLib\XmlBase\XmlBase.csproj">
+      <Project>{0df11ed9-dfa4-467c-aa28-411ce56836ff}</Project>
+      <Name>XmlBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\X-Monitor_GUI\ControlsUlit\ControlsUnit.csproj">
+      <Project>{38b2aa80-5906-4289-bc83-0207ea8ab102}</Project>
+      <Name>ControlsUnit</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\X-Monitor_GUI\GMap.NET.Core\GMap.NET.Core.csproj">
+      <Project>{d0c39d9d-bed0-418b-9a5e-713176caf40c}</Project>
+      <Name>GMap.NET.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\X-Monitor_GUI\GMap.NET.WindowsPresentation\GMap.NET.WindowsPresentation.csproj">
+      <Project>{644fe7d4-0184-400f-b2d7-99cb41360658}</Project>
+      <Name>GMap.NET.WindowsPresentation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\X-Monitor_GUI\GMapNetInterFace\GMapNetInterFace.csproj">
+      <Project>{9d620a1c-e68b-4a25-a7ad-25afdf03a587}</Project>
+      <Name>GMapNetInterFace</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\down.png" />
+    <Resource Include="Resources\logo.png" />
+    <Resource Include="Resources\minisurveyorlogo.png" />
+    <Resource Include="Resources\minisv.ico" />
+    <EmbeddedResource Include="Resources\MultiWayPoint.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <Resource Include="Resources\Position.png" />
+    <Resource Include="Resources\setting.png" />
+    <EmbeddedResource Include="Resources\UavWayPoint.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <Resource Include="Resources\up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\back36.png" />
+    <Resource Include="Resources\right133.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\address-book--pencil.png" />
+    <Resource Include="Resources\address-book-open.png" />
+    <Resource Include="Resources\alarm-clock-blue.png" />
+    <Resource Include="Resources\document.png" />
+    <Resource Include="Resources\property-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Info\License.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\add204.png" />
+    <Resource Include="Resources\distance1.png" />
+    <Resource Include="Resources\file126.png" />
+    <Resource Include="Resources\list88.png" />
+    <Resource Include="Resources\minus3.png" />
+    <Resource Include="Resources\open127.png" />
+    <Resource Include="Resources\placeholder8.png" />
+    <Resource Include="Resources\save-file.png" />
+    <Resource Include="Resources\text54.png" />
+    <Resource Include="Resources\view1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Circle.png" />
+    <Resource Include="Resources\Square.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\command2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\mouse2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\connect.png" />
+    <Resource Include="Resources\disconnect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 および x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Xml\Message\Get_UAVData.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Xml\Message\Close.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xml\Message\Get_COMPort.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xml\Message\Get_Initial.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xml\Message\MainlinkSend_Home.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xml\Message\MainlinkSend_Land.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xml\Message\MainlinkSend_MultiWaypoint.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xml\Message\MainlinkSend_MultiWaypointAck.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xml\Message\MainlinkSend_Pause.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xml\Message\MainlinkSend_Resume.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xml\Message\MainlinkSend_Waypoint.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xml\Message\Set_COMPort.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xml\Message\Set_FlightLogEdit.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xml\Message\Set_FlightLogOpenClose.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xml\Message\Set_FlightLogPlay.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xml\Message\Set_FlightLogSlidebar.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\maker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\uav2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\home2.png" />
+    <Resource Include="Resources\uav3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Circle1.png" />
+    <Resource Include="Resources\line.png" />
+    <Resource Include="Resources\Rectangle.png" />
+    <Resource Include="Resources\ReturnDraw1.png" />
+    <Resource Include="Resources\ReturnDraw2.png" />
+    <Resource Include="Resources\standard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\kml.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\x_monitor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Xml\Message\MainlinkSend_Firm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Log4net.Config.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+		<name>wpp</name>
+		<open>1</open>
+		<description>test</description>
+		<Style id="transGreenPoly">
+			<LineStyle>
+				<width>1.5</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>7d00ff00</color>
+			</PolyStyle>
+		</Style>
+		<Folder>
+			<name>FlightPlanning</name>
+			<visibility>0</visibility>
+			<description>FlightPlanning Polygons</description>
+			<Folder>
+				<name>LineString</name>
+				<visibility>1</visibility>
+				<description>FlightPlanning</description>
+				<LookAt>
+					<longitude></longitude>
+					<latitude></latitude>
+					<altitude>0</altitude>
+					<heading>-30</heading>
+					<tilt>53</tilt>
+					<range>276</range>
+				</LookAt>
+				<Placemark>
+					<name>FlightPlanning WPP</name>
+					<visibility>1</visibility>
+					<styleUrl>#transGreenPoly</styleUrl>
+					<LineString>
+						<extrude>1</extrude>
+						<tessellate>1</tessellate>
+						<altitudeMode>relativeToGround</altitudeMode>
+						<coordinates>
+						</coordinates>
+					</LineString>
+				</Placemark>
+			</Folder>
+		</Folder>
+	</Document>
+</kml>

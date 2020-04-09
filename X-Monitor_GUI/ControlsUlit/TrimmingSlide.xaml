@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="ControlsUnit.TrimmingSlide"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:xctk="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
+             Name="TrimmingSlideControl"
+             Height="80" Width="800">
+
+    <!--再生用スライド-スタイル-->
+    <UserControl.Resources>
+        <ResourceDictionary Source="TrimmingSlideStyles.xaml"/>
+    </UserControl.Resources>
+
+    <!--再生用スライド-->
+    <Grid >
+        <!--
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>        
+        -->
+        <Label Name="_Time" Content="0:0.0" Foreground="White" Width="100" VerticalContentAlignment="Center"  HorizontalContentAlignment="Left" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,5,0,50" />
+        <Label Name="_TotalTime" Content="time" Foreground="White" Width="100" VerticalContentAlignment="Center"  HorizontalContentAlignment="Right" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,5,0,50" />
+        <ScrollBar  Grid.Row="0" x:Name="_PlaySlider" Height="25"  Width="{Binding ElementName=TrimmingSlideControl,Path=Width}" Scroll="_PlaySlider_Scroll" Orientation="Horizontal" Maximum="100" SmallChange="1" />
+        <!--
+        <Slider Style="{StaticResource WMPSlider}" Grid.Row="0" x:Name="_PlaySlider" Height="Auto"  Width="{Binding ElementName=TrimmingSlideControl,Path=Width}"  ValueChanged="_PlaySlider_ValueChanged" TickPlacement="TopLeft" TickFrequency="0.001"/>
+        -->
+        <xctk:RangeSlider
+                           x:Name="_RangeSlider"
+                           Step="1"
+                           Width="{Binding ElementName=TrimmingSlideControl,Path=Width}"
+                           Height="20"
+                           HigherRangeStyle="{StaticResource HigherRangeStyle3}"
+                           RangeStyle="{StaticResource RangeStyle3}"
+                           LowerRangeStyle="{StaticResource LowerRangeStyle3}" 
+                          HigherValueChanged="_RangeSlider_HigherValueChanged" LowerValueChanged="_RangeSlider_LowerValueChanged" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,12" />
+
+        <!--
+              <Slider Name="Play" Grid.Row="1" Style="{StaticResource TrimmingSlideStyle}" Height="30" Width="{Binding ElementName=TrimmingSlideControl,Path=Width}" />
+        <Slider Name="Max" Grid.Row="1" Style="{StaticResource MaxSlideStyle}" Height="30" Width="{Binding ElementName=TrimmingSlideControl,Path=Width}" Background="{x:Null}" BorderBrush="Black"/>  
+        -->
+
+    </Grid>
+
+</UserControl>

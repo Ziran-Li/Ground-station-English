@@ -1,0 +1,16 @@
+﻿Build started 2016/1/13 11:29:47.
+     1>Project "C:\Users\hello\Desktop\acsl\X-Monitor_RecPlay\src\X-Monitor_Rec\X-Monitor_Rec.vcxproj" on node 2 (Rebuild target(s)).
+     1>ClCompile:
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\..\..\commonLib\include /I..\..\..\miniSvLib\include /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Debug\X-Monitor_RecD.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\..\..\commonLib\include /I..\..\..\miniSvLib\include /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\X-Monitor_RecD.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt "X-Monitor_Rec.cpp"
+         X-Monitor_Rec.cpp
+       Link:
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\..\ACSL\Core\X-Monitor_RecD.exe" /INCREMENTAL /NOLOGO /LIBPATH:..\..\..\commonLib\lib /LIBPATH:..\..\..\miniSvLib\lib miniSvSockD.lib miniSvXmlDataManageD.lib socketD.lib commBufD.lib debugWriteD.lib threadD.lib timerD.lib xmlD.lib miniSvKmlD.lib opencv_calib3d244d.lib opencv_contrib244d.lib opencv_core244d.lib opencv_features2d244d.lib opencv_flann244d.lib opencv_gpu244d.lib opencv_highgui244d.lib opencv_imgproc244d.lib opencv_legacy244d.lib opencv_ml244d.lib opencv_nonfree244d.lib opencv_objdetect244d.lib opencv_photo244d.lib opencv_stitching244d.lib opencv_ts244d.lib opencv_video244d.lib opencv_videostab244d.lib opencv_calib3d244.lib opencv_contrib244.lib opencv_core244.lib opencv_features2d244.lib opencv_flann244.lib opencv_gpu244.lib opencv_highgui244.lib opencv_imgproc244.lib opencv_legacy244.lib opencv_ml244.lib opencv_nonfree244.lib opencv_objdetect244.lib opencv_photo244.lib opencv_stitching244.lib opencv_ts244.lib opencv_video244.lib opencv_videostab244.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"..\..\..\ACSL\Core\X-Monitor_RecD.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\..\..\ACSL\Core\X-Monitor_RecD.lib" /MACHINE:X86 Debug\stdafx.obj
+         "Debug\X-Monitor_Rec.obj"
+         X-Monitor_Rec.vcxproj -> C:\Users\hello\Desktop\acsl\X-Monitor_RecPlay\src\X-Monitor_Rec\..\..\..\ACSL\Core\X-Monitor_RecD.exe
+     1>Done Building Project "C:\Users\hello\Desktop\acsl\X-Monitor_RecPlay\src\X-Monitor_Rec\X-Monitor_Rec.vcxproj" (Rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:31.72

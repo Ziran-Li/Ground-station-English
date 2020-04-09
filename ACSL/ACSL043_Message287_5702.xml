@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<root>
+	<message ver='12'>
+		<information i='1'>
+			お知らせ①
+		</information>
+	  <information i='2'>
+			お知らせ①
+		</information>
+	  <update name='X-Monitor' ver='1.2.0'>
+			X-Monitorの更新情報
+			http://www.acsl.co.jp/sw.html
+		</update>
+	  <update name='Y-Planner' ver='1.2.0'>
+			Y-Plannerの更新情報
+			http://www.acsl.co.jp/sw.html
+		</update>
+	  <update name='Mapple'  ver='1.0.0'>
+			Mappleプラグインの更新情報
+			http://www.acsl.co.jp/sw.html
+		</update>
+	  <update name='FlightLogConverter' ver='1.0.0'>
+			FlightLogConverterの更新情報
+			http://www.acsl.co.jp/sw.html
+		</update>
+	  <update name='GpsMonitor' ver='1.0.0'>
+			GpsMonitorの更新情報
+			http://www.acsl.co.jp/sw.html
+		</update>	
+	</message>
+</root>

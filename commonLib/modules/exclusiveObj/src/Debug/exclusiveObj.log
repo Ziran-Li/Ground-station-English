@@ -1,0 +1,20 @@
+﻿Build started 2016/1/13 11:29:42.
+     1>Project "C:\Users\hello\Desktop\acsl\commonLib\modules\exclusiveObj\src\exclusiveObj.vcxproj" on node 5 (Rebuild target(s)).
+     1>ClCompile:
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\include /I..\..\..\include /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Debug\exclusiveObjD.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+       Lib:
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"..\lib\exclusiveObjD.lib" /NOLOGO Debug\stdafx.obj
+         exclusiveObj.vcxproj -> C:\Users\hello\Desktop\acsl\commonLib\modules\exclusiveObj\src\..\lib\exclusiveObjD.lib
+       PostBuildEvent:
+         copy ..\include\*.h ..\..\..\include\
+         copy ..\lib\exclusiveObjD.lib ..\..\..\lib\
+         :VCEnd
+         ..\include\ExclusiveObject.h
+         已复制         1 个文件。
+         已复制         1 个文件。
+     1>Done Building Project "C:\Users\hello\Desktop\acsl\commonLib\modules\exclusiveObj\src\exclusiveObj.vcxproj" (Rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.10

@@ -1,0 +1,13 @@
+﻿Build started 2016/1/13 11:29:23.
+     1>Project "C:\Users\hello\Desktop\acsl\commonLib\modules\xml\src\xml.vcxproj" on node 2 (Rebuild target(s)).
+     1>ClCompile:
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\include /I..\..\..\include /IC:\local\boost_1_55_0 /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Debug\xmlD.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\include /I..\..\..\include /IC:\local\boost_1_55_0 /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\xmlD.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt MsXmlPlus.cpp
+         MsXmlPlus.cpp
+     1>c:\users\hello\desktop\acsl\commonlib\modules\xml\include\msxmlplus.h(14): fatal error C1083: Cannot open include file: 'boost/lexical_cast.hpp': No such file or directory
+     1>Done Building Project "C:\Users\hello\Desktop\acsl\commonLib\modules\xml\src\xml.vcxproj" (Rebuild target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:01.67

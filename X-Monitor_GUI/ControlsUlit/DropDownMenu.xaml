@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="ControlsUnit.DropDownMenu"
+          xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:l="clr-namespace:ControlsUnit"
+             mc:Ignorable="d" >
+    <Grid>
+        <Viewbox>
+            <l:DropDownMenuButton BorderBrush="White" Foreground="White" >
+                <l:DropDownMenuButton.Background>
+                    <SolidColorBrush Color="Black" Opacity="0.5"/>
+                </l:DropDownMenuButton.Background>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="MENU" />
+                    <Path Width="15" Height="10" Stretch="Fill" Fill="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type l:DropDownMenuButton}},Path=Foreground}" Data="F1 M 57.5692,88L 99.1384,16L 16,16L 57.5692,88 Z "/>
+                </StackPanel>
+                <l:DropDownMenuButton.DropDownContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Item one" />
+                        <Separator />
+                        <MenuItem Header="Item two" />
+                        <MenuItem Header="1" />
+                        <MenuItem Header="2" />
+                    </ContextMenu>
+                </l:DropDownMenuButton.DropDownContextMenu>
+            </l:DropDownMenuButton>
+        </Viewbox>
+    </Grid>
+</UserControl>

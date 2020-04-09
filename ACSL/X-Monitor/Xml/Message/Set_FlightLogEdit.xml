@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <message type="set" a="FlightLog">
+    <FlightLog>
+      <Play>
+        <Edit>
+          <SaveFilePath t="S"></SaveFilePath>
+          <StartTime></StartTime>
+          <EndTime></EndTime>
+        </Edit>
+      </Play>
+    </FlightLog>
+  </message>
+</root>

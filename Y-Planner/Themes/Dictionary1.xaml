@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- Window Brushes -->
+    <!--
+    #FF1F1A50 31,26,80
+    赤：#FFB03D4F 176,61,79
+    青#FF564FB8 86,79,184
+    紫#FF963FAA 150,63,170
+    緑#FF489708 72,151,8
+    Resources["WindowBackgroundBrush"] = new SolidColorBrush(Color.FromRgb(0, 0, 255));
+    -->
+    <SolidColorBrush x:Key="WindowBackgroundBrush" Color="#FF1F1A50"/>
+
+    <SolidColorBrush x:Key="CanvasBackgroundBrush" Color="#FF1F1A50" Opacity="0.7"/>
+
+</ResourceDictionary>

@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{38B2AA80-5906-4289-BC83-0207EA8AB102}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ControlsUnit</RootNamespace>
+    <AssemblyName>ControlsUnit</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release_Beta|AnyCPU'">
+    <OutputPath>bin\Release_Beta\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'TypeMulti|AnyCPU'">
+    <OutputPath>bin\TypeMulti\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Wpf.Toolkit">
+      <HintPath>bin\bin\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AlarmMessage.xaml.cs">
+      <DependentUpon>AlarmMessage.xaml</DependentUpon>
+    </Compile>
+    <Page Include="AlarmMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BatteryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ControlModeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Current_Flow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FlightModeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GPSView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Height_Show.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LinkView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MapZoom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RCrecView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RotateAzimuthal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SilderArrange.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SpeedView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TimerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Totol_Flow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TrimmingSlideStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UAVAltitudeStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TrimmingSlide.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UAVAltitude.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="BatteryView.xaml.cs">
+      <DependentUpon>BatteryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ControlModeView.xaml.cs">
+      <DependentUpon>ControlModeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Current_Flow.xaml.cs">
+      <DependentUpon>Current_Flow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DwopDownMenuButton.cs" />
+    <Compile Include="FlightModeView.xaml.cs">
+      <DependentUpon>FlightModeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GPSView.xaml.cs">
+      <DependentUpon>GPSView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Height_Show.xaml.cs">
+      <DependentUpon>Height_Show.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LinkView.xaml.cs">
+      <DependentUpon>LinkView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MapZoom.xaml.cs">
+      <DependentUpon>MapZoom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RCrecView.xaml.cs">
+      <DependentUpon>RCrecView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RotateAzimuthal.xaml.cs">
+      <DependentUpon>RotateAzimuthal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SilderArrange.xaml.cs">
+      <DependentUpon>SilderArrange.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SpeedView.xaml.cs">
+      <DependentUpon>SpeedView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TimerView.xaml.cs">
+      <DependentUpon>TimerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Totol_Flow.xaml.cs">
+      <DependentUpon>Totol_Flow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TrimmingSlide.xaml.cs">
+      <DependentUpon>TrimmingSlide.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TrimmingSlideStyle.cs" />
+    <Compile Include="UAVAltitude.xaml.cs">
+      <DependentUpon>UAVAltitude.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\battery.png" />
+    <EmbeddedResource Include="Resources\connect.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\disconnect.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <Resource Include="Resources\minisurveyorlogo.png" />
+    <Resource Include="Resources\rc.png" />
+    <Resource Include="Resources\UAV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\uav2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\direction.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Alarm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\broadcasting.png" />
+    <Resource Include="Resources\zoom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\down10.png" />
+    <Resource Include="Resources\up10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\nuav.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Dummy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\daojishi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\suofangzhongjian.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\fangda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\suoxiao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\luopan.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

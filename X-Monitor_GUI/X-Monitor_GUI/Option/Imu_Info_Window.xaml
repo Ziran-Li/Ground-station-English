@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="XMonitor_GUI.Imu_Info_Window"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             Height="432" Width="220" Name="Main" Stylus.IsPressAndHoldEnabled="False" Background="#FF5A4D66"  >
+    <Grid>
+        <StackPanel VerticalAlignment="Center" Height="432" RenderTransformOrigin="0.5,0.5" >
+            <StackPanel Height="30" Orientation="Horizontal"  HorizontalAlignment="Left" Margin="0,0,0,5">
+                <Label Name="M_Imu_Data" Width="70" Content="IMU:" Foreground="White" Height="30" VerticalAlignment="Top" HorizontalContentAlignment="Left" />
+            </StackPanel>
+            <StackPanel Height="30" Orientation="Horizontal"  HorizontalAlignment="Left" Margin="0,0,0,5">
+                <Label Name="M_Imu_Roll" Width="70" Content="Roll" Foreground="White" Height="30" VerticalAlignment="Top" HorizontalContentAlignment="Left" Margin="10,0,0,0"/>
+                <Label Name="M_Imu_Pitch" Width="70" Content="Pitch" Foreground="White" Height="30" VerticalAlignment="Top" HorizontalContentAlignment="Left" Margin="10,0,0,0"/>
+                <Label Name="M_Imu_Yaw" Width="70" Content="Yaw" Foreground="White" Height="30" VerticalAlignment="Top" HorizontalContentAlignment="Left" Margin="10,0,0,0"/>
+            </StackPanel>
+            <StackPanel Height="30" Orientation="Horizontal"  HorizontalAlignment="Left" Margin="0,0,0,5">
+                <Label Name="M_Gyro_Data" Width="80" Content="Gyroscope:" Foreground="White" Height="30" VerticalAlignment="Top" HorizontalContentAlignment="Left" />
+            </StackPanel>
+            <StackPanel Height="30" Orientation="Horizontal"  HorizontalAlignment="Left" Margin="0,0,0,5">
+                <Label Name="M_Gyro_RollRate" Width="70" Content="RollRate" Foreground="White" Height="30" VerticalAlignment="Top" HorizontalContentAlignment="Left" Margin="10,0,0,0"/>
+                <Label Name="M_Gyro_PitchRate" Width="70" Content="PitchRate" Foreground="White" Height="30" VerticalAlignment="Top" HorizontalContentAlignment="Left" Margin="10,0,0,0"/>
+                <Label Name="M_Gyro_YawRate" Width="70" Content="YawRate" Foreground="White" Height="30" VerticalAlignment="Top" HorizontalContentAlignment="Left" Margin="10,0,0,0"/>
+            </StackPanel>
+            <StackPanel Height="30" Orientation="Horizontal"  HorizontalAlignment="Left" Margin="0,0,0,5">
+                <Label Name="M_Acc_Data" Width="91" Content="Acceleration:" Foreground="White" Height="30" VerticalAlignment="Top" HorizontalContentAlignment="Left" />
+            </StackPanel>
+            <StackPanel Height="30" Orientation="Horizontal"  HorizontalAlignment="Left" Margin="0,0,0,5">
+                <Label Name="M_Acc_X" Width="70" Content="XAcc" Foreground="White" Height="30" VerticalAlignment="Top" HorizontalContentAlignment="Left" Margin="10,0,0,0"/>
+                <Label Name="M_Acc_Y" Width="70" Content="YAcc" Foreground="White" Height="30" VerticalAlignment="Top" HorizontalContentAlignment="Left" Margin="10,0,0,0"/>
+                <Label Name="M_Acc_Z" Width="70" Content="ZAcc" Foreground="White" Height="30" VerticalAlignment="Top" HorizontalContentAlignment="Left" Margin="10,0,0,0"/>
+            </StackPanel>
+            <StackPanel Height="30" Orientation="Horizontal"  HorizontalAlignment="Left" Margin="0,0,0,5">
+                <Label Name="M_Mag_Data" Width="97" Content="Geomagnetic:" Foreground="White" Height="30" VerticalAlignment="Top" HorizontalContentAlignment="Left" />
+            </StackPanel>
+            <StackPanel Height="30" Orientation="Horizontal"  HorizontalAlignment="Left" Margin="0,0,0,5">
+                <Label Name="M_Mag_X" Width="70" Content="XMag" Foreground="White" Height="30" VerticalAlignment="Top" HorizontalContentAlignment="Left" Margin="10,0,0,0"/>
+                <Label Name="M_Mag_Y" Width="70" Content="YMag" Foreground="White" Height="30" VerticalAlignment="Top" HorizontalContentAlignment="Left" Margin="10,0,0,0"/>
+                <Label Name="M_Mag_Z" Width="70" Content="ZMag" Foreground="White" Height="30" VerticalAlignment="Top" HorizontalContentAlignment="Left" Margin="10,0,0,0"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

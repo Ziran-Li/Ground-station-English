@@ -1,0 +1,494 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:metro="http://schemas.codeplex.com/elysium/theme"
+        xmlns:map="clr-namespace:GMap.NET.WindowsPresentation;assembly=GMap.NET.WindowsPresentation"
+        xmlns:plot="http://research.microsoft.com/DynamicDataDisplay/1.0"
+        xmlns:forms="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        xmlns:control="clr-namespace:ControlsUnit;assembly=ControlsUnit"
+        xmlns:marker ="clr-namespace:XMonitor_GUI.CustomMarkers"
+        xmlns:window ="clr-namespace:XMonitor_GUI.Window"
+        xmlns:helix="clr-namespace:HelixToolkit.Wpf;assembly=HelixToolkit.Wpf"
+        xmlns:mdi="clr-namespace:WPF.MDI;assembly=WPF.MDI"
+        xmlns:port="clr-namespace:System.IO.Ports;assembly=System" 
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"      
+
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="XMonitor_GUI.MainWindow"      
+
+        x:Name="Main_Window"
+        Height="720" Width="1280" Icon="Resources/minisv3.ico" Background="{DynamicResource WindowBackgroundBrush}" WindowStyle="SingleBorderWindow" Closing="MainWindowCosing" MinHeight="720" MinWidth="780"
+        SizeChanged="Window_SizeChanged" WindowStartupLocation="CenterScreen" PreviewKeyDown="Window_PreviewKeyDown" >
+
+    <Window.Resources>
+        <ResourceDictionary Source="MainWindowStyles.xaml"/>
+    </Window.Resources>
+
+    <!--窗口框架工作范围-->
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="50" ResizeBorderThickness="5" />
+    </WindowChrome.WindowChrome>
+
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="440*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="348*"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+
+
+        <!--窗口框架设计设置-->
+        <!-- 地图表示　GMap.NET -->
+        <map:GMapControl x:Name="MainMap" MaxZoom="24" MinZoom="0" Zoom="17" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="4" Margin="-362,-555,-418,-585"
+			Grid.ColumnSpan="3" ScaleMode="Dynamic" />
+        <!-- GMapProviders Copyright-->
+        <Label x:Name="Copyright" Content="Copyright" Height="21" Grid.Column="1" Grid.Row="2" Foreground="#FF1F1A50"  FontSize="8" VerticalAlignment="Bottom" VerticalContentAlignment="Bottom"/>
+
+        <!--主屏幕 -->
+        <Grid Grid.Row="2" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*" x:Name="BaseWidth"/>
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="250" MinWidth="150" x:Name="BaseColumn" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="10" />
+                <RowDefinition Height="250" x:Name="BaseRow"/>
+                <RowDefinition Height="100" x:Name="BaseHeight"/>
+            </Grid.RowDefinitions>
+
+            <!--映射操作范围-->
+            <Canvas x:Name="LeftsideArea" Grid.RowSpan="5">
+                <Canvas.Background>
+                    <SolidColorBrush Color="White" Opacity="0"/>
+                </Canvas.Background>
+            </Canvas>
+            <Canvas x:Name="TopArea"  Grid.ColumnSpan="4">
+                <Canvas.Background>
+                    <SolidColorBrush Color="White" Opacity="0"/>
+                </Canvas.Background>
+            </Canvas>
+            <Canvas x:Name="RightsideArea"  Grid.Column="3" Grid.RowSpan="4" Margin="27,67,0,0" Grid.Row="1">
+                <Canvas.Background>
+                    <SolidColorBrush Color="White" Opacity="0"/>
+                </Canvas.Background>
+            </Canvas>
+            <Canvas Grid.ColumnSpan="4" Grid.Row="4">
+                <Canvas.Background>
+                    <SolidColorBrush Color="White" Opacity="0"/>
+                </Canvas.Background>
+            </Canvas>
+
+
+            <!--********** Top Side **********-->
+            <!-- 提醒 -->
+            <Viewbox  Grid.ColumnSpan="4" Grid.Row="0" HorizontalAlignment="Left" StretchDirection="DownOnly" VerticalAlignment="Top" Width="1252" >
+                <StackPanel Orientation="Horizontal"  HorizontalAlignment="Left" VerticalAlignment="Top" Height="100" Width="1385" >
+                    <control:TimerView x:Name="TimerName" Background="{DynamicResource CanvasBackgroundBrush}" VerticalAlignment="Top" Width="0"/>
+                    <control:ControlModeView x:Name="ControlModeName" Background="{DynamicResource CanvasBackgroundBrush}" Width="105"  />
+                    <control:LinkView x:Name="LinkName"   ValueMax="100"  ValueMin="0" DataContext="{Binding Source={StaticResource Data}, XPath=Data}" LinkValue="{Binding XPath=Link}" Background="{DynamicResource CanvasBackgroundBrush}"  />
+                    <control:GPSView x:Name="GPSName"    ValueMax="48"  ValueMin="0" DataContext="{Binding Source={StaticResource Data}, XPath=Data}" GPSValue="{Binding XPath=GPS}" Background="{DynamicResource CanvasBackgroundBrush}"  />
+                    <control:BatteryView x:Name="BatteryName" ValueMax="12" ValueMin="0" DataContext="{Binding Source={StaticResource Data}, XPath=Data}" BatteryValue="{Binding XPath=BatteryVoltage}" Background="{DynamicResource CanvasBackgroundBrush}" />
+                    <control:FlightModeView x:Name="FlightModeName" DataContext="{Binding Source={StaticResource Data}, XPath=Data}" Text="{Binding XPath=Flight}" Background="{DynamicResource CanvasBackgroundBrush}"  />
+                    <control:RCrecView x:Name="RCrecName"  ValueMax="100"  ValueMin="0" DataContext="{Binding Source={StaticResource Data}, XPath=Data}" RCrecValue="{Binding XPath=RC}" Background="{DynamicResource CanvasBackgroundBrush}" RenderTransformOrigin="0.5,0.5" Width="1"  >
+                        <control:RCrecView.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="-1"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </control:RCrecView.RenderTransform>
+                    </control:RCrecView>
+                    <control:Height_Show x:Name="HeightModelName" Background="{DynamicResource CanvasBackgroundBrush}" Width="106"  />
+                    <control:SpeedView x:Name="SpeedName" Background="{DynamicResource CanvasBackgroundBrush}" Width="106"/>
+                    <control:Totol_Flow x:Name="TotolFlowName" Background="{DynamicResource CanvasBackgroundBrush}" Width="106"/>
+                    <control:Current_Flow x:Name="CurrentFlowRateName" Background="{DynamicResource CanvasBackgroundBrush}" Width="106"/>
+                    <StackPanel Margin="0,2,0,0" Orientation="Vertical" Width="1" RenderTransformOrigin="0.5,0.5">
+                        <StackPanel.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="-1"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </StackPanel.RenderTransform>
+                        <Label Content="Serial：" Foreground="#FFF1EAEA" Background="{DynamicResource CanvasBackgroundBrush}" Margin="2,2,2,20" Height="27" FontWeight="Bold"/>
+                        <Label Content="Baud：" Foreground="#FFF1EAEA" Background="{DynamicResource CanvasBackgroundBrush}" Margin="2,13,2,20" Height="27" FontWeight="Bold"/>
+                    </StackPanel>
+                </StackPanel>
+            </Viewbox>
+            <!--********** Left Side **********-->
+            <!--参数显示 -->
+            <Viewbox  Grid.Column="0" Grid.Row="1" Grid.RowSpan="4"  HorizontalAlignment="Left" VerticalAlignment="Top" >
+                <control:UAVAltitude x:Name="Altitude"  HorizontalAlignment="Left" VerticalAlignment="Top" Background="{DynamicResource CanvasBackgroundBrush}" RenderTransformOrigin="0.5,0.5" Width="1" Visibility="Hidden" >
+                    <control:UAVAltitude.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="-1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </control:UAVAltitude.RenderTransform>
+                </control:UAVAltitude>
+            </Viewbox>
+            <!--********** Right Side **********-->
+            <!-- 菜单 -->
+            <control:DropDownMenuButton Grid.Column="2" Grid.ColumnSpan="2" VerticalAlignment="Top" BorderBrush="White" Foreground="White" Height="50" Width="150" HorizontalAlignment="Right" Background="{DynamicResource CanvasBackgroundBrush}"  >
+                <control:DropDownMenuButton.DropDownContextMenu>
+                    <ContextMenu >
+                        <MenuItem x:Name="OpenFlightPlan" FontSize="20" Header="Open Flight Plan" Click="MenuItem_Click_FplaOpen" />
+                        <!--<MenuItem Name="CloseFlightPlan" FontSize="20" Header="关闭飞行计划" Click="MenuItem_Click_FplaClose" IsEnabled="False"/>
+                        <MenuItem Name="SendFlightPlan" FontSize="20" Header="发送飞行计划" Click="MenuItem_Click_FplaTrans" IsEnabled="False"/>
+                        <MenuItem Name="ListFlightPlan" FontSize="20" Header="飞行计划信息" Click="MenuItem_Click_FplaData" IsEnabled="False"/>-->
+                        <Separator />
+                        <!--<MenuItem Name="OpenFlightLog"  FontSize="20" Header="飞行日志" Click="MenuItem_Click_FlogOpen"/>
+                        <MenuItem Name="CloseFlightLog" FontSize="20" Header="关闭飞行日志" Click="MenuItem_Click_FlogClose"  IsEnabled="False"/>
+                        <MenuItem Name="SaveFlightLog"  FontSize="20" Header="保存" Click="MenuItem_Click_FlogSave" IsEnabled="False" />-->
+                        <!--<MenuItem Name="OpenExplorer"  FontSize="20" Header="打开资源管理器" Click="MenuItem_Click_OpenExplorer" />-->
+                        <Separator />
+                        <!--<MenuItem FontSize="20" Header="UAV详细信息(U)" Click="MenuItem_Click_UAVData" />-->
+                        <MenuItem FontSize="20" Header="Setting(S)" Click="MenuItem_Click_Setting"/>
+                        <!--<MenuItem FontSize="20" Header="说明书(M)" Click="MenuItem_Click_Manual" />-->
+                        <MenuItem FontSize="20" Header="About(A)" Click="MenuItem_Click_About" />
+                        <Separator />
+                        <MenuItem FontSize="20" Header="End(E)"  Click="MenuItem_Click_End" />
+                    </ContextMenu>
+                </control:DropDownMenuButton.DropDownContextMenu>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="SetInfo" FontSize="34" FontFamily="Meiryo UI" />
+                    <Path Width="25" Height="20" Stretch="Fill" Fill="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type control:DropDownMenuButton}}}" Data="F1 M 57.5692,88L 99.1384,16L 16,16L 57.5692,88 Z "/>
+                </StackPanel>
+            </control:DropDownMenuButton>
+
+            <StackPanel Grid.Column="3" VerticalAlignment="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Canvas x:Name="MarkerIcon" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="50" Grid.Column="2" Background="White" MouseLeftButtonDown="MarkerIcon_MouseLeftButtonDown">
+                    <Canvas.OpacityMask>
+                        <ImageBrush ImageSource="Resources/shubiaodianji.png"/>
+                    </Canvas.OpacityMask>
+                </Canvas>
+                <Canvas x:Name="TouchIcon" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="50" Grid.Column="2" MouseLeftButtonDown="TouchIconMouse" Background="White"/>
+                <Canvas x:Name="SettingIcon" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="50" Grid.Column="2" MouseLeftButtonDown="SettingIconMouseLeftButton" Background="White">
+                    <Canvas.OpacityMask>
+                        <ImageBrush ImageSource="Resources/shezhi.png"/>
+                    </Canvas.OpacityMask>
+                </Canvas>
+            </StackPanel>
+
+            <!--********** Center **********-->
+            <!--网格线-->
+            <Border x:Name="GridLine" Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" BorderBrush="White" CornerRadius="0" BorderThickness="0.5" >
+                <Canvas x:Name="canvas" 
+					SnapsToDevicePixels="True"
+					Loaded="canvas_Loaded" 
+					SizeChanged="canvas_SizeChanged" Margin="1,0,-1,0"/>
+            </Border>
+            <!--相应的网格线的距离表示-->
+            <Grid x:Name="Arrow" Grid.Column="1" Grid.Row="1"  Height="40" Width="250" VerticalAlignment="Top" HorizontalAlignment="Right">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="50"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid x:Name="DisArrow" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Width="50">
+                    <Line x:Name="Dis1" Stroke="White" StrokeThickness="2" X1="0" Y1="8" X2="{Binding Width, ElementName=DisArrow}" Y2="8" />
+                    <Line x:Name="Dis2" Stroke="{Binding Stroke, ElementName=Dis1}" StrokeThickness="4" X1="2" Y1="0" X2="2" Y2="16" />
+                    <Line x:Name="Dis3" Stroke="{Binding Stroke, ElementName=Dis1}" StrokeThickness="4" HorizontalAlignment="Right" X1="0" Y1="0" X2="0" Y2="16" />
+                </Grid>
+                <Label x:Name="DisName" Grid.Column="0" Content="dis" Height="40" Width="180" FontSize="24" Background="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Foreground="White" />
+                <Image Source="/X-Monitor;component/Resources/charu.png" Grid.ColumnSpan="2" Margin="128,40,0,-50"  />
+            </Grid>
+
+
+            <!--********** Bottom Side **********-->
+            <!-- 无人机命令按钮和播放控制 -->
+            <Viewbox  Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" HorizontalAlignment="Center" StretchDirection="DownOnly" VerticalAlignment="Bottom" >
+                <StackPanel x:Name="back_color" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Bottom" Width="896"  >
+                    <StackPanel.Background>
+                        <SolidColorBrush Color="#1b393f" Opacity="0.9"/>
+                    </StackPanel.Background>
+
+
+
+                    <!--<StackPanel Name="ShowPanel" Margin="0,0,0,0" Orientation="Vertical" Width="50" RenderTransformOrigin="0.5,0.5">
+                        <Button Name="showtitle" Height="100" Width="60" ToolTip="缩放按钮" Background="{DynamicResource CanvasBackgroundBrush}">
+                            <Image Source="/X-Monitor;component/Resources/right.png" />
+                        </Button>
+                    </StackPanel>-->
+                    <StackPanel Orientation="Vertical" Width="0" Height="100" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+                        <StackPanel.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="-1"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </StackPanel.RenderTransform>
+                        <ComboBox ItemsSource="{Binding Port.PortNames}" x:Name="cmbPortName" BorderBrush="White" Background="{DynamicResource CanvasBackgroundBrush}"  Foreground="YellowGreen"   Width="71" Margin="0,5,0,40"/>
+                        <ComboBox  x:Name="cmbBaudRate"  BorderBrush="White" Background="{DynamicResource CanvasBackgroundBrush}"  Foreground="YellowGreen" Width="71" />
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Width="0" Height="95" VerticalAlignment="Top" Margin="0,5,0,0" RenderTransformOrigin="0.5,0.5">
+
+                        <ToggleButton IsChecked="False" x:Name="btnOpenPort" Height="24" Background="{DynamicResource CanvasBackgroundBrush}"  Foreground="White" RenderTransformOrigin="-0.283,0.254">
+                            <ToggleButton.Style>
+                                <Style TargetType="{x:Type ToggleButton}">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsChecked" Value="True">
+                                            <Setter Property="Content" Value="关闭串口" />
+                                        </Trigger>
+                                        <Trigger Property="IsChecked" Value="False">
+                                            <Setter Property="Content" Value="打开串口" />
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </ToggleButton.Style>
+                        </ToggleButton>
+                    </StackPanel>
+                    <!--<StackPanel Margin="0,5,0,0" Orientation="Vertical" Width="64" RenderTransformOrigin="0.502,0.718">-->
+
+                    <Button  x:Name="zuoyuan" Background="{DynamicResource CanvasBackgroundBrush}" Focusable="False" FontFamily="Meiryo UI"  FontSize="18" FontWeight="Bold"  BorderThickness="2"    Width="50" Height="100" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="zuoyuan_Click">
+                        <Image Source="/X-Monitor;component/Resources/right.png" />
+                    </Button>
+
+
+
+                    <StackPanel Name="banjingwrite" Margin="0,5,0,0" Orientation="Vertical" Width="100" RenderTransformOrigin="0.502,0.718">
+                        <Label x:Name="line_one" Background="White" Margin="1,-6.5,-11,0" Height="2" RenderTransformOrigin="0.5,0.5">
+                            <Label.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="-1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Label.RenderTransform>
+                        </Label>
+
+                        <StackPanel Orientation="Horizontal">
+                            <Label x:Name="shijain"  FontSize="18" FontWeight="Bold"  BorderThickness="2" Content="0"  Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="35" Visibility="Visible" RenderTransformOrigin="0.5,0.5" Width="67"/>
+                            <Label x:Name="pesabanjingtitle"  FontSize="16" FontWeight="Bold"  BorderThickness="2" Content="s"  Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="35" Visibility="Visible" RenderTransformOrigin="0.5,0.5" Width="46"/>
+                        </StackPanel>
+                        <ComboBox  x:Name="Show_Index" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Text="5" FontSize="22" BorderBrush="White" Background="{DynamicResource CanvasBackgroundBrush}" Margin="10,15,10,0"  Foreground="YellowGreen" Height="30" SelectionChanged="Show_Index_SelectionChanged" />
+                        <Label Background="White" Margin="0,11,-11,0" Height="2" RenderTransformOrigin="0.5,0.5">
+                            <Label.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="-1" ScaleX="-1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Label.RenderTransform>
+                        </Label>
+                    </StackPanel>
+                    <Button x:Name="jizhunset" Focusable="False" ToolTip="New Plan"  FontFamily="Meiryo UI" FontSize="18" FontWeight="Bold"  BorderThickness="2"  Background="{DynamicResource CanvasBackgroundBrush}"  Foreground="White" Content="New" Height="100" Margin="0,0,-33,0" Click="Button_Click" Visibility="Visible" Width="100"/>
+                    <Button x:Name="dandianshanchu" Focusable="False" ToolTip="Delete One Waypoint" FontFamily="Meiryo UI" FontSize="18" FontWeight="Bold"  BorderThickness="2" Background="{DynamicResource CanvasBackgroundBrush}"  Foreground="White" Content="Delete" Height="100" Margin="32,0,-112,0" Click="Button_Click_2" Visibility="Visible" Width="100"/>
+                    <Button x:Name="fanganshengcheng" Focusable="False" ToolTip="Generate Track" FontFamily="Meiryo UI" FontSize="18" FontWeight="Bold"  BorderThickness="2" Background="{DynamicResource CanvasBackgroundBrush}"  Foreground="White" Content="Make" Height="100" Width="0"  Click="Button_PlanMake_Click" Visibility="Visible"/>
+                    <Button x:Name="fanganbaocun" Focusable="False" ToolTip="Save Into C:\\AutoWing" FontFamily="Meiryo UI" FontSize="18" FontWeight="Bold"  BorderThickness="2" Background="{DynamicResource CanvasBackgroundBrush}"  Foreground="White" Content="Save" Height="100" Width="100" Margin="110,0,-112,0" Click="Button_PlanSave_Click" Visibility="Visible"/>
+                    <Button x:Name="ludianshangchuan" Focusable="False" ToolTip="Upload The Mission" FontFamily="Meiryo UI" FontSize="18" FontWeight="Bold"  BorderThickness="2" Background="{DynamicResource CanvasBackgroundBrush}"  Foreground="White" Content="Waypoint" Height="100" Width="100" Margin="110,0,-112,0" Visibility="Visible" Click="StartTransmitMission_Btn_Click" />
+                    <Button x:Name="guijiqingchu" Focusable="False" ToolTip="Track Clear" FontFamily="Meiryo UI" FontSize="18" FontWeight="Bold"  BorderThickness="2" Background="{DynamicResource CanvasBackgroundBrush}"  Foreground="White" Content="Clear" Height="100" Width="100" Margin="110,0,-112,0" Visibility="Visible" Click="StartClearTrace_Btn_Click"/>
+                    <Button x:Name="ludianxiugai" ToolTip="Start Collect Waypoints" Focusable="False" Background="{DynamicResource CanvasBackgroundBrush}" Foreground="White" FontFamily="Meiryo UI" FontSize="18" FontWeight="Bold"  Content="OpenColl" Height="100" Width="100" Margin="110,0,-73,0" Click="Button_ChangePoint_Click" Visibility="Visible"/>
+
+                    <control:RotateAzimuthal x:Name="MapRotate"  ValueChanged="RotateAzimuthalValueChanged" Background="{DynamicResource CanvasBackgroundBrush}" MouseLeftButtonDown="MapRotate_MouseLeftButtonDown" Width="100" Visibility="Visible" Margin="74,0,0,0"  />
+
+                    <Button  x:Name="youyuan"  Background="{DynamicResource CanvasBackgroundBrush}" Focusable="False" FontFamily="Meiryo UI"  FontSize="18" FontWeight="Bold"  BorderThickness="2"    Width="55" Height="100" Click="youyuan_Click" >
+                        <Image Source="/X-Monitor;component/Resources/left.png" />
+                    </Button>
+
+
+
+
+                    <Label x:Name="PosSet" Content="WaypointSet" Height="96" Width="1" Foreground="White" FontFamily="Meiryo UI" FontSize="18" FontWeight="Bold"  Background="{DynamicResource CanvasBackgroundBrush}"  BorderBrush="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" Stylus.IsPressAndHoldEnabled="False" Visibility="Hidden" />
+                    <Label x:Name="User4" Content="User4" Height="97" Width="0" Foreground="White" FontFamily="Meiryo UI" FontSize="18" FontWeight="Bold"  Background="{DynamicResource CanvasBackgroundBrush}"  BorderBrush="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" Stylus.IsPressAndHoldEnabled="False" Visibility="Hidden"/>
+                    <!--<Button Name="hidetitle" Height="100" Width ="50" Background="{DynamicResource CanvasBackgroundBrush}"  Click="Button_Hide_Set" Visibility="Visible">
+                        <Image Source="/X-Monitor;component/Resources/left.png" />
+                    </Button>-->
+                    <Label x:Name="PosSpd" Content="Speed" Height="100" Width="0" Foreground="White" FontFamily="Meiryo UI" FontSize="18" FontWeight="Bold"  Background="{DynamicResource CanvasBackgroundBrush}"  BorderBrush="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="2" Stylus.IsPressAndHoldEnabled="False" MouseDoubleClick="PosSpd_MouseDoubleClick"/>
+                    <Label x:Name="PosClear" Content="Clear" Height="100" Width="0" Foreground="White" FontFamily="Meiryo UI" FontSize="18" FontWeight="Bold"  Background="{DynamicResource CanvasBackgroundBrush}"  BorderBrush="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="2" Stylus.IsPressAndHoldEnabled="False"/>
+                    <Label Content="Label"/>
+
+                </StackPanel>
+            </Viewbox>
+
+
+
+            <!--选项屏幕-->
+            <mdi:MdiContainer x:Name="Container"  Grid.Column="3" Grid.Row="1" Grid.RowSpan="4" Background="{x:Null}"  SizeChanged="OptionAreaSizeChanged" Theme="Luna" Margin="10,32,0,50">
+                <mdi:MdiContainer.ContextMenu>
+                    <ContextMenu x:Name="cm" Visibility="Visible">
+                        <MenuItem Header="The Window Of WayPoints" Click="WaypointWindow_Click" />
+                        <MenuItem Header="The Window Of Chart" Click="ChartWindow_Click" />
+                        <MenuItem Header="The Window Of Camera" Click="ApplicationWindow_Click" />
+                        <MenuItem Header="The Window Of 3D Model" Click="ModelWindow_Click" />
+                        <MenuItem Header="The Window Of Version" Click="VersionWindow_Click" />
+                        <MenuItem Header="The Window Of Light" Click="LEDControlWindow_Click" />
+                        <MenuItem Header="The Window Of Wifi" Click="WifiSetWindow_Click" />
+                        <MenuItem Header="The Window Of Index" Click="IndexSetWindow_Click" />
+                        <MenuItem Header="The Window Of Plan Finetuning" Click="PlanFineTuningSetWindow_Click" />
+                        <MenuItem Header="The Window Of AP Code" Click="APIDSetWindow_Click" />
+                        <MenuItem Header="The Window Of IMU Data" Click="ImuDataWindow_Click" />
+                        <Separator />
+                        <MenuItem Header="Cascade" Click="Cascade_Click" />
+                        <MenuItem Header="Horizontal" Click="Horizontally_Click"/>
+                        <MenuItem Header="Vertical" Click="Vertically_Click"/>
+                        <Separator />
+                        <MenuItem Header="Close All Window" Click="CloseAll_Click"/>
+                    </ContextMenu>
+                </mdi:MdiContainer.ContextMenu>
+            </mdi:MdiContainer>
+
+            <GridSplitter Grid.Column="2" Grid.Row="1" Grid.RowSpan="3" ResizeDirection="Columns" HorizontalAlignment="Stretch" x:Name="OptionGridSplitter">
+                <GridSplitter.Background>
+                    <SolidColorBrush Color="White" Opacity="0"/>
+                </GridSplitter.Background>
+            </GridSplitter>
+
+
+            <!--地图放大缩小-->
+            <control:MapZoom x:Name="ZoomName" Grid.Column="3" Grid.Row="1" Grid.RowSpan="4"  Value="{Binding Zoom, ElementName=MainMap}"  HorizontalAlignment="Right" VerticalAlignment="Bottom" 
+				ZoomBackground="#FF1F1A50" ZoomMinimum="1" ZoomMaximum="20" ValueChanged="MapZoomChanged" Height="447" />
+
+
+            <!--***************************************TEST***************************************-->
+
+            <!--警告消息-->
+            <control:AlarmMessage x:Name="AlertMessageName" Grid.Column="1" Grid.Row="1" AlarmFlag="2" HorizontalAlignment="Left" VerticalAlignment="Top" Message="test" Visibility="Hidden" />
+
+            <!--再生 / 裁剪滑块-->
+            <control:TrimmingSlide x:Name="PlayerSlide" Height="80" Width="850"  Grid.Column="1" Grid.Row="3" VerticalContentAlignment="Bottom" VerticalAlignment="Bottom" HorizontalAlignment="Center"
+				Panel.ZIndex="100" ValueChanged="PlayerSlide_ValueChanged" TimeForeground="#FF1F1A50" />
+
+
+            <TextBox x:Name="test" TextWrapping="Wrap" Text="test" Grid.Column="1" Margin="5,4,633,85" Grid.Row="1" Background="White"  FontSize="8" VerticalScrollBarVisibility="Auto" Grid.RowSpan="3" Visibility="Hidden"/>
+            <Label x:Name="Work_Record"  Content="" Grid.Column="1" Height="38" Margin="243,0,55,122" Grid.Row="1" FontSize="18" Foreground="#FFFFFDFD" />
+
+
+            <!--<Button x:Name="Hand_Point" ToolTip="打点"   Background="Transparent" Click="Hand_Point_Click" Margin="0,10,0,140" Grid.Row="3">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Rectangle Width="80" Height="80" >
+                                <Rectangle.Fill>
+                                    <ImageBrush ImageSource="/X-Monitor;component/Resources/Click_Point.png"></ImageBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" Content="{TemplateBinding Content}"></ContentPresenter>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background"  Value="Yellow"/>
+                            </Trigger>
+                            <Trigger Property="ToggleButton.IsChecked" Value="true">
+                                <Setter Property="Background"  Value="Blue"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" Value="#ADADAD"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template> 　　
+            </Button>-->
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="100" Grid.Row="1" Grid.RowSpan="3" Margin="0,0,0,5" >
+                <!--<StackPanel.Background>
+                    <SolidColorBrush Color="#FF1F1A50" Opacity="0.5"/>
+                </StackPanel.Background>-->
+                <StackPanel>
+                    <Button x:Name="UnLock_Btn" ToolTip="解锁成功飞机进入怠速" Focusable="False"  Margin="0,20,0,330" Height="90" FontFamily="Meiryo UI" FontSize="18" FontWeight="Bold"  BorderThickness="2"  Background="Transparent" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Foreground="White" Width="100" Click="UnLock_Btn_Click"/>
+                    <Button x:Name="Start_Fly" ToolTip="自主起飞" Focusable="False"  Margin="-400,-340,-400,239" Height="90" FontFamily="Meiryo UI" FontSize="18" FontWeight="Bold"  BorderThickness="2"  Background="Transparent" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Foreground="White" Width="100" Click="StartFly_Btn_Click" >
+                        <Image Source="/X-Monitor;component/Resources/qifei.png" />
+                    </Button>
+                    <Label x:Name="User3" Margin="-400,-340,-400,239"  Height="90" Width="100" Foreground="White" FontFamily="Meiryo UI" FontSize="18" FontWeight="Bold"  Background="{DynamicResource CanvasBackgroundBrush}"  BorderBrush="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" Stylus.IsPressAndHoldEnabled="False" Visibility="Hidden"/>
+                    <Button  x:Name="StopOrReback_Btn" Margin="0,-400,0,0" ToolTip="紧急暂停当前任务"  Focusable="False" FontFamily="Meiryo UI" FontSize="18" FontWeight="Bold"  BorderThickness="2"  Background="Transparent"  Foreground="White" Width="100" Height="90" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="StopOrReback_Btn_Click">
+                        <Image Source="/X-Monitor;component/Resources/zanting.png" />
+                    </Button>
+                    <Button  x:Name="Start_Land" Margin="-400,-230,-400,0" ToolTip="自主着陆"  Focusable="False" FontFamily="Meiryo UI" FontSize="18" FontWeight="Bold"  BorderThickness="2"  Background="Transparent"  Foreground="White" Width="100" Height="90" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="StartLand_Btn_Click" >
+                        <Image Source="/X-Monitor;component/Resources/zhuolu.png" />
+                    </Button>
+                    <Label x:Name="User2" Margin="-400,-230,-400,0" Content="User2" Height="90" Width="100" Foreground="White" FontFamily="Meiryo UI" FontSize="18" FontWeight="Bold"  Background="{DynamicResource CanvasBackgroundBrush}"  BorderBrush="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" Stylus.IsPressAndHoldEnabled="False" Visibility="Hidden"/>
+                    <Button  x:Name="Start_Back" Margin="-400,-70,-400,0" ToolTip="自主返航"  Focusable="False" FontFamily="Meiryo UI" FontSize="18" FontWeight="Bold"  BorderThickness="2"  Background="Transparent"  Foreground="White" Width="100" Height="90" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="StartBack_Btn_Click">
+                        <Image Source="/X-Monitor;component/Resources/fanhang.png" />
+                    </Button>
+                    <Label x:Name="User1" Margin="-400,-70,-400,0" Content="User1" Height="90" Width="100" Foreground="White" FontFamily="Meiryo UI" FontSize="18" FontWeight="Bold"  Background="{DynamicResource CanvasBackgroundBrush}"  BorderBrush="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="1" Stylus.IsPressAndHoldEnabled="False" VerticalAlignment="Top" Visibility="Hidden"/>
+                </StackPanel>
+            </StackPanel>
+
+
+
+            <Button x:Name="Hand_Point" Focusable="False" Width="100" Margin="389,156,403,0" Grid.Row="3" Background="{DynamicResource CanvasBackgroundBrush}"  BorderThickness="0"   Click="Hand_Point_Click" Visibility="Hidden" Grid.Column="1">
+                <Image Source="/X-Monitor;component/Resources/Click_Point.png" />
+            </Button>
+            <Image Source="/X-Monitor;component/Resources/charu.png" RenderTransformOrigin="0.415,0.639" Grid.Column="3" Margin="10,5,129,105" Grid.Row="1" />
+            <!--***************************************TEST***************************************-->
+        </Grid>
+
+        <!--发送-->
+        <Grid x:Name="TransmitWindow" Grid.Column="1" Grid.Row="2" Height="150" Width="500"  Background="{Binding Background, ElementName=Main_Window}" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden"  >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="5"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="5"/>
+            </Grid.RowDefinitions>
+
+            <!--窗口设定-->
+            <Label Grid.Row="1" Grid.Column="1" Content="飞行任务发送" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" FontSize="24" FontFamily="Meiryo UI" FontWeight="Bold" Margin="0,5,0,0"/>
+            <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Height="50" Width="37">
+                <Button Content="r" Style="{DynamicResource CaptionButtonStyleKey}" FontSize="32" BorderBrush="White" Click="TransmitClosingButton_Click" />
+            </StackPanel>
+            <ProgressBar x:Name="TransmitBar" Grid.Column="1" Grid.Row="2" Margin="5,0" Value="50" Background="White"/>
+            <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal" VerticalAlignment="Center"  HorizontalAlignment="Center" Height="50" >
+                <Button Content="Transmit" Width="120" FontSize="18" BorderBrush="White" Background="White" Foreground="Black" FontFamily="Meiryo UI"  Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Height="40" Click="TransmitButton_Click"/>
+                <Button Content="取消" Width="120" FontSize="18" BorderBrush="White" Background="White" Foreground="Black" FontFamily="Meiryo UI"  Margin="80,5,5,5" Click="TransmitCancelButton_Click"/>
+            </StackPanel>
+        </Grid>
+
+        <Label x:Name="WaitWindow" Content="Wait" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="2" Background="White" Opacity="0.5" FontSize="72" HorizontalContentAlignment="Center" Visibility="Hidden"/>
+
+
+        <!--大纲-->
+        <Canvas Grid.Column="0" Grid.RowSpan="4" Background="{Binding Background, ElementName=Main_Window}"  />
+        <Canvas Grid.Column="4" Grid.RowSpan="4" Background="{Binding Background, ElementName=Main_Window}" />
+        <Canvas Grid.Column="1" Grid.Row="0" Background="{Binding Background, ElementName=Main_Window}" />
+        <Canvas Grid.Column="1" Grid.Row="4" Background="{Binding Background, ElementName=Main_Window}" />
+        <!--TOP枠-->
+        <Canvas x:Name="TopCanvas" Grid.Row="1" Grid.Column="1" Background="{Binding Background, ElementName=Main_Window}" />
+        <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Height="50">
+            <Image HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="100" Source="Resources/minisurveyorlogo.png"/>
+            <TextBlock Margin="10,6,0,6" Text="A.Y.Drone" FontSize="28" Foreground="White" VerticalAlignment="Center" FontWeight="Bold" Width="0"/>
+            <TextBlock x:Name="VersionName" Margin="0,20,0,0" Text="0.0.0" FontSize="20" Foreground="White" VerticalAlignment="Center" />
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Height="50">
+            <Button Content="0" Style="{DynamicResource CaptionButtonStyleKey}" FontSize="32" BorderBrush="White" Click="MinWindowButton_Click" />
+            <Button Content="1" Style="{DynamicResource CaptionButtonStyleKey}" FontSize="32" BorderBrush="White" Click="MaxWindowButton_Click" />
+            <Button Content="2" Style="{DynamicResource CaptionButtonStyleKey}" FontSize="32" BorderBrush="White" Click="DefaultWindowButton_Click"  />
+            <Button Content="r" Style="{DynamicResource CaptionButtonStyleKey}" FontSize="32" BorderBrush="White" Click="CloseButton_Click" />
+        </StackPanel>
+
+        <!--警告音設定-->
+        <MediaElement x:Name="me1" Source="Sound/meka_ge_keihou03.mp3" LoadedBehavior="Manual" Visibility="Collapsed" />
+        <MediaElement x:Name="me2" Source="Sound/ding.wav" LoadedBehavior="Manual" Visibility="Collapsed" />
+        <MediaElement x:Name="SendSound" Source="Sound/start.wav" LoadedBehavior="Manual" Visibility="Collapsed" />
+        <MediaElement x:Name="AutoStartFly_Wav" Source="Sound/自主起飞.wav" LoadedBehavior="Manual" Visibility="Collapsed" />
+        <MediaElement x:Name="AutoStartLand_Wav" Source="Sound/自主着陆.wav" LoadedBehavior="Manual" Visibility="Collapsed" />
+        <MediaElement x:Name="AutoStartBack_Wav" Source="Sound/自主返航.wav" LoadedBehavior="Manual" Visibility="Collapsed" />
+        <MediaElement x:Name="AutoStartMessionTransmit_Wav" Source="Sound/任务上传.wav" LoadedBehavior="Manual" Visibility="Collapsed" />
+        <MediaElement x:Name="AutoStartBreakMessionTransmit_Wav" Source="Sound/断点续喷.wav" LoadedBehavior="Manual" Visibility="Collapsed" />
+    </Grid>
+
+</Window>

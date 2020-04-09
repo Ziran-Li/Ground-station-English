@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <message type="get" name="TEST1" cycle = "20">
+    <Data encoding="text">
+      <UAV >
+        <IMU>
+          <Att t="R3" i="0"></Att>
+          <Att t="R3" i="1"></Att>
+          <Att t="R3" i="2"></Att>
+          <Gyro t="R3" i="0"></Gyro>
+          <Gyro t="R3" i="1"></Gyro>
+          <Gyro t="R3" i="2"></Gyro>
+          <Acc t="R3" i="0"></Acc>
+          <Acc t="R3" i="1"></Acc>
+          <Acc t="R3" i="2"></Acc>
+          <Mag t="R3" i="0"></Mag>
+          <Mag t="R3" i="1"></Mag>
+          <Mag t="R3" i="2"></Mag>
+          <MagNorm></MagNorm>
+        </IMU>
+        <GPS>
+          <Sats t="X"></Sats>
+          <hPosAcc></hPosAcc>
+          <vPosAcc></vPosAcc>
+          <hVelAcc></hVelAcc>
+          <vVelAcc></vVelAcc>
+          <Lat></Lat>
+          <Lon></Lon>
+          <Alt></Alt>
+          <Vel c="r" t="R3" i="0"></Vel>
+          <Vel c="r" t="R3" i="1"></Vel>
+          <Vel c="r" t="R3" i="2"></Vel>
+        </GPS>
+        <PS>
+          <Alt></Alt>
+        </PS>
+        <Nav>
+          <Lat t="R"></Lat>
+          <Lon t="R"></Lon>
+          <Alt t="R"></Alt>
+          <Vel c="r" t="R3" i="0"></Vel>
+          <Vel c="r" t="R3" i="1"></Vel>
+          <Vel c="r" t="R3" i="2"></Vel>
+        </Nav>
+        <Ref>
+          <Att t="R3" i="0"></Att>
+          <Att t="R3" i="1"></Att>
+          <Att t="R3" i="2"></Att>
+          <Vel c="n" t="R3" i="0"></Vel>
+          <Vel c="n" t="R3" i="1"></Vel>
+          <Vel c="n" t="R3" i="2"></Vel>
+          <Alt></Alt>
+        </Ref>
+        <Wpt>
+          <Lat t="R"></Lat>
+          <Lon t="R"></Lon>
+          <Alt t="R"></Alt>
+          <Yaw t="R"></Yaw>
+          <Spd t="R"></Spd>
+        </Wpt>
+        <Home>
+          <Lat t="R"></Lat>
+          <Lon t="R"></Lon>
+          <Alt t="R"></Alt>
+          <Yaw t="R"></Yaw>
+        </Home>
+        <Sys>
+          <Mode>
+            <Ctrl t="X"></Ctrl>
+            <Auto t="X"></Auto>
+            <Drv t="X"></Drv>
+          </Mode>
+          <CPU t="X" a="L"></CPU>
+          <CPU t="X" a="H"></CPU>
+        </Sys>
+        <Voltage t="R"></Voltage>
+        <Ctrl>
+          <Input a="H" t="R4" i="0"></Input>
+          <Input a="H" t="R4" i="1"></Input>
+          <Input a="H" t="R4" i="2"></Input>
+          <Input a="H" t="R4" i="3"></Input>
+          <Input a="L" t="R4" i="0"></Input>
+          <Input a="L" t="R4" i="1"></Input>
+          <Input a="L" t="R4" i="2"></Input>
+          <Input a="L" t="R4" i="3"></Input>
+          <Rotor t="I6" i="0"></Rotor>
+          <Rotor t="I6" i="1"></Rotor>
+          <Rotor t="I6" i="2"></Rotor>
+          <Rotor t="I6" i="3"></Rotor>
+          <Rotor t="I6" i="4"></Rotor>
+          <Rotor t="I6" i="5"></Rotor>
+          <Rotor t="I12" i="0"></Rotor>
+          <Rotor t="I12" i="1"></Rotor>
+          <Rotor t="I12" i="2"></Rotor>
+          <Rotor t="I12" i="3"></Rotor>
+          <Rotor t="I12" i="4"></Rotor>
+          <Rotor t="I12" i="5"></Rotor>
+          <Rotor t="I12" i="6"></Rotor>
+          <Rotor t="I12" i="7"></Rotor>
+          <Rotor t="I12" i="8"></Rotor>
+          <Rotor t="I12" i="9"></Rotor>
+          <Rotor t="I12" i="10"></Rotor>
+          <Rotor t="I12" i="11"></Rotor>
+        </Ctrl>
+        <Health>
+          <Datalink t="X" a="D"></Datalink>
+          <ReceiverComm t="X"></ReceiverComm>
+          <ReceiverRecep t="X"></ReceiverRecep>
+          <GyroComm t="X"></GyroComm>
+          <GyroMeas t="X"></GyroMeas>
+          <McuComm t="X" a="L"></McuComm>
+          <McuComm t="X" a="H"></McuComm>
+          <ImuComm t="X"></ImuComm>
+          <ImuGyroMeas t="X"></ImuGyroMeas>
+          <ImuAccMeas t="X"></ImuAccMeas>
+          <ImuMagMeas t="X"></ImuMagMeas>
+          <PsComm t="X"></PsComm>
+          <PsMeas t="X"></PsMeas>
+          <GpsComm t="X"></GpsComm>
+          <GpsMeas t="X"></GpsMeas>
+          <Datalink t="X" a="U"></Datalink>
+        </Health>
+        <RSSI>
+          <Datalink t="SI" a="D"></Datalink>
+          <Datalink t="SI" a="U"></Datalink>
+        </RSSI>
+        <Propo>
+          <An t="USI16" i="0"></An>
+          <An t="USI16" i="1"></An>
+          <An t="USI16" i="2"></An>
+          <An t="USI16" i="3"></An>
+          <An t="USI16" i="4"></An>
+          <An t="USI16" i="5"></An>
+          <An t="USI16" i="6"></An>
+          <An t="USI16" i="7"></An>
+          <An t="USI16" i="8"></An>
+          <An t="USI16" i="9"></An>
+          <An t="USI16" i="10"></An>
+          <An t="USI16" i="11"></An>
+          <An t="USI16" i="12"></An>
+          <An t="USI16" i="13"></An>
+          <An t="USI16" i="14"></An>
+          <An t="USI16" i="15"></An>
+          <Dg t="X2" i="0"></Dg>
+          <Dg t="X2" i="1"></Dg>
+          <Lost t="X"></Lost>
+          <FS t="X"></FS>
+        </Propo>
+      </UAV>
+      <GCS>
+        <SystemTime>
+          <wYear t="USI"></wYear>
+          <wMonth t="USI"></wMonth>
+          <wDay t="USI"></wDay>
+          <wHour t="USI"></wHour>
+          <wMinute t="USI"></wMinute>
+          <wSecond t="USI"></wSecond>
+          <wMilliseconds t="USI"></wMilliseconds>
+        </SystemTime>
+      </GCS>
+    </Data>
+    <FlightLog>
+      <Play>
+        <CurrentTime></CurrentTime>
+      </Play>
+    </FlightLog>
+  </message>
+</root>

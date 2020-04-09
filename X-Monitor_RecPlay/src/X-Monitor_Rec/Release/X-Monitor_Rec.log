@@ -1,0 +1,34 @@
+﻿生成启动时间为 2017/4/24 星期一 下午 4:02:03。
+     1>项目“D:\VS2013_Project\acsl\X-Monitor_RecPlay\src\X-Monitor_Rec\X-Monitor_Rec.vcxproj”在节点 5 上(Rebuild 个目标)。
+     1>ClCompile:
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\..\..\commonLib\include /I..\..\..\miniSvLib\include /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Release\X-Monitor_Rec.pch" /Fo"Release\\" /Fd"Release\vc120.pdb" /FR"Release\\" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\..\..\commonLib\include /I..\..\..\miniSvLib\include /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Release\X-Monitor_Rec.pch" /Fo"Release\\" /Fd"Release\vc120.pdb" /FR"Release\\" /Gd /TP /analyze- /errorReport:prompt "X-Monitor_Rec.cpp"
+         X-Monitor_Rec.cpp
+       Link:
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\..\ACSL\Core\X-Monitor_Rec.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:..\..\..\commonLib\lib /LIBPATH:..\..\..\miniSvLib\lib miniSvSock.lib miniSvXmlDataManage.lib socket.lib commBuf.lib debugWrite.lib thread.lib timer.lib xml.lib miniSvKml.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"..\..\..\ACSL\Core\X-Monitor_Rec.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\..\..\ACSL\Core\X-Monitor_Rec.lib" /MACHINE:X86 /SAFESEH Release\stdafx.obj
+         "Release\X-Monitor_Rec.obj"
+         正在生成代码
+         已完成代码的生成
+     1>miniSvKml.lib(minizip.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“miniSvKml.lib(minizip.obj)”或在“D:\VS2013_Project\acsl\ACSL\Core\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>miniSvKml.lib(miniunz.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“miniSvKml.lib(miniunz.obj)”或在“D:\VS2013_Project\acsl\ACSL\Core\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>miniSvKml.lib(zip.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“miniSvKml.lib(zip.obj)”或在“D:\VS2013_Project\acsl\ACSL\Core\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>miniSvKml.lib(crc32.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“miniSvKml.lib(crc32.obj)”或在“D:\VS2013_Project\acsl\ACSL\Core\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>miniSvKml.lib(iowin32.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“miniSvKml.lib(iowin32.obj)”或在“D:\VS2013_Project\acsl\ACSL\Core\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>miniSvKml.lib(unzip.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“miniSvKml.lib(unzip.obj)”或在“D:\VS2013_Project\acsl\ACSL\Core\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>miniSvKml.lib(ioapi.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“miniSvKml.lib(ioapi.obj)”或在“D:\VS2013_Project\acsl\ACSL\Core\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>miniSvKml.lib(deflate.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“miniSvKml.lib(deflate.obj)”或在“D:\VS2013_Project\acsl\ACSL\Core\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>miniSvKml.lib(inflate.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“miniSvKml.lib(inflate.obj)”或在“D:\VS2013_Project\acsl\ACSL\Core\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>miniSvKml.lib(trees.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“miniSvKml.lib(trees.obj)”或在“D:\VS2013_Project\acsl\ACSL\Core\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>miniSvKml.lib(adler32.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“miniSvKml.lib(adler32.obj)”或在“D:\VS2013_Project\acsl\ACSL\Core\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>miniSvKml.lib(zutil.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“miniSvKml.lib(zutil.obj)”或在“D:\VS2013_Project\acsl\ACSL\Core\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>miniSvKml.lib(inffast.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“miniSvKml.lib(inffast.obj)”或在“D:\VS2013_Project\acsl\ACSL\Core\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>miniSvKml.lib(inftrees.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“miniSvKml.lib(inftrees.obj)”或在“D:\VS2013_Project\acsl\ACSL\Core\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+         X-Monitor_Rec.vcxproj -> D:\VS2013_Project\acsl\X-Monitor_RecPlay\src\X-Monitor_Rec\..\..\..\ACSL\Core\X-Monitor_Rec.exe
+       BscMake:
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\bscmake.exe /nologo /o"..\..\..\ACSL\Core\X-Monitor_Rec.bsc" /n Release\stdafx.sbr "Release\X-Monitor_Rec.sbr"
+     1>已完成生成项目“D:\VS2013_Project\acsl\X-Monitor_RecPlay\src\X-Monitor_Rec\X-Monitor_Rec.vcxproj”(Rebuild 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:32.19

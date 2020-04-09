@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Project ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+		<!-- Select a Product Configuration -->
+		<InstallShieldProductConfiguration>Express</InstallShieldProductConfiguration>
+		<!-- Select a Visual Studio Configuration / InstallShield Release -->
+		<Configuration>Debug</Configuration>
+		<InstallShieldRelease>$(Configuration)</InstallShieldRelease>
+	</PropertyGroup>
+	<ItemGroup>
+		<!-- The InstallShieldProject item selects the project to build -->
+		<InstallShieldProject Include="$(MSBuildProjectDirectory)\$(MSBuildProjectName).isl"/>
+		<!-- The InstallShieldReleaseFlags sets Release Flags -->
+		<!--<InstallShieldReleaseFlags Include=""/>-->
+		<!-- The InstallShieldMergeModulePath specifies what directories are
+		searched for Merge Modules -->
+		<!--<InstallShieldMergeModulePath Include=""/>-->
+	</ItemGroup>
+	<ItemGroup>
+		<!-- The ProjectReference items refer to any Visual Studio solutions you want to automatically probe for Project Output Groups.  -->
+	</ItemGroup>
+	<ItemGroup>
+		<!-- The TaggedOutputs items allow you to explicitly add extra files to output groups. Each item must include both Name and OutputGroup, as well as TargetPath metadata values. -->
+		<!--<TaggedOutputs Include="C:\My Test Exe.exe">
+			<Name>My Test Project</Name>
+			<OutputGroup>Primary output</OutputGroup>
+			<TargetPath>My Test Exe.exe</TargetPath>
+		</TaggedOutputs> -->
+	</ItemGroup>
+	<Import Project="$(MSBuildExtensionsPath32)\InstallShield\2015Limited\InstallShield.targets"/>
+	<ItemGroup>
+		<ProjectReference Include="..\..\X-Monitor_GUI\GMapNetInterFace\GMapNetInterFace.csproj">
+			<Name>GMapNetInterFace</Name>
+			<Project>{9D620A1C-E68B-4A25-A7AD-25AFDF03A587}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\..\X-Monitor_GUI\MapPlugins\GeoServey\GeoServey.csproj">
+			<Name>GeoServey</Name>
+			<Project>{96A5265E-AE7E-4EB9-A228-BA1E26B20A8E}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\..\X-Monitor_GUI\MapPlugins\GeoServey_Std\GeoServey_Std.csproj">
+			<Name>GeoServey_Std</Name>
+			<Project>{A4C8388E-4A4B-4715-AD73-C3B03B81C4FC}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\..\Y-Planner\Y-Planner.csproj">
+			<Name>Y-Planner</Name>
+			<Project>{16B20D87-544C-4854-860A-40CA89A7584A}</Project>
+		</ProjectReference>
+	</ItemGroup>
+</Project>

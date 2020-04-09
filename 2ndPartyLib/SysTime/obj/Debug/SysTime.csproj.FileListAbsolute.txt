@@ -1,0 +1,4 @@
+C:\Users\hello\Desktop\acsl\2ndPartyLib\SysTime\bin\Debug\SysTime.dll
+C:\Users\hello\Desktop\acsl\2ndPartyLib\SysTime\bin\Debug\SysTime.pdb
+C:\Users\hello\Desktop\acsl\2ndPartyLib\SysTime\obj\Debug\SysTime.dll
+C:\Users\hello\Desktop\acsl\2ndPartyLib\SysTime\obj\Debug\SysTime.pdb

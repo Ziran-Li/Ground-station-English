@@ -1,0 +1,4 @@
+C:\Users\hello\Desktop\acsl\2ndPartyLib\Point\bin\Debug\Point.dll
+C:\Users\hello\Desktop\acsl\2ndPartyLib\Point\bin\Debug\Point.pdb
+C:\Users\hello\Desktop\acsl\2ndPartyLib\Point\obj\Debug\Point.dll
+C:\Users\hello\Desktop\acsl\2ndPartyLib\Point\obj\Debug\Point.pdb

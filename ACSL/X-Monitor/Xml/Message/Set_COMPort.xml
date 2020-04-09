@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <message type="set" a="Config">
+    <Config>
+      <COM>
+        <Port t="UI"></Port>
+      </COM>
+			<FlightLog>
+				<FilePath t="S"></FilePath>
+				<StoragePeriodInDay t="UI"></StoragePeriodInDay>
+				<DivideSizeInByte t="UI"></DivideSizeInByte>
+				<RecStopTimeFromDataStop t="UI"></RecStopTimeFromDataStop>
+			</FlightLog>
+    </Config>
+  </message>
+</root>

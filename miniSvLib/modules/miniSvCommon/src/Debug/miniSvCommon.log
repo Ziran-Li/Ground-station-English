@@ -1,0 +1,27 @@
+﻿Build started 2016/1/13 11:29:24.
+     1>Project "C:\Users\hello\Desktop\acsl\miniSvLib\modules\miniSvCommon\src\miniSvCommon.vcxproj" on node 5 (Rebuild target(s)).
+     1>ClCompile:
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\include /I..\..\..\include /I..\..\..\..\commonLib\include /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Debug\miniSvCommonD.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\include /I..\..\..\include /I..\..\..\..\commonLib\include /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt ..\..\..\include\Common\Debug.c
+         Debug.c
+       Lib:
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"..\lib\miniSvCommonD.lib" /NOLOGO Debug\Debug.obj
+         Debug\stdafx.obj
+         miniSvCommon.vcxproj -> C:\Users\hello\Desktop\acsl\miniSvLib\modules\miniSvCommon\src\..\lib\miniSvCommonD.lib
+       PostBuildEvent:
+         copy ..\include\*.h ..\..\..\include\
+         copy ..\lib\miniSvCommonD.lib ..\..\..\lib\
+         :VCEnd
+         ..\include\BasicConfiguration.h
+         ..\include\Commondef_High.h
+         ..\include\Commondef_Low.h
+         ..\include\ControlInfo.h
+         ..\include\Globaldef.h
+         已复制         5 个文件。
+         已复制         1 个文件。
+     1>Done Building Project "C:\Users\hello\Desktop\acsl\miniSvLib\modules\miniSvCommon\src\miniSvCommon.vcxproj" (Rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:04.11

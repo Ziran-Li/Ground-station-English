@@ -1,0 +1,48 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Y_Planner.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Lat" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">32.0103691272</Value>
+    </Setting>
+    <Setting Name="Lng" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">118.7828039246</Value>
+    </Setting>
+    <Setting Name="Waypoint_Speed" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="CoreIPaddress" Type="System.String" Scope="User">
+      <Value Profile="(Default)">127.0.0.1</Value>
+    </Setting>
+    <Setting Name="CorePort" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">53799</Value>
+    </Setting>
+    <Setting Name="COMPort" Type="System.String" Scope="User">
+      <Value Profile="(Default)">COM1</Value>
+    </Setting>
+    <Setting Name="YPlannerVersion" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1.2.1</Value>
+    </Setting>
+    <Setting Name="APFCVersion" Type="System.String" Scope="User">
+      <Value Profile="(Default)">3.4.1</Value>
+    </Setting>
+    <Setting Name="Waypoint_Threashold" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="Waypoint_Wait" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="Provider" Type="System.String" Scope="User">
+      <Value Profile="(Default)">国土地理院地図(航空)</Value>
+    </Setting>
+    <Setting Name="Function1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">xxx</Value>
+    </Setting>
+    <Setting Name="Function2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">xxx</Value>
+    </Setting>
+    <Setting Name="Function3" Type="System.String" Scope="User">
+      <Value Profile="(Default)">xxx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

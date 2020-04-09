@@ -1,0 +1,8 @@
+C:\Users\ogawa\Documents\02_開発\02_MSAP\minisv_gcs\trunk\Version1\ACSL\mapPlugin\BingStaticMap.dll
+C:\Users\ogawa\Documents\02_開発\02_MSAP\minisv_gcs\trunk\Version1\ACSL\mapPlugin\BingStaticMap.pdb
+C:\Users\ogawa\Documents\02_開発\02_MSAP\minisv_gcs\trunk\Version1\X-Monitor_GUI\MapPlugins\BingStaticMap\obj\Debug\BingStaticMap.dll
+C:\Users\ogawa\Documents\02_開発\02_MSAP\minisv_gcs\trunk\Version1\X-Monitor_GUI\MapPlugins\BingStaticMap\obj\Debug\BingStaticMap.pdb
+C:\Users\hello\Desktop\acsl\ACSL\mapPlugin\BingStaticMap.dll
+C:\Users\hello\Desktop\acsl\ACSL\mapPlugin\BingStaticMap.pdb
+C:\Users\hello\Desktop\acsl\X-Monitor_GUI\MapPlugins\BingStaticMap\obj\Debug\BingStaticMap.dll
+C:\Users\hello\Desktop\acsl\X-Monitor_GUI\MapPlugins\BingStaticMap\obj\Debug\BingStaticMap.pdb

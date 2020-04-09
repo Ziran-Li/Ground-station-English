@@ -1,0 +1,5 @@
+C:\Users\hello\Desktop\acsl\ACSL\mapPlugin\GeoServey.dll
+C:\Users\hello\Desktop\acsl\ACSL\mapPlugin\GeoServey.pdb
+C:\Users\hello\Desktop\acsl\X-Monitor_GUI\MapPlugins\GeoServey\obj\Debug\GeoServey.csprojResolveAssemblyReference.cache
+C:\Users\hello\Desktop\acsl\X-Monitor_GUI\MapPlugins\GeoServey\obj\Debug\GeoServey.dll
+C:\Users\hello\Desktop\acsl\X-Monitor_GUI\MapPlugins\GeoServey\obj\Debug\GeoServey.pdb

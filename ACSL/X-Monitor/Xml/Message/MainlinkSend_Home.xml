@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <message type="mainlink send">
+    <Data>
+      <UAV>
+        <Home>
+          <SendFlag t="B"></SendFlag>
+        </Home>
+      </UAV>
+    </Data>
+  </message>
+</root>

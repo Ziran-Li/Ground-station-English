@@ -1,0 +1,213 @@
+#ifndef INCLUDED_PROTOCOL_LEGACYDEF_H
+#define INCLUDED_PROTOCOL_LEGACYDEF_H
+
+#include "StandardDef.h"
+
+//**************************************************
+//	Higher-Level MCU <--> Ground Control Station  communication definition
+//**************************************************
+
+// パケット識別ID
+enum PACKETID 
+{
+	PACKETID_PROPO                = 0x01, // PC  → UAV  ~Ver0007a
+	PACKETID_IMU                  = 0x02, // UAV → PC   ~Ver0009a4
+	PACKETID_GPS                  = 0x03, // UAV → PC   ~Ver0009a4
+	PACKETID_INSGPS               = 0x04, // UAV → PC   ~Ver0007a
+	PACKETID_INPUT                = 0x05, // UAV → PC   ~Ver0007a
+	PACKETID_ATTREF               = 0x06, // UAV → PC   ~Ver0010
+	PACKETID_VELREF               = 0x07, // UAV → PC   ~Ver0010
+	PACKETID_POSREF               = 0x08, // UAV → PC   ~Ver0007a
+	PACKETID_GPSREF               = 0x09, // PC  → UAV  ~Ver0007a
+	PACKETID_FLIGHT_MODE          = 0x0A, // PC  → UAV
+	PACKETID_LAND_COMMAND         = 0x0B, // PC  → UAV  ~Ver3.2
+	PACKETID_CURRENT_FLIGHTMODE   = 0x0C, // UAV → PC 
+	PACKETID_INSGPS_LITE          = 0x0D, // UAV → PC   Ver0007b~        軽量版
+	PACKETID_INPUT_LITE           = 0x0E, // UAV → PC   Ver0007b~        軽量版
+	PACKETID_POSREF_LITE          = 0x0F, // UAV → PC   Ver0007b~        軽量版
+	PACKETID_GPSREF_LITE          = 0x10, // PC  → UAV  Ver0007b~Ver0010 軽量版 
+	PACKETID_PROPO_LITE           = 0x11, // PC  → UAV  Ver0007b~        軽量版
+	PACKETID_COMMAND              = 0x12, // UAV ⇔ PC   Ver0007b~
+	PACKETID_COUNTERCOMMAND       = 0x13, // UAV ⇔ PC   Ver0007b~
+	PACKETID_IMU_ATTITUDERATE     = 0x14, // UAV → PC   Ver0009a3~Ver0009a4
+	PACKETID_GPS_LITE             = 0x15, // UAV → PC   Ver0009a5~ 軽量版
+	PACKETID_IMU2                 = 0x16, // UAV → PC   Ver0009a5~
+	PACKETID_LOCAL_POSITION       = 0x17, // UAV → PC   Ver0009a5~
+	PACKETID_SYSTEM_CONDITION     = 0x18, // UAV → PC   Ver0010~
+	PACKETID_ATTREF2              = 0x19, // UAV → PC   Ver1.0~ PACKETID_ATTREF のラジアン単位版
+	PACKETID_VELREF2              = 0x1A, // UAV → PC   Ver1.0~ PACKETID_VELREF の改良版
+	PACKETID_GPSREF2              = 0x1B, // PC  → UAV  Ver1.0~ PACKETID_GPSREF_LITE のラジアン単位版
+	PACKETID_PROPO_SIMPLE         = 0x1C, // PC  → UAV  Ver1.0~ PACKETID_PROPO_LITE の別形式（簡単な代わりにパケットサイズ大）
+	PACKETID_GPS_INFO             = 0x1D, // UAV → PC   Ver2.0~
+	PACKETID_MULTIWAYPOINT        = 0x1E, // PC  → UAV  Ver2.0~
+	PACKETID_MULTIWAYPOINT_ACK    = 0x1F, // UAV → PC   Ver2.0~
+	PACKETID_USS                  = 0x20, // UAV → PC 
+	PACKETID_MAGNETIC             = 0x21, // UAV → PC 
+	PACKETID_LLC_INPUT_MINIMUM    = 0x22, // UAV → PC 
+	PACKETID_LLC_INPUT_4ROTOR     = 0x23, // UAV → PC 
+	PACKETID_LLC_INPUT_6ROTOR     = 0x24, // UAV → PC 
+	PACKETID_LLC_INPUT_8ROTOR     = 0x25, // UAV → PC 
+	PACKETID_LLC_INPUT_12ROTOR    = 0x26, // UAV → PC 
+	PACKETID_HEALTH               = 0x27, // UAV → PC   Ver3.2~
+	PACKETID_ACTION_POINT         = 0x28, // UAV → PC   Ver3.2~
+	PACKETID_EXTNAVSYS_PV         = 0x29, // PC  → UAV  Ver3.3~ 外部ナビゲーションシステムによる航法データ (位置・速度)
+	PACKETID_EXTNAVSYS_PVH        = 0x30, // PC  → UAV  Ver3.3~ 外部ナビゲーションシステムによる航法データ (位置・速度・方位)
+	PACKETID_EXTNAVSYS_PVQ        = 0x31, // PC  → UAV  Ver3.3~ 外部ナビゲーションシステムによる航法データ (位置・速度・クォータニオン姿勢)
+	PACKETID_EEPROM_WRITE         = 0x32, // PC  → UAV  Ver3.3~
+	PACKETID_EEPROM_COMMAND       = 0x33, // PC  → UAV  Ver3.3~
+	PACKETID_EXTNAVSYS_PVH2       = 0x34, // PC  → UAV  Ver3.3~ 外部ナビゲーションシステムによる航法データ (位置・速度・方位・角速度絶対値)
+	PACKETID_FIRMWAREINFO         = 0x35, // UAV → PC   Ver3.3~ ファームウェア情報（Low&High）
+	PACKETID_TRANS_MODE_CHANGE_REQ     = 0x36, // UAV ← GCS データ転送モード変更要求
+	PACKETID_TRANS_MODE_CHANGE_RES     = 0x37, // UAV → GCS データ転送モード変更応答
+	PACKETID_SD_FILE_SEND_START_REQ    = 0x38, // UAV ← GCS データ転送開始要求
+	PACKETID_SD_FILE_SEND_START_NOTIFY = 0x39, // UAV → GCS データ転送開始通知
+	PACKETID_SD_FILE_SEND_REQ          = 0x3A, // UAV ⇔ GCS 汎用要求
+	PACKETID_SD_FILE_SEND_NOTIFY       = 0x3B, // UAV ⇔ GCS 汎用通知
+	PACKETID_SD_FILE_USER_DATA         = 0x3C, // UAV ⇔ GCS ユーザーデータ
+	PACKETID_SD_FILE_RESEND_REQ        = 0x3D, // UAV ⇔ GCS データ再送要求
+	PACKETID_SD_FILE_SEND_STOP_REQ     = 0x3E, // UAV ← GCS データ転送停止要求
+	PACKETID_SD_FILE_SEND_STOP_NOTIFY  = 0x3F, // UAV → GCS データ転送停止通知
+// 201506xx TCS.Y.Nakamura ADD_S [ファイル転送機能拡張対応]
+	PACKETID_SD_FILE_SEND_UPDATE_FILE_LIST_REQ = 0x40, // UAV ← GCS ファイルリスト更新要求
+	PACKETID_SD_FILE_SEND_UPDATE_FILE_LIST_RES = 0x41, // UAV ← GCS ファイルリスト更新応答
+	PACKETID_SD_FILE_LIST_DATA                 = 0x42, // ファイルサイズ(4)、ファイル(フォルダ)情報(20)
+// 201506xx TCS.Y.Nakamura ADD_E
+	PACKETID_GENERALINT_4         = 0xE0, // UAV → PC   Ver1.0~ ユーザー定義データ(4バイトバッファ)
+	PACKETID_GENERALINT_8         = 0xE1, // UAV → PC   Ver1.0~ ユーザー定義データ(8バイトバッファ)
+	PACKETID_GENERALINT_12        = 0xE2, // UAV → PC   Ver1.0~ ユーザー定義データ(12バイトバッファ)
+	PACKETID_GENERALINT_16        = 0xE3, // UAV → PC   Ver1.0~ ユーザー定義データ(16バイトバッファ)
+	PACKETID_GENERALINT_32        = 0xE4, // UAV → PC   Ver1.0~ ユーザー定義データ(32バイトバッファ)
+	PACKETID_GENERALREAL_4        = 0xE5, // UAV → PC   Ver1.0~ ユーザー定義データ(4バイトバッファ)
+	PACKETID_GENERALREAL_8        = 0xE6, // UAV → PC   Ver1.0~ ユーザー定義データ(8バイトバッファ)
+	PACKETID_GENERALREAL_12       = 0xE7, // UAV → PC   Ver1.0~ ユーザー定義データ(12バイトバッファ)
+	PACKETID_GENERALREAL_16       = 0xE8, // UAV → PC   Ver1.0~ ユーザー定義データ(16バイトバッファ)
+	PACKETID_GENERALREAL_32       = 0xE9, // UAV → PC   Ver1.0~ ユーザー定義データ(32バイトバッファ)
+	PACKETID_USER1                = 0xF0, // PC  → UAV  Ver0009a4~ ユーザー定義（パケットサイズ未定）
+	PACKETID_USER2                = 0xF1, // PC  → UAV  Ver0009a4~ ユーザー定義（パケットサイズ未定）
+	PACKETID_USER3                = 0xF2, // PC  → UAV  Ver0009a4~ ユーザー定義（パケットサイズ未定）
+	PACKETID_USER4                = 0xF3, // PC  → UAV  Ver0009a4~ ユーザー定義（パケットサイズ未定）
+	PACKETID_USER5                = 0xF4, // PC  → UAV  Ver0009a4~ ユーザー定義（パケットサイズ未定）
+	PACKETID_DEBUG                = 0xFE, // UAV → PC 
+};
+
+// パケットの大きさ
+enum PACKETSIZE 
+{
+	PACKETSIZE_CONSTANT           = 5,
+	PACKETSIZE_PROPO              = PACKETSIZE_CONSTANT + 12,
+	PACKETSIZE_IMU                = PACKETSIZE_CONSTANT + 12,
+	PACKETSIZE_GPS                = PACKETSIZE_CONSTANT + 26,
+	PACKETSIZE_INSGPS             = PACKETSIZE_CONSTANT + 26,
+	PACKETSIZE_INPUT              = PACKETSIZE_CONSTANT + 12,
+	PACKETSIZE_ATTREF             = PACKETSIZE_CONSTANT +  6,
+	PACKETSIZE_VELREF             = PACKETSIZE_CONSTANT +  6,
+	PACKETSIZE_POSREF             = PACKETSIZE_CONSTANT + 20,
+	PACKETSIZE_GPSREF             = PACKETSIZE_CONSTANT + 22,
+	PACKETSIZE_FLIGHT_MODE        = PACKETSIZE_CONSTANT +  1,
+	PACKETSIZE_LAND_COMMAND       = PACKETSIZE_CONSTANT +  4,
+	PACKETSIZE_CURRENT_FLIGHTMODE = PACKETSIZE_CONSTANT +  1,
+	PACKETSIZE_INSGPS_LITE        = PACKETSIZE_CONSTANT + 19,
+	PACKETSIZE_INPUT_LITE         = PACKETSIZE_CONSTANT +  5,
+	PACKETSIZE_POSREF_LITE        = PACKETSIZE_CONSTANT + 13,
+	PACKETSIZE_GPSREF_LITE        = PACKETSIZE_CONSTANT + 15,
+	PACKETSIZE_PROPO_LITE         = PACKETSIZE_CONSTANT +  5,
+	PACKETSIZE_COMMAND            = PACKETSIZE_CONSTANT +  5,
+	PACKETSIZE_COUNTERCOMMAND     = PACKETSIZE_CONSTANT +  5,
+	PACKETSIZE_IMU_ATTITUDERATE   = PACKETSIZE_CONSTANT +  6,
+	PACKETSIZE_GPS_LITE           = PACKETSIZE_CONSTANT + 19,
+	PACKETSIZE_IMU2               = PACKETSIZE_CONSTANT + 23,
+	PACKETSIZE_LOCAL_POSITION     = PACKETSIZE_CONSTANT +  9,
+	PACKETSIZE_SYSTEM_CONDITION   = PACKETSIZE_CONSTANT + 11,
+	PACKETSIZE_ATTREF2            = PACKETSIZE_CONSTANT +  6,
+	PACKETSIZE_VELREF2            = PACKETSIZE_CONSTANT +  6,
+	PACKETSIZE_GPSREF2            = PACKETSIZE_CONSTANT + 15,
+	PACKETSIZE_PROPO_SIMPLE       = PACKETSIZE_CONSTANT +  9,
+	PACKETSIZE_GPS_INFO           = PACKETSIZE_CONSTANT + 10,
+	PACKETSIZE_MULTIWAYPOINT      = PACKETSIZE_CONSTANT + 30,
+	PACKETSIZE_MULTIWAYPOINT_ACK  = PACKETSIZE_MULTIWAYPOINT,
+	PACKETSIZE_USS                = PACKETSIZE_CONSTANT + 10,
+	PACKETSIZE_MAGNETIC           = PACKETSIZE_CONSTANT +  6,
+	PACKETSIZE_LLC_INPUT_MINIMUM  = PACKETSIZE_CONSTANT +  8,
+	PACKETSIZE_LLC_INPUT_4ROTOR   = PACKETSIZE_CONSTANT + 16,
+	PACKETSIZE_LLC_INPUT_6ROTOR   = PACKETSIZE_CONSTANT + 20,
+	PACKETSIZE_LLC_INPUT_8ROTOR   = PACKETSIZE_CONSTANT + 24,
+	PACKETSIZE_LLC_INPUT_12ROTOR  = PACKETSIZE_CONSTANT + 32,
+	PACKETSIZE_HEALTH             = PACKETSIZE_CONSTANT + 17,
+	PACKETSIZE_ACTION_POINT       = PACKETSIZE_CONSTANT + 24,
+	PACKETSIZE_EXTNAVSYS_PV       = PACKETSIZE_CONSTANT + 12,
+	PACKETSIZE_EXTNAVSYS_PVH      = PACKETSIZE_CONSTANT + 14,
+	PACKETSIZE_EXTNAVSYS_PVQ      = PACKETSIZE_CONSTANT + 20,
+	PACKETSIZE_EEPROM_WRITE       = PACKETSIZE_CONSTANT + 32,
+	PACKETSIZE_EEPROM_COMMAND     = PACKETSIZE_CONSTANT + 4,
+	PACKETSIZE_EXTNAVSYS_PVH2     = PACKETSIZE_CONSTANT + 16,
+	PACKETSIZE_FIRMWAREINFO       = PACKETSIZE_CONSTANT + 18,
+	PACKETSIZE_FROMSECONDARY      = PACKETSIZE_CONSTANT + 12,
+	PACKETSIZE_TRANS_MODE_CHANGE_REQ     = PACKETSIZE_CONSTANT + 1,         // モード(1)
+	PACKETSIZE_TRANS_MODE_CHANGE_RES     = PACKETSIZE_TRANS_MODE_CHANGE_REQ,// 結果(1)
+// 201506xx TCS.Y.Nakamura ADD_S [ファイル転送機能拡張対応]
+	PACKETSIZE_SD_FILE_SEND_START_REQ    = PACKETSIZE_CONSTANT + 1+4+11+20,    // RW(1)、有効データ長(4)、フォルダ名(11)、ファイル情報(20)
+	PACKETSIZE_SD_FILE_SEND_START_NOTIFY = PACKETSIZE_CONSTANT + 1+1+4+20,  // RW(1)、結果(1)、有効データ長(4)、ファイル情報(20)
+// 201506xx TCS.Y.Nakamura ADD_E
+	PACKETSIZE_SD_FILE_SEND_REQ          = PACKETSIZE_CONSTANT + 1+2+4,     // 種別(1)、ブロック番号(2)、CRC32(4)
+	PACKETSIZE_SD_FILE_SEND_NOTIFY       = PACKETSIZE_CONSTANT + 1+1+2,     // 種別(1)、結果(1)、ブロック番号(2)
+	PACKETSIZE_SD_FILE_USER_DATA         = PACKETSIZE_CONSTANT + 1+32,      // データ番号(1)、ユーザーデータ(32)
+	PACKETSIZE_SD_FILE_RESEND_REQ        = PACKETSIZE_CONSTANT + 32,        // 再送要求パケット情報(32)
+	PACKETSIZE_SD_FILE_SEND_STOP_REQ     = PACKETSIZE_CONSTANT + 1,         // フラグ(1)
+	PACKETSIZE_SD_FILE_SEND_STOP_NOTIFY  = PACKETSIZE_SD_FILE_SEND_STOP_REQ,// 結果(1)
+// 201506xx TCS.Y.Nakamura ADD_S [ファイル転送機能拡張対応]
+	PACKETSIZE_SD_FILE_SEND_UPDATE_FILE_LIST_REQ = PACKETSIZE_CONSTANT + 11,// ディレクトリ名(11)
+	PACKETSIZE_SD_FILE_SEND_UPDATE_FILE_LIST_RES = PACKETSIZE_CONSTANT + 1 + 2, // 結果(1)、ファイル数(2)
+	PACKETSIZE_SD_FILE_LIST_DATA         = PACKETSIZE_CONSTANT + 1 + 2 + 4 + 20,  // モード(1)、データ番号(2)、ファイルサイズ(4)、ファイル(フォルダ)情報(20)
+// 201506xx TCS.Y.Nakamura ADD_E
+	PACKETSIZE_GENERALINT_4       = PACKETSIZE_CONSTANT + 1 + 4,  // パラメータ(1) + バッファ(4)
+	PACKETSIZE_GENERALINT_8       = PACKETSIZE_CONSTANT + 1 + 8,
+	PACKETSIZE_GENERALINT_12      = PACKETSIZE_CONSTANT + 1 + 12,
+	PACKETSIZE_GENERALINT_16      = PACKETSIZE_CONSTANT + 1 + 16,
+	PACKETSIZE_GENERALINT_32      = PACKETSIZE_CONSTANT + 1 + 32,
+	PACKETSIZE_GENERALREAL_4      = PACKETSIZE_CONSTANT + 1 + 4,
+	PACKETSIZE_GENERALREAL_8      = PACKETSIZE_CONSTANT + 1 + 8,
+	PACKETSIZE_GENERALREAL_12     = PACKETSIZE_CONSTANT + 1 + 12,
+	PACKETSIZE_GENERALREAL_16     = PACKETSIZE_CONSTANT + 1 + 16,
+	PACKETSIZE_GENERALREAL_32     = PACKETSIZE_CONSTANT + 1 + 32,
+	PACKETSIZE_DEBUG              = PACKETSIZE_CONSTANT + sizeof(::QUADWORD),
+};
+
+// PACKETID_GENERALINT_* のパラメータ（データの先頭に指定する値．下位5ビットはデータ書き込み位置の指定に使用）
+#define GENERALINT_PARAMETER_UBYTE     (_UBYTE)0        // バッファのデータは符号無し8ビット型
+#define GENERALINT_PARAMETER_SBYTE     (_UBYTE)(1 << 5) // バッファのデータは符号付き8ビット型
+#define GENERALINT_PARAMETER_UWORD     (_UBYTE)(2 << 5) // バッファのデータは符号無し16ビット型
+#define GENERALINT_PARAMETER_SWORD     (_UBYTE)(3 << 5) // バッファのデータは符号付き16ビット型
+#define GENERALINT_PARAMETER_UDWORD    (_UBYTE)(4 << 5) // バッファのデータは符号無し32ビット型
+#define GENERALINT_PARAMETER_SDWORD    (_UBYTE)(5 << 5) // バッファのデータは符号付き32ビット型
+#define GENERALINT_PARAMETER_SQWORD    (_UBYTE)(6 << 5) // バッファのデータは符号付き64ビット型（符号無しデータは送れない．受け側はsigned long long）
+#define GENERALINT_PARAMETER_RESERVED0 (_UBYTE)(7 << 5) // 予約
+#define GENERALINT_PARAMETER_MASK      (_UBYTE)0x1F     // 下位5ビットのマスク
+
+// PACKETID_GENERALREAL_* のパラメータ（データの先頭に指定する値．下位5ビットはデータ書き込み位置の指定に使用）
+#define GENERALREAL_PARAMETER_FLOAT     (_UBYTE)0        // バッファのデータはfloat型
+#define GENERALREAL_PARAMETER_DOUBLE    (_UBYTE)(1 << 5) // バッファのデータはdouble型
+#define GENERALREAL_PARAMETER_100TO2    (_UBYTE)(2 << 5) // バッファのデータは符号付き16ビット型（Dec2ByteTo100でデコードする）
+#define GENERALREAL_PARAMETER_RADTO2    (_UBYTE)(3 << 5) // バッファのデータは符号付き16ビット型（Dec2ByteToRadでデコードする）
+#define GENERALREAL_PARAMETER_1TO2      (_UBYTE)(4 << 5) // バッファのデータは符号付き16ビット型（Dec2ByteTo1でデコードする）
+#define GENERALREAL_PARAMETER_RESERVED1 (_UBYTE)(5 << 5) // 予約
+#define GENERALREAL_PARAMETER_RESERVED2 (_UBYTE)(6 << 5) // 予約
+#define GENERALREAL_PARAMETER_RESERVED3 (_UBYTE)(7 << 5) // 予約
+#define GENERALREAL_PARAMETER_MASK      (_UBYTE)0x1F     // 下位5ビットのマスク
+
+// コマンドID
+enum MAV_COMMAND 
+{
+	COMMAND_UNKNOWNCOMMAND       = 0x00, // UAV ⇔ PC   Ver0007b~ | カウンターコマンド専用 引数：コマンドID
+	COMMAND_BACKTOLAUNCHPOINT    = 0x01, // PC  → UAV  Ver0007b~ | 離陸地点への帰還 引数：なし
+	COMMAND_NEXTWAYPOINT         = 0x02, // PC  → UAV  Ver2.0~   | 次のウェイポイントへ移動（マルチウェイポイント飛行時） 引数：なし
+	COMMAND_CALIBRATION_START     = 0x03, // UAV ← PC キャリブレーション開始要求
+	COMMAND_CALIBRATION_STOP      = 0x04, // UAV ← PC キャリブレーション停止要求
+	COMMAND_CALIBRATION_RESTART   = 0x05, // UAV ← PC キャリブレーションやり直し要求
+	COMMAND_CALIBRATION_INDICATION = 0x06, // UAV → PC ユーザーオペレーション指示
+	COMMAND_LASERPOINTING_ANGLE  = 0x20, // UGVのレーザーコマンド | 0x00, デバイスID, PWMパルス幅
+	COMMAND_LASERPOINTING_SHOOT  = 0x21, // UGVのレーザーコマンド | 0x00, 0x00, デバイスID, レーザON/OFF
+	COMMAND_PING                 = 0xFF, // PC  → UAV  Ver1.0~
+	COMMAND_REQUEST_FIRMWAREINFO = 0x30, // PC  → UAV  Ver3.3.0~ | ファームウェア情報の問い合わせ 引数：なし
+};
+
+#endif

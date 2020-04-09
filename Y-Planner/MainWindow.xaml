@@ -1,0 +1,617 @@
+﻿<Window	x:Class="Y_Planner.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:metro="http://schemas.codeplex.com/elysium/theme"
+        xmlns:map="clr-namespace:GMap.NET.WindowsPresentation;assembly=GMap.NET.WindowsPresentation"
+        xmlns:control="clr-namespace:ControlsUnit;assembly=ControlsUnit"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:xcad="http://schemas.xceed.com/wpf/xaml/avalondock"
+        xmlns:s="clr-namespace:System;assembly=mscorlib"
+        xmlns:Custom="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon" 
+	    xmlns:option ="clr-namespace:Y_Planner.Option"
+        x:Name="Main_Window"
+        Height="720" Width="1280" Icon="Resources/minisv.ico" Background="{Binding Background, ElementName=MainRibbon}" WindowStyle="SingleBorderWindow" MinHeight="720" MinWidth="780" Closing="MainWindowCosing" SizeChanged="Window_SizeChanged" PreviewKeyDown="Window_PreviewKeyDown" PreviewKeyUp="Window_PreviewKeyUp" >
+	<Window.Resources>
+		<ResourceDictionary Source="MainWindowStyles.xaml"/>
+	</Window.Resources>
+    <!--指定的窗口框架的工作范围-->
+	<WindowChrome.WindowChrome>
+		<WindowChrome CaptionHeight="50" ResizeBorderThickness="5" />
+	</WindowChrome.WindowChrome>
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="10"/>
+			<ColumnDefinition Width="440*"/>
+			<ColumnDefinition Width="10"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="10"/>
+			<RowDefinition Height="50"/>
+			<RowDefinition Height="348*"/>
+			<RowDefinition Height="10"/>
+		</Grid.RowDefinitions>
+
+        <!-- 主界面 -->
+		<Grid Grid.Row="2" Grid.Column="1">
+			<Grid.ColumnDefinitions>
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="140" Name="RibbonRow"/>
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
+
+			<Ribbon x:Name="MainRibbon" Grid.Row="0" Grid.RowSpan="2" >
+                <!-- 应用程序菜单 -->
+				<Ribbon.ApplicationMenu>
+					<RibbonApplicationMenu  KeyTip="F" LargeImageSource="Resources/Circle1.png" >
+                        <RibbonApplicationMenuItem Name="NewFile" Header="新建" Click="NewFile_Click" ImageSource="Resources/file126.png" />
+                        <RibbonApplicationMenuItem Name="FileOpen" Header="打开" Click="FileOpen_Click" ImageSource="Resources/open127.png" />
+						<RibbonApplicationMenuItem Name="FileClose" Header="关闭" Click="FileClose_Click"/>
+						<RibbonApplicationMenuItem Name="Save" Header="目标另存为" Click="Save_Click" ImageSource="Resources/save-file.png" />
+						<RibbonApplicationMenuItem Name="OverWrite" Header="保存" Click="OverWrite_Click" />
+						<RibbonSeparator/>
+						<RibbonApplicationMenuItem Name="Manual" Header="帮助文档" Click="Manual_Click" ImageSource="Resources/text54.png" />
+						<RibbonApplicationMenuItem Name="About" Header="关于" Click="About_Click" />
+						<RibbonSeparator/>
+						<RibbonApplicationMenuItem Name="End" Header="退出" KeyTip="E" Click="MenuItem_Click_End" />
+					</RibbonApplicationMenu>
+				</Ribbon.ApplicationMenu>
+
+                <!-- 帮助窗格：图标 右边[？] -->
+				<Ribbon.HelpPaneContent>
+					<RibbonButton SmallImageSource="Resources/up.png" Click="RibbonButton_Click" />
+				</Ribbon.HelpPaneContent>
+
+                <!-- 快速访问工具栏：[保存] [撤消][重做]图标 -->
+
+				<Ribbon.QuickAccessToolBar>
+					<RibbonQuickAccessToolBar>
+						<RibbonButton x:Name ="QuickAccessConnect" SmallImageSource="{Binding ElementName=UAVConect,Path=LargeImageSource}" Click="UAVConect_Click" Margin="0,0,5,0"/>
+						<RibbonButton x:Name ="QuickAccessTouch" SmallImageSource="{Binding ElementName=TouchIcon,Path=LargeImageSource}" Click="TouchIcon_Click" Margin="0,0,5,0"/>
+						<RibbonButton x:Name ="QuickAccessUndo" SmallImageSource="Resources/back36.png" Click="UndoButton_Click" IsEnabled="{Binding ElementName=UndoButton,Path=IsEnabled}" />
+						<RibbonButton x:Name ="QuickAccessRedo" SmallImageSource="Resources/right133.png" Click="RedoButton_Click" IsEnabled="{Binding ElementName=RedoButton,Path=IsEnabled}"/>
+					</RibbonQuickAccessToolBar>
+				</Ribbon.QuickAccessToolBar>
+
+                <!-- 功能区＃3：选项卡3] -->
+
+                <!--项目标签-->
+				<RibbonTab Header="工程" KeyTip="V" >
+					<!--基准点的增加与删除-->
+					<RibbonGroup x:Name="Mission" Header="任务">
+						<RibbonMenuButton Name="BasePoint" Label="基准点"  LargeImageSource="Resources/placeholder8.png" >
+							<RibbonMenuItem Name="BasePointAdd" Header="增加(+)" Click="BasePointAdd_Click" ImageSource="Resources/add204.png" />
+							<RibbonMenuItem Name="BasePointDel" Header="删除(-)" Click="BasePointDel_Click" ImageSource="Resources/minus3.png"/>
+						</RibbonMenuButton>
+					</RibbonGroup>
+					<RibbonGroup Header="航点">
+						<RibbonButton Label="清除" x:Name="SingleClear" Click="SingleClear_Click" />
+						<RibbonButton Label="清除所有" x:Name="AllClear" Click="AllClear_Click"/>
+						<RibbonButton Label="全选" x:Name="AllSelect" Click="AllSelect_Click" Visibility="Hidden"/>
+					</RibbonGroup>
+					<!--　功能　-->
+					<RibbonGroup Header="撤销/前进">
+						<RibbonButton Label="撤销" x:Name="UndoButton" Margin="2" LargeImageSource="Resources/back36.png" Click="UndoButton_Click" IsEnabled="False" />
+						<RibbonButton Label="前进" x:Name="RedoButton" Margin="2" LargeImageSource="Resources/right133.png" Click="RedoButton_Click" IsEnabled="False" />
+					</RibbonGroup>
+                    <!--　属性显示　-->
+                    <RibbonGroup x:Name="PropertiesView" Header="属性显示">
+                        <RibbonMenuButton Label="属性" LargeImageSource="Resources/view1.png" >
+                            <RibbonMenuItem Header="航点属性" ImageSource="Resources/property-blue.png" />
+                            <RibbonMenuItem Header="任务属性" ImageSource="Resources/property-blue.png" />
+						</RibbonMenuButton>
+                        <RibbonMenuButton Label="列表显示" LargeImageSource="Resources/list88.png">
+                            <RibbonMenuItem Header="航点视图" Click="WaypointView_Click" />
+							<RibbonMenuItem Header="任务视图" Click="MissionView_Click" />
+							<RibbonMenuItem Header="高度视图" Click="AltitudeListView_Click" />
+						</RibbonMenuButton>
+					</RibbonGroup>
+                    <!--　绘图功能-->
+					<RibbonGroup Header="路点设置" >
+						<StackPanel Orientation="Vertical">
+							<Label Width="40" Height="40" Margin="5" MouseLeftButtonDown="StandardDraw_MouseLeftButtonDown" >
+								<Label.Background>
+									<ImageBrush ImageSource="Resources/standard.png"/>
+								</Label.Background>
+							</Label>
+							<RadioButton GroupName="Group1" Margin="2" Name="Radio_StandardDraw" Content="标准" IsChecked="True"/>
+						</StackPanel>
+						<StackPanel Orientation="Vertical">
+							<Label Width="40" Height="40" Margin="5" MouseLeftButtonDown="LineDraw_MouseLeftButtonDown" >
+								<Label.Background>
+									<ImageBrush ImageSource="Resources/line.png"/>
+								</Label.Background>
+							</Label>
+                            <RadioButton GroupName="Group1" Margin="2" Name="Radio_LineDraw" Content="直线"/>
+						</StackPanel>
+						<StackPanel Orientation="Vertical">
+							<Label Width="40" Height="40" Margin="5" MouseLeftButtonDown="RectangleDraw_MouseLeftButtonDown">
+								<Label.Background>
+									<ImageBrush ImageSource="Resources/Rectangle.png"/>
+								</Label.Background>
+							</Label>
+							<RadioButton GroupName="Group1" Margin="2" Name="Radio_RectangleDraw" Content="矩形"/>
+						</StackPanel>
+						<StackPanel Orientation="Vertical">
+							<Label Width="40" Height="40" Margin="5"  MouseLeftButtonDown="CircleDraw_MouseLeftButtonDown">
+								<Label.Background>
+									<ImageBrush ImageSource="Resources/Circle.png"/>
+								</Label.Background>
+							</Label>
+							<RadioButton GroupName="Group1" Margin="2" Name="Radio_CircleDraw" Content="圆"/>
+						</StackPanel>
+						<StackPanel Orientation="Vertical">
+							<Label Width="40" Height="40" Margin="5" MouseLeftButtonDown="ReturnDraw1_MouseLeftButtonDown">
+								<Label.Background>
+									<ImageBrush ImageSource="Resources/ReturnDraw1.png"/>
+								</Label.Background>
+							</Label>
+							<RadioButton GroupName="Group1" Margin="2" Name="Radio_ReturnDraw1" Content="横向往复"/>
+						</StackPanel>
+						<StackPanel Orientation="Vertical">
+							<Label Width="40" Height="40" Margin="5" MouseLeftButtonDown="ReturnDraw2_MouseLeftButtonDown">
+								<Label.Background>
+									<ImageBrush ImageSource="Resources/ReturnDraw2.png"/>
+								</Label.Background>
+							</Label>
+							<RadioButton GroupName="Group1" Margin="2" Name="Radio_ReturnDraw2" Content="纵向往复"/>
+						</StackPanel>
+						<StackPanel Orientation="Horizontal">
+							<Label Content="纵向等分数:" Margin="0,0,5,0"/>
+							<xctk:DoubleUpDown Name="NumberOfPartitionsValue1" Width="60" Value="3" Margin="1" Maximum="255" Minimum="0" Increment="1" />
+						</StackPanel>
+						<StackPanel Orientation="Horizontal">
+                            <Label Content="横向等分数:" Margin="0,0,5,0"/>
+							<xctk:DoubleUpDown Name="NumberOfPartitionsValue2" Width="60" Value="3" Margin="1" Maximum="255" Minimum="0" Increment="1" />
+						</StackPanel>
+					</RibbonGroup>
+					<!-- X-Monitor发送 -->
+					<RibbonGroup Header="发送" >
+						<RibbonButton Name="Transmit" Label="Transmit" LargeImageSource="Resources/x_monitor.png" Click="Transmit_Click"/>
+					</RibbonGroup>
+                    <!-- X-Monitor变换 -->
+                    <RibbonGroup Header="変换" >
+						<RibbonButton Name="kmlWrite" Label="KML"  LargeImageSource="Resources/kml.png" Click="kmlWrite_Click" />
+					</RibbonGroup>
+				</RibbonTab>
+				<!--设置-->
+				<RibbonTab Header="设置" KeyTip="V" >
+					<RibbonGroup x:Name="MapGroup2" Header="切换操作">
+						<RibbonButton Label="触控/鼠标" x:Name="TouchIcon" Click="TouchIcon_Click"/>
+					</RibbonGroup>
+					<RibbonGroup x:Name="MapSetting" Header="经纬度">
+
+						<StackPanel Orientation="Horizontal">
+							<Label Content="纬度:" Margin="0,0,5,0"/>
+							<RibbonTextBox Name="LatText" Width="90" />
+						</StackPanel>
+						<StackPanel Orientation="Horizontal">
+							<Label Content="经度:" Margin="0,0,2,0"/>
+							<RibbonTextBox Name="LngText" Width="90" Margin="0,0,0,0.2" />
+						</StackPanel>
+						<Button  Content="设置" Name="LatLngSet" Width="55" Margin="2" Click="LatLngSet_Click"/>
+					</RibbonGroup>
+					<RibbonGroup Header="地图选择">
+						<Label Name="a" Content="地图类别:"/>
+						<ComboBox Name="MapProviders" Width="100" SelectionChanged="MapProviders_SelectionChanged"  />
+					</RibbonGroup>
+					<RibbonGroup Header="地图选择">
+						<TextBox Name="CustomMapText" Width="120" IsEnabled="False"/>
+						<Button Name="CustomMapButton" Grid.Column="1" Grid.Row="1" Margin="5" Content="参照" Click="CustomMapButton_Click" />
+					</RibbonGroup>
+                    <RibbonGroup Header="经度和纬度搜索">
+						<Label Content="目标点:"/>
+						<RibbonTextBox Name="AddressText" Text="千叶大"/>
+						<Button  Content="搜索" Name="AddressSearch" Width="55" Margin="2" Click="AddressSearch_Click" />
+						<Button  Content="设置" Name="AddressSet" Width="55" Margin="2" Click="AddressSet_Click"/>
+					</RibbonGroup>
+                    <RibbonGroup Header="海拔高度">
+						<RibbonTextBox Name="ElevationText" IsEnabled="False"/>
+                        <Button  Content="海拔获取" Margin="5" Name="ElevationSet" Click="ElevationSet_Click" />
+					</RibbonGroup>
+				</RibbonTab>
+
+                <!--连接选项-->
+                <RibbonTab Header="机体信息" >
+					<RibbonGroup Header="连接">
+						<RibbonButton Name="UAVConect" Label="连接失败" LargeImageSource="Resources/disconnect.png" Click="UAVConect_Click" />
+					</RibbonGroup>
+					<RibbonGroup Header="UAV">
+                        <StackPanel Orientation="Horizontal">
+                            <!--横向放置，内容为lat，大小为0.0.3.0-->
+                            <Label Content="纬度:" Margin="0,0,3,0"/>
+							<RibbonTextBox Name="UAVLatText"/>
+						</StackPanel>
+						<StackPanel Orientation="Horizontal">
+                            <Label Content="经度:" Margin="0,0,0,0"/>
+							<RibbonTextBox Name="UAVLngText" />
+						</StackPanel>
+						<StackPanel Orientation="Horizontal">
+							<Label Content="高度:" Margin="0,0,7,0"/>
+							<RibbonTextBox Name="UAVAltText" />
+						</StackPanel>
+						<StackPanel Orientation="Horizontal">
+							<Label Content="偏航:" Margin="0,0,0,0"/>
+							<RibbonTextBox Name="UAVYawText" />
+						</StackPanel>
+					</RibbonGroup>
+				</RibbonTab>
+			</Ribbon>
+            <!-- Dock属性-->
+			<xcad:DockingManager Grid.Row="2" AllowMixedOrientation="True" BorderThickness="1">
+				<xcad:DockingManager.DocumentHeaderTemplate>
+					<DataTemplate>
+						<StackPanel Orientation="Horizontal">
+							<Image Source="{Binding IconSource}" Margin="0,0,4,0"/>
+							<TextBlock Text="{Binding Title}" />
+						</StackPanel>
+					</DataTemplate>
+				</xcad:DockingManager.DocumentHeaderTemplate>
+				<xcad:LayoutRoot x:Name="_layoutRoot">
+					<xcad:LayoutPanel Orientation="Horizontal">
+						<!-- 左侧 -->
+
+                        <xcad:LayoutAnchorablePane DockWidth="250">
+                            <!-- 航点属性 -->
+                            <xcad:LayoutAnchorable ContentId="WaypointPropertyId" Title="航点属性" CanHide="False" CanClose="False" AutoHideWidth="300" IconSource="Resources/property-blue.png" FloatingWidth="200">
+                                <xctk:PropertyGrid x:Name="WaypointProperty" NameColumnWidth="120" PropertyValueChanged="WaypointProperty_PropertyValueChanged" />
+                            </xcad:LayoutAnchorable>
+                            <!-- 任务属性 -->
+                            <xcad:LayoutAnchorable ContentId="MissionPropaertyId" Title="任务属性" CanHide="False" CanClose="False" AutoHideWidth="300" IconSource="Resources/property-blue.png" FloatingHeight="200" FloatingWidth="200">
+                                <xctk:PropertyGrid x:Name="MissionProperty" NameColumnWidth="120" PropertyValueChanged="MissionProperty_PropertyValueChanged" />
+                            </xcad:LayoutAnchorable>
+                        </xcad:LayoutAnchorablePane>
+                        <!-- Main -->
+						<xcad:LayoutDocumentPaneGroup >
+							<xcad:LayoutDocumentPane>
+								<!--地图　固定　-->
+								<xcad:LayoutDocument ContentId="documentMap" Title="Map" IconSource="Resources/document.png" CanClose="False" CanFloat="False" IsSelectedChanged="LayoutDocument_IsSelectedChanged" >
+									<Grid >
+										<Grid.ColumnDefinitions>
+											<ColumnDefinition Width="80"/>
+											<ColumnDefinition Width="*"/>
+											<ColumnDefinition Width="200" />
+										</Grid.ColumnDefinitions>
+										<Grid.RowDefinitions>
+											<RowDefinition Height="*"/>
+											<RowDefinition Height="60"/>
+										</Grid.RowDefinitions>
+										<!-- 地图表示　GMap.NET -->
+										<map:GMapControl x:Name="MainMap" Grid.ColumnSpan="3" Grid.RowSpan="2" MaxZoom="20" MinZoom="1" Zoom="17" ScaleMode="Dynamic" RenderTransformOrigin="0.5,0.5" Margin="-278,-291,-222,-309" />
+										<!-- GMapProviders Copyright-->
+										<Label x:Name="Copyright" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Content="Copyright" Height="21"  Foreground="#FF5B5B5B"  FontSize="8" VerticalAlignment="Bottom" VerticalContentAlignment="Bottom"/>
+                                        <!--网格线-->
+										<Border x:Name="GridLine"  Grid.ColumnSpan="3" Grid.RowSpan="2"  BorderBrush="White" CornerRadius="0" BorderThickness="0.5" >
+											<Canvas x:Name="canvas" SnapsToDevicePixels="True" Loaded="canvas_Loaded" SizeChanged="canvas_SizeChanged" Margin="0,-2,0,2" />
+										</Border>
+                                        <!--相应的网格线距离显示-->
+										<Grid Name="Arrow" Grid.ColumnSpan="3"  Height="40" Width="250" VerticalAlignment="Top" HorizontalAlignment="Right">
+											<Grid.ColumnDefinitions>
+												<ColumnDefinition Width="*"/>
+												<ColumnDefinition Width="50"/>
+											</Grid.ColumnDefinitions>
+											<Grid.RowDefinitions>
+												<RowDefinition Height="*"/>
+											</Grid.RowDefinitions>
+											<Grid Name="DisArrow" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Width="50">
+												<Line Name="Dis1" Stroke="White" StrokeThickness="2" X1="0" Y1="8" X2="{Binding ElementName=DisArrow,Path=Width}" Y2="8" />
+												<Line Name="Dis2" Stroke="{Binding ElementName=Dis1,Path=Stroke}" StrokeThickness="4" X1="2" Y1="0" X2="2" Y2="16" />
+												<Line Name="Dis3" Stroke="{Binding ElementName=Dis1,Path=Stroke}" StrokeThickness="4" HorizontalAlignment="Right" X1="0" Y1="0" X2="0" Y2="16" />
+											</Grid>
+											<Label Name="DisName" Grid.Column="0" Content="dis" Height="40" Width="180" FontSize="24" Background="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Foreground="#FF1F1A50" />
+										</Grid>
+										<!--地图扩大与缩小-->
+										<Viewbox  Grid.Column="2" Grid.Row="0" Grid.RowSpan="2" StretchDirection="DownOnly" HorizontalAlignment="Right" VerticalAlignment="Bottom" >
+											<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom"  >
+												<Border Height="50" Width="50" Grid.Column="2"  Background="#FF1F1A50"  VerticalAlignment="Bottom"  BorderBrush="White" CornerRadius="3" BorderThickness="2">
+													<Label Name="MarkerIcon" Background="White" MouseLeftButtonDown="MarkerIcon_MouseLeftButtonDown" Foreground="White">
+														<Label.OpacityMask>
+															<ImageBrush ImageSource="Resources/maker.png"/>
+														</Label.OpacityMask>
+													</Label>
+												</Border>
+												<control:RotateAzimuthal VerticalAlignment="Bottom" Height="50" Width="50"  x:Name="MapRotate"  ValueChanged="RotateAzimuthalValueChanged" Background="{Binding ElementName=ZoomName,Path=ZoomBackground}" MouseLeftButtonDown="MapRotate_MouseLeftButtonDown" />
+												<control:MapZoom  x:Name="ZoomName" Value="{Binding Zoom, ElementName=MainMap}"  ZoomBackground="#FF1F1A50" ZoomMinimum="1" ZoomMaximum="20" ValueChanged="MapZoomChanged" />
+											</StackPanel>
+										</Viewbox>
+									</Grid>
+								</xcad:LayoutDocument>
+							</xcad:LayoutDocumentPane>
+						</xcad:LayoutDocumentPaneGroup>
+						<!-- 右侧 -->
+						<xcad:LayoutAnchorablePaneGroup DockWidth="200">
+							<xcad:LayoutAnchorablePane>
+								<!--Waypoint列表-->
+								<xcad:LayoutAnchorable x:Name="WaypointDoc" ContentId="Waypoint" Title="航点" IconSource="Resources/address-book-open.png" CanAutoHide="True" CanFloat="True" CanHide="True" CanClose="False" AutoHideMinHeight="0" AutoHideMinWidth="0" AutoHideWidth="200" FloatingWidth="200" IsMaximized="True" >
+									<Grid>
+										<Grid.ColumnDefinitions>
+											<ColumnDefinition Width="*"/>
+										</Grid.ColumnDefinitions>
+										<Grid.RowDefinitions>
+											<RowDefinition Height="80"/>
+											<RowDefinition Height="*"/>
+											<RowDefinition Height="30"/>
+										</Grid.RowDefinitions>
+										<!-- Waypoint一扩展集 -->
+                                        <ListView x:Name="WaypointAllChange_DataGrid" Grid.Row="0">
+                                            <ListView.View>
+                                                <GridView>
+                                                    <GridViewColumn  Header="ID" DisplayMemberBinding="{Binding ID}" />
+                                                    <!--<GridViewColumn  Header="Name" DisplayMemberBinding="{Binding Name}" />-->
+                                                    <GridViewColumn  Header="x">
+                                                        <GridViewColumn.CellTemplate>
+                                                            <DataTemplate>
+                                                                <xctk:DoubleUpDown x:Name="AllWaypointX" Value="{Binding x}" ValueChanged="AllWaypoint_ValueChanged" />
+                                                            </DataTemplate>
+                                                        </GridViewColumn.CellTemplate>
+                                                    </GridViewColumn>
+                                                    <GridViewColumn  Header="y">
+                                                        <GridViewColumn.CellTemplate>
+                                                            <DataTemplate>
+                                                                <xctk:DoubleUpDown x:Name="AllWaypointY" Value="{Binding y}" ValueChanged="AllWaypoint_ValueChanged" />
+                                                            </DataTemplate>
+                                                        </GridViewColumn.CellTemplate>
+                                                    </GridViewColumn>
+                                                    <GridViewColumn  Header="高度">
+                                                        <GridViewColumn.CellTemplate>
+                                                            <DataTemplate>
+                                                                <xctk:DoubleUpDown x:Name="AllWaypointHeight" Value="{Binding Height}" ValueChanged="AllWaypoint_ValueChanged" />
+                                                            </DataTemplate>
+                                                        </GridViewColumn.CellTemplate>
+                                                    </GridViewColumn>
+                                                    <GridViewColumn  Header="航向">
+                                                        <GridViewColumn.CellTemplate>
+                                                            <DataTemplate>
+                                                                <xctk:DoubleUpDown x:Name="AllWaypointHeading" Value="{Binding Heading}" ValueChanged="AllWaypoint_ValueChanged" Minimum="-180" Maximum="180"/>
+                                                            </DataTemplate>
+                                                        </GridViewColumn.CellTemplate>
+                                                    </GridViewColumn>
+													<!--
+                                                    <GridViewColumn  Header="ThreasholdH">
+                                                        <GridViewColumn.CellTemplate>
+                                                            <DataTemplate>
+                                                                <xctk:DoubleUpDown x:Name="AllWaypointThreasholdH" Value="{Binding ThreasholdH}" ValueChanged="AllWaypoint_ValueChanged" />
+                                                            </DataTemplate>
+                                                        </GridViewColumn.CellTemplate>
+                                                    </GridViewColumn>
+                                                    <GridViewColumn  Header="ThreasholdV" DisplayMemberBinding="{Binding ThreasholdV}" />
+													-->
+													<GridViewColumn  Header="等待时间">
+														<GridViewColumn.CellTemplate>
+															<DataTemplate>
+																<xctk:DoubleUpDown x:Name="AllWaypointWait" Value="{Binding Wait}" ValueChanged="AllWaypoint_ValueChanged" />
+															</DataTemplate>
+														</GridViewColumn.CellTemplate>
+													</GridViewColumn>
+													<!--<GridViewColumn  Header="Function" DisplayMemberBinding="{Binding Function}" />-->
+                                                    <GridViewColumn  Header="速度">
+                                                        <GridViewColumn.CellTemplate>
+                                                            <DataTemplate>
+                                                                <xctk:DoubleUpDown x:Name="AllWaypointSpeed" Value="{Binding Speed}" ValueChanged="AllWaypoint_ValueChanged" Minimum="0.1" Maximum="10"/>
+                                                            </DataTemplate>
+                                                        </GridViewColumn.CellTemplate>
+                                                    </GridViewColumn>
+                                                </GridView>
+                                            </ListView.View>
+                                        </ListView>
+
+                                        <!-- Waypointリスト -->
+										<!--
+										<DataGrid x:Name="WaypointListView" Grid.Row="1" IsReadOnly="True" >
+											<DataGrid.Columns>
+												<DataGridTextColumn  Header="ID" Binding="{Binding ID}" />
+												<DataGridTextColumn  Header="Name" Binding="{Binding Name}" />
+												<DataGridTextColumn  Header="x" Binding="{Binding x}" />
+												<DataGridTextColumn  Header="y" Binding="{Binding y}" />
+												<DataGridTextColumn  Header="Height" Binding="{Binding Height}" />
+												<DataGridTextColumn  Header="Heading" Binding="{Binding Heading}" />
+												<DataGridTextColumn  Header="ThreasholdH" Binding="{Binding ThreasholdH}" />
+												<DataGridTextColumn  Header="ThreasholdV" Binding="{Binding ThreasholdV}" />
+												<DataGridTextColumn  Header="Wait" Binding="{Binding Wait}" />
+												<DataGridTextColumn  Header="Function" Binding="{Binding Function}" />
+												<DataGridTextColumn  Header="Speed" Binding="{Binding Speed}" />
+											</DataGrid.Columns>
+										</DataGrid>
+										-->
+                                        <!-- 右侧列表部分-->
+                                            <ListView x:Name="WaypointListView" Grid.Row="1" ItemsSource="{Binding}" SelectionChanged="WaypointListView_SelectionChanged" >
+											<ListView.View>
+												<GridView>
+													<GridViewColumn  Header="ID" DisplayMemberBinding="{Binding ID}" />
+													<!--<GridViewColumn  Header="Name" DisplayMemberBinding="{Binding Name}" />-->
+													<GridViewColumn  Header="x" DisplayMemberBinding="{Binding x}" />
+													<GridViewColumn  Header="y" DisplayMemberBinding="{Binding y}" />
+													<GridViewColumn  Header="高度" DisplayMemberBinding="{Binding Height}" />
+													<GridViewColumn  Header="航向" DisplayMemberBinding="{Binding Heading}" />
+													<!--
+													<GridViewColumn  Header="ThreasholdH" DisplayMemberBinding="{Binding ThreasholdH}" />
+													<GridViewColumn  Header="ThreasholdV" DisplayMemberBinding="{Binding ThreasholdV}" />
+													-->
+													<GridViewColumn  Header="等待时间" DisplayMemberBinding="{Binding Wait}" />
+													<!--<GridViewColumn  Header="Function" DisplayMemberBinding="{Binding Function}" />-->
+													<GridViewColumn  Header="速度" DisplayMemberBinding="{Binding Speed}" />
+												</GridView>
+											</ListView.View>
+										</ListView>
+										<Grid Grid.Row="2">
+											<Grid.ColumnDefinitions>
+												<ColumnDefinition Width="50"/>
+												<ColumnDefinition Width="50"/>
+												<ColumnDefinition Width="50"/>
+												<ColumnDefinition Width="50"/>
+												<ColumnDefinition Width="*"/>
+											</Grid.ColumnDefinitions>
+											<Grid.RowDefinitions>
+												<RowDefinition Height="*"/>
+											</Grid.RowDefinitions>
+											<Button Grid.Column="0" Content="增加" Margin="2" Click="WaypointAdd_Click" />
+											<Button Grid.Column="1" Content="删除" Margin="2" Click="SingleClear_Click" />
+											<Button Grid.Column="2" Content="▲" Margin="2" Click="WaypointUp_Click" />
+											<Button Grid.Column="3" Content="▼" Margin="2" Click="WaypointDown_Click"/>
+										</Grid>
+									</Grid>
+								</xcad:LayoutAnchorable>
+								<!--高度界面-->
+                                <xcad:LayoutAnchorable x:Name="AltitudeDock" ContentId="Altitude" Title="高度列表" IconSource="Resources/address-book-open.png" CanAutoHide="True" CanFloat="True" CanHide="True" CanClose="False" AutoHideMinHeight="0" AutoHideMinWidth="0" AutoHideWidth="200" FloatingWidth="200" IsMaximized="True" >
+									<option:AltitudeProperty x:Name="AltitudePropertyValue" ValueChanged="AltitudePropertyValue_ValueChanged" AllValueChanged="AltitudePropertyValue_AllValueChanged"/>
+								</xcad:LayoutAnchorable>
+
+								<!--Misson界面 不显示右侧-->
+								<xcad:LayoutAnchorable x:Name="MissionDoc" ContentId="Mission" Title="任务列表"  IconSource="Resources/address-book-open.png" CanClose="False" CanHide="True" CanFloat="True" CanAutoHide="True" AutoHideMinHeight="200" AutoHideMinWidth="200" AutoHideHeight="200" AutoHideWidth="200" FloatingWidth="200" FloatingHeight="200" IsMaximized="True" IsVisible="False" >
+									<Grid>
+										<Grid.ColumnDefinitions>
+											<ColumnDefinition Width="*"/>
+											<ColumnDefinition Width="*"/>
+											<ColumnDefinition Width="*"/>
+										</Grid.ColumnDefinitions>
+										<Grid.RowDefinitions>
+											<RowDefinition Height="100"/>
+											<RowDefinition Height="120"/>
+											<RowDefinition Height="100"/>
+											<RowDefinition Height="60"/>
+											<RowDefinition Height="40"/>
+											<RowDefinition Height="40"/>
+											<RowDefinition Height="40"/>
+											<RowDefinition Height="*"/>
+										</Grid.RowDefinitions>
+										<StackPanel Grid.Row="0" Grid.ColumnSpan="3">
+											<StackPanel Orientation="Horizontal" Margin="5">
+												<Label Content="任务:"/>
+												<ComboBox Name="missionSelect" Width="120" SelectionChanged="missionSelect_SelectionChanged" IsEnabled="False"/>
+											</StackPanel>
+											<StackPanel Orientation="Horizontal" Margin="5">
+												<Label Content="名称:"/>
+												<TextBox Name="missionName" Width="120" Margin="5,0,0,0" IsEnabled="{Binding ElementName=missionSelect,Path=IsEnabled}"/>
+											</StackPanel>
+											<CheckBox Name="missonEnabled" Margin="5" Content="Enabled" IsChecked="True" IsEnabled="False"/>
+										</StackPanel>
+										<!-- 基本属性 右侧 -->
+										<GroupBox  Header="基本属性" Grid.Row="1" Grid.ColumnSpan="3">
+											<Grid>
+												<Grid.ColumnDefinitions>
+													<ColumnDefinition Width="70"/>
+													<ColumnDefinition Width="*"/>
+												</Grid.ColumnDefinitions>
+												<Grid.RowDefinitions>
+													<RowDefinition Height="25"/>
+													<RowDefinition Height="25"/>
+													<RowDefinition Height="25"/>
+													<RowDefinition Height="25"/>
+												</Grid.RowDefinitions>
+												<Label Content="纬度:" Grid.Row="0"/>
+												<Label Content="经度:"  Grid.Row="1"/>
+												<Label Content="高度:"  Grid.Row="2"/>
+                                                <Label Content="旋转:"  Grid.Row="3"/>
+
+												<xctk:DoubleUpDown Name="LatValue" Grid.Row="0" Grid.Column="1" Margin="1" Maximum="90" Minimum="-90" Increment="0.000001" ValueChanged="LatValue_ValueChanged" IsEnabled="{Binding ElementName=missionSelect,Path=IsEnabled}"/>
+												<xctk:DoubleUpDown Name="LonValue" Grid.Row="1" Grid.Column="1" Margin="1" Maximum="180" Minimum="-180" Increment="0.000001" ValueChanged="LonValue_ValueChanged" IsEnabled="{Binding ElementName=missionSelect,Path=IsEnabled}"/>
+												<xctk:DoubleUpDown Name="AltValue" Grid.Row="2" Grid.Column="1" Margin="1" Maximum="300" Minimum="0" Increment="0.1" IsEnabled="False" />
+												<xctk:DoubleUpDown Name="RotValue" Grid.Row="3" Grid.Column="1" Margin="1" Maximum="180" Minimum="-180" Increment="1" ValueChanged="RotValue_ValueChanged" IsEnabled="{Binding ElementName=missionSelect,Path=IsEnabled}" />
+											</Grid>
+										</GroupBox>
+                                        <!-- 比例 -->
+                                        <GroupBox  Header="比例" Grid.Row="2" Grid.ColumnSpan="3">
+											<Grid>
+												<Grid.ColumnDefinitions>
+													<ColumnDefinition Width="50"/>
+													<ColumnDefinition Width="*"/>
+												</Grid.ColumnDefinitions>
+												<Grid.RowDefinitions>
+													<RowDefinition Height="25"/>
+													<RowDefinition Height="25"/>
+													<RowDefinition Height="25"/>
+												</Grid.RowDefinitions>
+												<Label Content="x:" Grid.Row="0" HorizontalAlignment="Right" />
+												<Label Content="y:"  Grid.Row="1" HorizontalAlignment="Right" />
+												<Label Content="z:"  Grid.Row="2" HorizontalAlignment="Right" />
+
+												<xctk:DoubleUpDown Name="XValue" Grid.Row="0" Grid.Column="1" Margin="1" Maximum="300" Minimum="0" Increment="0.1" ValueChanged="XValue_ValueChanged" IsEnabled="{Binding ElementName=missionSelect,Path=IsEnabled}"/>
+												<xctk:DoubleUpDown Name="YValue" Grid.Row="1" Grid.Column="1" Margin="1" Maximum="300" Minimum="0" Increment="0.1" ValueChanged="YValue_ValueChanged" IsEnabled="{Binding ElementName=missionSelect,Path=IsEnabled}"/>
+												<xctk:DoubleUpDown Name="ZValue" Grid.Row="2" Grid.Column="1" Margin="1" Maximum="300" Minimum="0" Increment="0.1" IsEnabled="False"/>
+											</Grid>
+										</GroupBox>
+										<StackPanel Grid.Row="3" Grid.ColumnSpan="3">
+											<Label Content="高度模式"/>
+											<ComboBox Name="AltitudeMode" IsEnabled="False">
+												<ComboBoxItem Content="相对高度" />
+												<ComboBoxItem Content="绝对高度" />
+												<ComboBoxItem Content="对地高度" />
+											</ComboBox>
+										</StackPanel>
+										<StackPanel Grid.Row="4" Grid.ColumnSpan="3" Orientation="Horizontal" Margin="5" IsEnabled="False">
+											<Label Content="任务:"/>
+											<ComboBox Name="missionConnect" Width="120" SelectionChanged="missionConnect_SelectionChanged" IsEnabled="{Binding ElementName=missionSelect,Path=IsEnabled}"/>
+										</StackPanel>
+										<StackPanel Grid.Row="5" Grid.ColumnSpan="3" Orientation="Horizontal" Margin="5">
+											<Label Content="总计:"/>
+											<TextBox Name="TotalText" Text="0" Width="100" IsEnabled="False" TextAlignment="Right"/>
+											<Label Content="[m]"/>
+										</StackPanel>
+										<StackPanel Grid.Row="6" Grid.ColumnSpan="3" Orientation="Horizontal" Margin="5" Visibility="Hidden">
+											<Label Content="预测:"/>
+											<TextBox Name="EstimationText" Width="100" IsEnabled="False"/>
+										</StackPanel>
+									</Grid>
+								</xcad:LayoutAnchorable>
+
+								<!--Pathリスト-->
+								<!--
+                                <xcad:LayoutAnchorable ContentId="Path" Title="Path" >
+                                    <ListView x:Name="PathListView" ItemsSource="{Binding}">
+                                        <ListView.View>
+                                            <GridView>
+                                                <GridViewColumn  Header="Waypoint1" DisplayMemberBinding="{Binding Waypoint1}" />
+                                                <GridViewColumn  Header="Waypoint2" DisplayMemberBinding="{Binding Waypoint2}" />
+                                                <GridViewColumn  Header="Speed" DisplayMemberBinding="{Binding Speed}" />
+                                                <GridViewColumn  Header="Shape" DisplayMemberBinding="{Binding Shape}" />
+                                            </GridView>
+                                        </ListView.View>
+                                    </ListView>
+                                </xcad:LayoutAnchorable>
+								-->
+							</xcad:LayoutAnchorablePane>
+						</xcad:LayoutAnchorablePaneGroup>
+					</xcad:LayoutPanel>
+				</xcad:LayoutRoot>
+			</xcad:DockingManager>
+		</Grid>
+
+		<Label Name="WaitWindow" Content="等待" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="2" Background="White" Opacity="0.5" FontSize="72" HorizontalContentAlignment="Center" Visibility="Hidden"/>
+
+        <!--设置面板设计-->
+        <!--外框-->
+		<Canvas Grid.Column="0" Grid.RowSpan="4" Background="{Binding Background, ElementName=MainRibbon}"  />
+		<Canvas Grid.Column="4" Grid.RowSpan="4" Background="{Binding Background, ElementName=MainRibbon}" />
+		<Canvas Grid.Column="1" Grid.Row="0" Background="{Binding Background, ElementName=MainRibbon}" />
+		<Canvas Grid.Column="1" Grid.Row="4" Background="{Binding Background, ElementName=MainRibbon}" />
+        <!--顶部框架-->
+		<Canvas x:Name="TopCanvas" Grid.Row="1" Grid.Column="1" Background="{Binding Background, ElementName=MainRibbon}" />
+		<StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Height="50">
+			<Canvas HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="120" Grid.Column="1" Grid.Row="1" >
+				<Canvas.Background>
+					<SolidColorBrush Color="Black" Opacity="0.6"/>
+				</Canvas.Background>
+				<Canvas.OpacityMask>
+					<ImageBrush ImageSource="Resources/minisurveyorlogo.png"/>
+				</Canvas.OpacityMask>
+			</Canvas>
+			<TextBlock Margin="10,0,0,0" Text="Y-Planner" FontSize="32" VerticalAlignment="Bottom" FontWeight="Bold">
+				<TextBlock.Foreground>
+					<SolidColorBrush Color="Black" Opacity="0.6"/>
+				</TextBlock.Foreground>
+			</TextBlock>
+			<TextBlock Name="VersionName" Margin="10,0,0,0" Text="0.0.0" FontSize="32" VerticalAlignment="Bottom" FontWeight="Bold">
+				<TextBlock.Foreground>
+					<SolidColorBrush Color="Black" Opacity="0.6"/>
+				</TextBlock.Foreground>
+			</TextBlock>
+		</StackPanel>
+        <!-- 关闭/最小化/最大化按钮 -->
+		<StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Height="50">
+			<Button Content="0" Style="{DynamicResource CaptionButtonStyleKey}" FontSize="32" BorderBrush="White" Click="MinWindowButton_Click" Foreground="Black" />
+			<Button Content="1" Style="{DynamicResource CaptionButtonStyleKey}" FontSize="32" BorderBrush="White" Click="MaxWindowButton_Click" Foreground="Black"/>
+			<Button Content="2" Style="{DynamicResource CaptionButtonStyleKey}" FontSize="32" BorderBrush="White" Click="DefaultWindowButton_Click"  Foreground="Black"/>
+			<Button Content="r" Style="{DynamicResource CaptionButtonStyleKey}" FontSize="32" BorderBrush="White" Click="CloseButton_Click" Foreground="Black"/>
+		</StackPanel>
+	</Grid>
+</Window>

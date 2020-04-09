@@ -1,0 +1,107 @@
+﻿<UserControl x:Class="XMonitor_GUI.Version_Info_Show"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             Name="MainVersion_Show" Height="1000" Width="250" Stylus.IsPressAndHoldEnabled="False">
+    <Grid>
+        <Border BorderBrush="Black" BorderThickness="1" ClipToBounds="True" SnapsToDevicePixels="True" >
+            <TabControl Name="m_TabControl_Title" Style="{DynamicResource TabControlStyle2}">
+                <TabItem Header="Version"  IsSelected="True" Style="{DynamicResource TabItemStyle2}">
+                    <StackPanel Name="Window" Orientation="Vertical"  HorizontalAlignment="Left" Width="230" Margin="0,0,-4,0"  >
+                        <GroupBox Header="AP__Version:" FontWeight="Light" BorderThickness="0.5" VerticalAlignment="Top" Margin="0,-3,5,5" FontSize="10" Foreground="White" Height="90">
+                            <StackPanel Height="110">
+                                <Label x:Name="m_ap_hard"  Content="HardWare_Version_Info"  FontSize="10" Foreground="White"/>
+                                <Label x:Name="m_ap_soft"  Content="SoftWare_Version_Info" FontSize="10" Foreground="White"/>
+                                <Label x:Name="m_ap_id"  Content="ID_Version_Info" FontSize="10" Foreground="White"/>
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox Header="IMU__Version:" FontWeight="Light" BorderThickness="0.5" VerticalAlignment="Top" Margin="0,-4,5,5" FontSize="10" Foreground="White" Height="90">
+                            <StackPanel Height="110" >
+                                <Label x:Name="m_imu_hard"  Content="HardWare_Version_Info" FontSize="10" Foreground="White"/>
+                                <Label x:Name="m_imu_soft" Content="SoftWare_Version_Info" FontSize="10" Foreground="White"/>
+                                <Label x:Name="m_imu_id" Content="ID_Version_Info" FontSize="10" Foreground="White"/>
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox Header="GPS__Version:" FontWeight="Light" BorderThickness="0.5" VerticalAlignment="Top" Margin="0,-4,5,5" FontSize="10" Foreground="White" Height="90">
+                            <StackPanel Height="110">
+                                <Label x:Name="m_gps_hard" Content="HardWare_Version_Info" FontSize="10" Foreground="White"/>
+                                <Label x:Name="m_gps_soft"  Content="SoftWare_Version_Info" FontSize="10" Foreground="White"/>
+                                <Label x:Name="m_gps_id" Content="ID_Version_Info" FontSize="10" Foreground="White"/>
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox Header="HUB__Version:" FontWeight="Light" BorderThickness="0.5" VerticalAlignment="Top" Margin="0,-4,5,5" FontSize="10" Foreground="White" Height="90">
+                            <StackPanel Height="110">
+                                <Label x:Name="m_hub_hard" Content="HardWare_Version_Info" FontSize="10" Foreground="White"/>
+                                <Label x:Name="m_hub_soft" Content="SoftWare_Version_Info" FontSize="10" Foreground="White"/>
+                                <Label x:Name="m_hub_id" Content="ID_Version_Info" FontSize="10" Foreground="White"/>
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox Header="MAG__Version:" FontWeight="Light" BorderThickness="0.5" VerticalAlignment="Top" Margin="0,5,5,5" FontSize="10" Foreground="White" Height="90">
+                            <StackPanel Height="110">
+                                <Label x:Name="m_mag_hard" Content="HardWare_Version_Info" FontSize="10" Foreground="White"/>
+                                <Label x:Name="m_mag_soft" Content="SoftWare_Version_Info" FontSize="10" Foreground="White"/>
+                                <Label x:Name="m_mag_id" Content="ID_Version_Info" FontSize="10" Foreground="White"/>
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox Header="LED__Version:" FontWeight="Light" BorderThickness="0.5" VerticalAlignment="Top" Margin="0,5,5,5" FontSize="10" Foreground="White" Height="95">
+                            <StackPanel Height="90">
+                                <Label x:Name="m_led_hard" Content="HardWare_Version_Info" FontSize="10" Foreground="White"/>
+                                <Label x:Name="m_led_soft" Content="SoftWare_Version_Info" FontSize="10" Foreground="White"/>
+                                <Label x:Name="m_led_id" Content="ID_Version_Info" FontSize="10" Foreground="White"/>
+                            </StackPanel>
+                        </GroupBox>
+
+
+                        <GroupBox Header="FDR__Version:" FontWeight="Light" BorderThickness="0.5" VerticalAlignment="Top" Margin="0,5,5,5" FontSize="10" Foreground="White" Height="95">
+                            <StackPanel Margin="0,0,0,1">
+                                <Label x:Name="m_fdr_hard" Content="HardWare_Version_Info" FontSize="10" Foreground="White"/>
+                                <Label x:Name="m_fdr_soft" Content="SoftWare_Version_Info" FontSize="10" Foreground="White"/>
+                                <Label x:Name="m_fdr_id" Content="ID_Version_Info" FontSize="10" Foreground="White"/>
+                            </StackPanel>
+                        </GroupBox>
+
+                        <GroupBox Header="DTU__Version:" FontWeight="Light" BorderThickness="0.5" VerticalAlignment="Top" Margin="0,5,5,5" FontSize="10" Foreground="White" Height="95">
+                            <StackPanel Margin="0,0,0,1">
+                                <Label x:Name="m_dtu_hard" Content="HardWare_Version_Info" FontSize="10" Foreground="White"/>
+                                <Label x:Name="m_dtu_soft" Content="SoftWare_Version_Info" FontSize="10" Foreground="White"/>
+                                <Label x:Name="m_dtu_id" Content="ID_Version_Info" FontSize="10" Foreground="White"/>
+                            </StackPanel>
+                        </GroupBox>
+
+                        <GroupBox Header="RTK__Version:" FontWeight="Light" BorderThickness="0.5" VerticalAlignment="Top" Margin="0,5,5,5" FontSize="10" Foreground="White" Height="95">
+                            <StackPanel Margin="0,0,0,1">
+                                <Label x:Name="m_rtk_hard" Content="HardWare_Version_Info" FontSize="10" Foreground="White"/>
+                                <Label x:Name="m_rtk_soft" Content="SoftWare_Version_Info" FontSize="10" Foreground="White"/>
+                                <Label x:Name="m_rtk_id" Content="ID_Version_Info" FontSize="10" Foreground="White"/>
+                            </StackPanel>
+                        </GroupBox>                        
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="Update" Style="{DynamicResource TabItemStyle2}" Visibility="Hidden">
+                    <StackPanel Name="Fire_Ware_Reset" Orientation="Vertical"  HorizontalAlignment="Left" Width="227" Height="640" Margin="0,0,-1,0">
+                        <GroupBox Header="Tip:" FontWeight="Light" VerticalAlignment="Top" BorderThickness="0.5" Margin="0,0,5,5" FontSize="16" Foreground="White" Height="290">
+                            <StackPanel Margin="0,0,0,-2">
+                                <TextBlock Name="First_Tip" TextWrapping="Wrap"  Text="第 一 步：选 择 需 要 升 级 的 硬 件" FontSize="15"  Margin="0,0,0,0" Foreground="White"/>
+                                <TextBlock Name="Second_Tip" TextWrapping="Wrap" Text="第 二 步：点 击 固 件 升 级 按 钮 发 送 升 级 指 令" FontSize="15" Margin="0,0,0,0" Foreground="White"/>
+                                <TextBlock Name="Third_Tip" TextWrapping="Wrap" Text="第 三 步：监 控 界 面 会 自 动 切 换 至 升 级 界 面" FontSize="15" Margin="0,0,0,0" Foreground="White"/>
+                                <TextBlock Name="Fourth_Tip" TextWrapping="Wrap" Text="第 四 步：点 击 文 件 载 入 按 钮 载 入 需 要 升 级 的 bin 文 件" FontSize="15" Margin="0,0,0,0" Foreground="White"/>
+                                <TextBlock Name="Fifth_Tip" TextWrapping="Wrap" Text="第 五 步：点 击 发 送 按 钮 会 显 示 当 前 固 件 升 级 的 进 度，升 级 成 功 或 失 败 会 有 相 应 的 提 示" Margin="0,0,0,0" FontSize="15" Foreground="White"/>
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox Header="升级操作:" FontWeight="Light" BorderThickness="0.5" VerticalAlignment="Top" Margin="0,5,5,5" FontSize="16" Foreground="White" Height="117">
+                            <StackPanel>
+                                <RadioButton Name="AP_CHECK" Content="飞控" GroupName="FireWare_Update" FontWeight="Light" Foreground="White"/>
+                                <RadioButton Name="IMU_CHECK" Content="IMU" Margin="137,-27,10,0"  GroupName="FireWare_Update"  FontWeight="Light" Foreground="White"/>
+                                <RadioButton Name="GPS_CHECK" Content="GPS" GroupName="FireWare_Update" FontWeight="Light" Foreground="White"/>
+                                <RadioButton Name="HUB_CHECK" Content="HUB" Margin="137,-27,10,0" GroupName="FireWare_Update"  FontWeight="Light" Foreground="White"/>
+                                <RadioButton Name="MAG_CHECK" Content="MAG" GroupName="FireWare_Update" FontWeight="Light" Foreground="White"/>
+                                <RadioButton Name="LED_CHECK" Content="LED" Margin="137,-27,10,0" GroupName="FireWare_Update"  FontWeight="Light" Foreground="White"/>
+                                <Button Name="FireWare_Btn" Content="固件升级" Background="Transparent" Foreground="White"  Margin="0,0,0,0" Click="FireWare_Btn_Click"></Button>
+                            </StackPanel>
+                        </GroupBox>
+                    </StackPanel>
+                </TabItem>
+            </TabControl>
+        </Border>
+    </Grid>
+</UserControl>

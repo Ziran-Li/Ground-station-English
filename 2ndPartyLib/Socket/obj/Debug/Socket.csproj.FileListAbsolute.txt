@@ -1,0 +1,6 @@
+C:\Users\hello\Desktop\acsl\2ndPartyLib\Socket\bin\Debug\Socket.dll
+C:\Users\hello\Desktop\acsl\2ndPartyLib\Socket\bin\Debug\Socket.pdb
+C:\Users\hello\Desktop\acsl\2ndPartyLib\Socket\bin\Debug\GMap.NET.Core.dll
+C:\Users\hello\Desktop\acsl\2ndPartyLib\Socket\bin\Debug\GMap.NET.Core.pdb
+C:\Users\hello\Desktop\acsl\2ndPartyLib\Socket\obj\Debug\Socket.dll
+C:\Users\hello\Desktop\acsl\2ndPartyLib\Socket\obj\Debug\Socket.pdb

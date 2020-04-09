@@ -1,0 +1,94 @@
+﻿■ Y-Planner
+<<<ソフトウェア使用許諾契約書>>>
+
+本使用許諾契約書（以下「本契約」といいます）は、お客様（法人または個人のいずれであるかを問いません。）がY-Planner（以下「本ソフトウェア」といいます。）をインストール及び使用する権利を下記条件に基づいて許諾を受け、お客様と弊社との間に締結された法的な契約書であることを示すものです。本ソフトウェアをインストール、複製、または使用することによって、お客様は本契約書の各条項に同意いただいたものとします。仮に、本契約書の条項に同意されない場合は、本ソフトウェアをインストール、複製、または使用することはできません。
+
+1.	総則
+　本ソフトウェアは、弊社がお客様に対して、本契約書に定める条件に同意する場合に限り使用を許諾するものです。お客様は、本契約書の条項に従ってのみ、本ソフトウェアのコピー、ダウンロード、インストール、および使用をすることができます。
+
+2.	定義
+　「本ソフトウェア」とは、本契約書とともに配布されるプログラムファイル、データファイル、ドキュメントファイルなど、すべてのファイルをいいます。
+
+3.	知的財産権
+　本ソフトウェアの知的財産権は、弊社に帰属します。但し、第三者より許諾を受けて本ソフトウェアに組み入れたものに関しては、その部分の知的財産権は、提供者である第三者に帰属します。本ソフトウェアは、日本を含む各国の著作権法、および著作権に関する国際条約により保護されています。本契約は、お客様に本ソフトウェアに関して何らの知的財産権も付与するものではありません。弊社は、本ソフトウェアに関するすべての権利を留保します。
+
+4.	輸出に関する規制
+　本ソフトウェアは、日本国外へ持ち出して使用することを想定しておりません。仮に本ソフトウェアを日本国内外に持ち出す場合、我が国の輸出管理に関する法律・規則・命令を遵守する必要がありますので、関係当局等に予めご相談ください。弊社としては、お客様の本ソフトウェアの日本国外における使用には責任を負いかねますので、ご注意ください。
+
+5.	禁止事項
+　お客様は、本契約書で明示的に許可している場合を除き、本ソフトウェアの複製、配布はできません。
+　お客様は、サンプルを除き、本ソフトウェアを改変することはできません。
+　お客様は、本ソフトウェアの逆アセンブル、逆コンパイル、リバースエンジニアリングをすることはできません。
+　お客様は、本ソフトウェアのレンタル、リース、貸与、譲渡、販売、サブライセンスをすることはできません。
+
+6.	保証範囲
+　弊社は、本ソフトウェアの品質および機能が、お客様の個別の使用目的に適合することを保証するものではなく、本ソフトウェアについて瑕疵担保責任を負いません。本ソフトウェアの誤り（バグ）の存在について、発見された、または認識した場合、弊社は速やかに対応しますが、その遂行義務をお客様に対して個別に負うものではありません。なお、弊社が本ソフトウェアを改良（バグ修正などをいい、ただしそれに限られません。）したとき、改良後のソフトウェアについても本契約書が引き続き適用されるものとします。
+
+7.	免責事項
+　弊社は、お客様が本ソフトウェアを使用したこと、または使用できなかったことから生じる、または、生じたいかなる損害についても、一切責任を負うものではありません。本ソフトウェアの使用は、お客様ご自身の責任で行うこととし、本ソフトウェアの使用により生じた直接的、または間接的ないかなる損害についても、弊社は免責されることとします。ただし、①本ソフトウェアの推奨動作環境のもと、②専ら本ソフトウェアの不具合に起因し、遠隔操作される飛行体（ミニサーベイヤーに限る）が墜落等をして飛行体の損傷、または人的物的損害を生じた場合で、③お客様がミニサーベイヤー安全ガイドライン等の安全ガイドラインを遵守したこと、かつ、④専用コントローラーを適切に利用しても墜落等の回避が不可能であったこと、を客観的に証明した場合にはこの限りではありません。
+　本ソフトウェアについて、お客様と第三者との間で著作権その他知的財産権上の紛争、製造物責任法に基づく紛争等が生じた場合といえども、弊社は一切のその責任を負いません。また、本ソフトウェアの利用に関して、お客様又はお客様の顧客に何らかの損害が生じた場合でも、一切のその責任を負いません。
+　本ソフトウェアの利用により、万が一ハードウェア機器若しくはデータ等に支障が生じた場合でも、弊社は一切その責任を負いません。
+
+8.	準拠法及び管轄
+　本契約書は、日本国法に準拠し、解釈されるものとします。また、本契約書に関して生じる紛争については、千葉地方裁判所を第一審の専属的管轄裁判所とします。
+
+9.	契約期間
+　本契約は、本ソフトウェアのインストール、もしくは使用を開始した際に発効し、本契約の終了まで有効なものとします。
+本契約は、本ソフトウェアの全部、または一部が使用可能な状態である間、有効です。但し、契約期間中であっても、お客様が本契約のいずれかに違反したときは、本契約は終了するものとし、お客様に許諾した権利はすべて失効するものとします。本契約が終了した場合、お客様は本ソフトウェアの使用を中止し、お客様の負担で本ソフトウェア（構成部分、複製物、関連資料など全て）を破棄する必要があります。
+
+10.	契約終了
+　お客様が本契約のいずれかの条項に違反したにも拘わらず、使用を継続した場合、弊社は、お客様に対し、お客様に使用継続により被った損害をお客様に請求することができます。
+
+以上
+
+最終更新日：2015年2月18日
+株式会社 自律制御システム研究所
+
+・本ソフトウェアは、 Apache 2.0/MIT/creativecommons/Ms-RLで配布されている製作物が含まれています。
+（this software includes the work that is distributed in the Apache License 2.0/creativecommons/Ms-RL）
+-------------------------------------------------------------------
+
+
+■ GMap.NET http://greatmaps.codeplex.com/
+License: The MIT License (MIT)
+
+Copyright (c) 2008-2011 Universe, WARNING: This software can access some
+map providers and may viotile their Terms of Service, you use it at your
+own risk, nothing is forcing you to accept this ;} Source itself is legal!
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the "Software"),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included
+in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+IN THE SOFTWARE.
+-------------------------------------------------------------------
+
+
+
+■ flaticon http://www.flaticon.com/
+License: creativecommons
+
+"Icon made by Freepik from Flaticon.com"
+"Icon made by SimpleIcon from Flaticon.com"
+-------------------------------------------------------------------
+
+
+
+■ 方位アイコン:http://anz-fukuoka.jugem.jp/?eid=159
+-------------------------------------------------------------------
+
+
+■ Extended WPF Toolkit™ Community Edition　https://wpftoolkit.codeplex.com/license
+License: Microsoft Reciprocal License (Ms-RL)
+-------------------------------------------------------------------

@@ -1,0 +1,28 @@
+﻿<!--
+  1.3 UAV操作/再生制御
+     1.3.1 Pause
+     1.3.2 Resume
+     1.3.3 Go Home
+     1.3.4 Land
+-->
+    
+<UserControl x:Class="ControlsUnit.Command"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" >
+    
+    <Grid>
+        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Top"  >
+            <StackPanel.Background>
+                <SolidColorBrush Color="#FF1F1A50" Opacity="0.5"/>
+            </StackPanel.Background>
+            <Button Content="Pause" Height="100" Width="100" Foreground="White" FontFamily="Meiryo UI" FontSize="18" FontWeight="Bold" Background="{x:Null}" BorderBrush="White"/>
+            <Button Content="Resume" Height="100" Width="100" Foreground="White" FontFamily="Meiryo UI" FontSize="18" FontWeight="Bold"  Background="{x:Null}" BorderBrush="White"/>
+            <Button Content="Go Home" Height="100" Width="100" Foreground="White" FontFamily="Meiryo UI" FontSize="18" FontWeight="Bold"  Background="{x:Null}" BorderBrush="White"/>
+            <Button Content="Land"  Height="100" Width="100" Foreground="White" FontFamily="Meiryo UI" FontSize="18" FontWeight="Bold"  Background="{x:Null}" BorderBrush="White"/>
+            <Button Content="PosnSet"  Height="100" Width="100" Foreground="White" FontFamily="Meiryo UI" FontSize="18" FontWeight="Bold"  Background="{x:Null}" BorderBrush="White"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

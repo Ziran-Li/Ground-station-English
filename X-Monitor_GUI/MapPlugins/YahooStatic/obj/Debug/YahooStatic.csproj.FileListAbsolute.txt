@@ -1,0 +1,5 @@
+C:\Users\hello\Desktop\acsl\ACSL\mapPlugin\YahooStatic.dll
+C:\Users\hello\Desktop\acsl\ACSL\mapPlugin\YahooStatic.pdb
+C:\Users\hello\Desktop\acsl\X-Monitor_GUI\MapPlugins\YahooStatic\obj\Debug\YahooStatic.csprojResolveAssemblyReference.cache
+C:\Users\hello\Desktop\acsl\X-Monitor_GUI\MapPlugins\YahooStatic\obj\Debug\YahooStatic.dll
+C:\Users\hello\Desktop\acsl\X-Monitor_GUI\MapPlugins\YahooStatic\obj\Debug\YahooStatic.pdb

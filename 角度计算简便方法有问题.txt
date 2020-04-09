@@ -1,0 +1,8 @@
+float CMonitor_SSView::Rotationtwo_Angle(double first_destination_la,double first_destination_lo,double second_destination_la,double second_destination_lo)
+{
+		float Angle_First=0.0; 
+		float Actual_angle=0.0;
+		Angle_First=-atan2((((second_destination_lo-first_destination_lo)*cos(second_destination_la))*3.1415926/180.0),((second_destination_la-first_destination_la)*3.1415926/180.0))*180/3.1415;
+		Actual_angle=Angle_First;
+		return Actual_angle;
+}

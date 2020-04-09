@@ -1,0 +1,31 @@
+﻿生成启动时间为 2017/4/24 星期一 下午 4:01:54。
+     1>项目“D:\VS2013_Project\acsl\X-Monitor\src\X-Monitor.vcxproj”在节点 2 上(Rebuild 个目标)。
+     1>ClCompile:
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\..\commonLib\include /I..\..\miniSvLib\include /I"D:\Program Files\boost_1_60_0" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D _WINDOWS /D NDEBUG /D _UNICODE /D UNICODE /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Release\Core.pch" /Fo"Release\\" /Fd"Release\vc120.pdb" /FR"Release\\" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\..\commonLib\include /I..\..\miniSvLib\include /I"D:\Program Files\boost_1_60_0" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D _WINDOWS /D NDEBUG /D _UNICODE /D UNICODE /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Release\Core.pch" /Fo"Release\\" /Fd"Release\vc120.pdb" /FR"Release\\" /Gd /TP /analyze- /errorReport:prompt AppSetting.cpp CLogEdit.cpp UavLinkManage.cpp "X-Monitor.cpp" "X-MonitorDlg.cpp"
+         AppSetting.cpp
+         CLogEdit.cpp
+         UavLinkManage.cpp
+         X-Monitor.cpp
+         X-MonitorDlg.cpp
+       ResourceCompile:
+         C:\Program Files\Windows Kits\8.1\bin\x86\rc.exe /D NDEBUG /D _UNICODE /D UNICODE /l"0x0411" /IRelease\ /nologo /fo"Release\X-Monitor.res" X-Monitor.rc 
+       Link:
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\ACSL\Core\Core.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:..\..\commonLib\lib /LIBPATH:..\..\miniSvLib\lib /LIBPATH:"D:\Program Files\boost_1_60_0\stage\lib" miniSvCodec.lib miniSvCommon.lib miniSvSock.lib miniSvUavLink.lib miniSvWirelessDevice.lib miniSvXmlDataManage.lib commBuf.lib debugWrite.lib exclusiveObj.lib sci.lib socket.lib thread.lib timer.lib xml.lib memory.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /manifestinput:"D:\Program Files\Microsoft Visual Studio 12.0\VC\Include\Manifest\dpiaware.manifest" /DEBUG /PDB:"..\..\ACSL\Core\Core.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /ENTRY:"wWinMainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\..\ACSL\Core\Core.lib" /MACHINE:X86 /SAFESEH "Release\X-Monitor.res"
+         Release\AppSetting.obj
+         Release\CLogEdit.obj
+         Release\UavLinkManage.obj
+         Release\stdafx.obj
+         "Release\X-Monitor.obj"
+         "Release\X-MonitorDlg.obj"
+         正在生成代码
+         已完成代码的生成
+         X-Monitor.vcxproj -> D:\VS2013_Project\acsl\X-Monitor\src\..\..\ACSL\Core\Core.exe
+       BscMake:
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\bscmake.exe /nologo /o"..\..\ACSL\Core\Core.bsc" /n Release\AppSetting.sbr Release\CLogEdit.sbr Release\UavLinkManage.sbr Release\stdafx.sbr "Release\X-Monitor.sbr" "Release\X-MonitorDlg.sbr"
+     1>已完成生成项目“D:\VS2013_Project\acsl\X-Monitor\src\X-Monitor.vcxproj”(Rebuild 个目标)的操作。
+
+生成成功。
+
+已用时间 00:01:13.75

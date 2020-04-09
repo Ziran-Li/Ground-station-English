@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="XMonitor_GUI.ApplicationWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:forms="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+             Height="250" Width="250" Unloaded="UserControl_Unloaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <!--WindowsFormsIntegration-->
+        <WindowsFormsHost Grid.Row="1" >
+            <forms:Panel x:Name="_panel" />
+        </WindowsFormsHost>
+        <StackPanel Grid.Row="0" Orientation="Horizontal"  HorizontalAlignment="Left">
+            <ComboBox Name="AppList" HorizontalAlignment="Left" VerticalAlignment="Top" Width="180" Margin="5,5,5,5" SelectionChanged="ApplicationSelectionChanged">
+                <ListBox Height="100" Width="100"/>
+            </ComboBox>
+            <Button Content="Refer" HorizontalAlignment="Left" VerticalAlignment="Top" Click="OpenApplication_Click" Margin="5,5,5,5"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

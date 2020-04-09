@@ -1,0 +1,22 @@
+﻿生成启动时间为 2017/4/24 星期一 下午 4:01:42。
+     1>项目“D:\VS2013_Project\acsl\commonLib\modules\exclusiveObj\src\exclusiveObj.vcxproj”在节点 2 上(Rebuild 个目标)。
+     1>ClCompile:
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\include /I..\..\..\include /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Release\exclusiveObj.pch" /Fo"Release\\" /Fd"Release\vc120.pdb" /FR"Release\\" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+       Lib:
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"..\lib\exclusiveObj.lib" /NOLOGO /LTCG Release\stdafx.obj
+         exclusiveObj.vcxproj -> D:\VS2013_Project\acsl\commonLib\modules\exclusiveObj\src\..\lib\exclusiveObj.lib
+       BscMake:
+         D:\Program Files\Microsoft Visual Studio 12.0\VC\bin\bscmake.exe /nologo /o"..\lib\exclusiveObj.bsc" /n Release\stdafx.sbr
+       PostBuildEvent:
+         copy ..\include\*.h ..\..\..\include\
+         copy ..\lib\exclusiveObj.lib ..\..\..\lib\
+         :VCEnd
+         ..\include\ExclusiveObject.h
+         已复制         1 个文件。
+         已复制         1 个文件。
+     1>已完成生成项目“D:\VS2013_Project\acsl\commonLib\modules\exclusiveObj\src\exclusiveObj.vcxproj”(Rebuild 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:01.46

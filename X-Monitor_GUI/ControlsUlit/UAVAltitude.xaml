@@ -1,0 +1,93 @@
+﻿<UserControl x:Class="ControlsUnit.UAVAltitude"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Height="500" Width="80" Loaded="UserControl_Loaded" >
+	<UserControl.Resources>
+		<ResourceDictionary Source="UAVAltitudeStyles.xaml"/>
+    </UserControl.Resources>
+
+
+    <Border BorderBrush="White" CornerRadius="0" BorderThickness="1">
+		<Grid >
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="0"/>
+				<RowDefinition Height="30"/>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="30"/>
+				<RowDefinition Height="0"/>
+				<RowDefinition Height="0"/>
+			</Grid.RowDefinitions>
+
+			<Label Grid.Column="0" Grid.Row="3"  Name="Nalt" Height="30" VerticalAlignment="Bottom" BorderBrush="White" Foreground="White" FontSize="18" FontWeight="Bold" FontFamily="Meiryo UI" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+			<Label  Grid.Column="0" Grid.Row="1" Name="Nuav" Height="30" VerticalAlignment="Top" Foreground="Gold" FontSize="18" FontWeight="Bold" FontFamily="Meiryo UI" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+			<Label Grid.Column="0" Grid.Row="4"  Name="NNalt" Height="30" VerticalAlignment="Bottom" BorderBrush="White" Foreground="White" FontSize="18" FontWeight="Bold" FontFamily="Meiryo UI" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+			<Label  Grid.Column="0" Grid.Row="0" Name="NNuav" Height="30" VerticalAlignment="Top" Foreground="Gold" FontSize="18" FontWeight="Bold" FontFamily="Meiryo UI" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+			<Button Grid.Column="0" Grid.Row="5" Name="Offset" Content="Offset" Click="Offset_Click" Background="{x:Null}" Foreground="White"/>
+
+			<Grid Grid.Column="0" Grid.Row="2" >
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*"/>
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="20"/>
+					<RowDefinition Height="25"/>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="25"/>
+					<RowDefinition Height="20"/>
+				</Grid.RowDefinitions>
+				<!--飾り-->
+				<ProgressBar Grid.Column="0" Grid.Row="2" Orientation="Vertical" BorderBrush="{x:Null}" Background="{x:Null}"/>
+				<!--標高-->
+				<ProgressBar Grid.Column="0" Grid.Row="2" Name="altval" Orientation="Vertical"  
+                     Maximum="{Binding ElementName=Waypoint,Path=Maximum}" Minimum="{Binding ElementName=Waypoint, Path=Minimum}"
+                     Style="{StaticResource RectangleProgressBar}" Foreground="Green" Margin="0,30,0,18" BorderBrush="{x:Null}" Background="{x:Null}"/>
+				<!--Home高度-->
+				<Slider Name="Home" TickPlacement="TopLeft" Maximum="30" Minimum="-10" Style="{StaticResource AltHomeStyle}"  Foreground="White" Grid.Row="2" SmallChange="1" TickFrequency="5" />
+				<!--目標高度-->
+				<Slider Name="Waypoint" Visibility="Hidden" TickPlacement="TopLeft" Maximum="30" Minimum="-10" Style="{StaticResource AltTargetStyle}" Foreground="White"  Grid.Row="2" SmallChange="1" TickFrequency="5" Value="{Binding ElementName=Dummy,Path=Value}"/>
+				<!--機体内部目標高度-->
+				<Slider Name="WaypointAct" Visibility="Hidden" TickPlacement="TopLeft" Maximum="30" Minimum="-10" Style="{StaticResource ActAltTargetStyle}" Foreground="White"  Grid.Row="2" SmallChange="1" TickFrequency="5" />
+				<!--現在高度-->
+				<Slider Name="Uav" TickPlacement="TopLeft" Maximum="30" Minimum="-10" Style="{StaticResource ActAltStyle}"  Foreground="White" Grid.Row="2" SmallChange="1" TickFrequency="5" />
+				<!--目標高度操作用-->
+				<Slider Name="Dummy" TickPlacement="TopLeft" Maximum="30" Minimum="-10" Style="{StaticResource DummySliderStyle}"  Foreground="White" Grid.Row="2" SmallChange="1" TickFrequency="5" ValueChanged="Waypoint_ValueChanged" />
+
+
+
+				<Border Grid.Column="0" Grid.Row="0" Grid.RowSpan="7" BorderBrush="White" BorderThickness="2" />
+				<Border Grid.Column="0" Grid.Row="0" BorderBrush="White" BorderThickness="1" Name="WaypointUp10Border"/>
+				<Border Grid.Column="0" Grid.Row="1" BorderBrush="White" BorderThickness="1" Name="WaypointUpBorder"/>
+				<Border Grid.Column="0" Grid.Row="3" BorderBrush="White" BorderThickness="1" Name="WaypointDownBorder"/>
+				<Border Grid.Column="0" Grid.Row="4" BorderBrush="White" BorderThickness="1" Name="WaypointDown10Border"/>
+
+				<Label Content="WaypointUp10" Name="WaypointUp10" Stylus.IsPressAndHoldEnabled="False"  Grid.Column="0" Grid.Row="0" BorderThickness="2" Background="White" Foreground="{x:Null}"  >
+					<Label.OpacityMask>
+						<ImageBrush ImageSource="Resources/up10.png"/>
+					</Label.OpacityMask>
+				</Label>
+				<Label Content="WaypointUp"  Name="WaypointUp" Stylus.IsPressAndHoldEnabled="False"  Grid.Column="0" Grid.Row="1" BorderBrush="White" Background="White" Foreground="{x:Null}" >
+					<Label.OpacityMask>
+						<ImageBrush ImageSource="Resources/up.png"/>
+					</Label.OpacityMask>
+				</Label>
+
+				<Label Content="WaypointDown"  Name="WaypointDown" Stylus.IsPressAndHoldEnabled="False"  Grid.Column="0" Grid.Row="3" BorderBrush="White" Background="White" Foreground="{x:Null}">
+					<Label.OpacityMask>
+						<ImageBrush ImageSource="Resources/down.png"/>
+					</Label.OpacityMask>
+				</Label>
+				<Label Content="WaypointDown10"   Name="WaypointDown10" Stylus.IsPressAndHoldEnabled="False"  Grid.Column="0" Grid.Row="4" BorderBrush="White" Background="White" Foreground="{x:Null}" >
+					<Label.OpacityMask>
+						<ImageBrush ImageSource="Resources/down10.png"/>
+					</Label.OpacityMask>
+				</Label>
+
+			</Grid>
+		</Grid>
+    </Border>
+</UserControl>
